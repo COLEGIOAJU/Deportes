@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<head>
+ <title>TIRO CON ARCO</title>
+ <!-- ADICIONALMENTE EN ESTE APARTADO PONEN TODO LO RELACIONADO A LA ESTRUCTURA CSS ASI: -->
+ <style>
+ body {
+ /* MODELO DE CAJA */
+ font-family: Agency FB ; margin: 2; padding: 1;
+ /* IMAGEN DE FONDO Y SUS PROPIEDADES */
+ background-image: url('tiro con arco lol.jpg'); background-size: 96% 100%; background-position: 50% 50%;
+ background-attachment: fixed; background-repeat: no-repeat;
+ /* COLOR DE FONDO */
+ background-color: 
+#090808; }
+ /* CONTINUACION ESTRUCTURA DE MODELO DE CAJA PARA EL ENCABEZADO Y LAS SESIONES, INCLUIDA
+COLOR, ALINEACION */
+ header, .content {
+ background-color: rgba(0, 0, 0, 0.3); padding: 25px; border-radius: 10px; margin: 22px; }
+ header h1, header nav ul li a { color: white; text-align: center; }
+ header nav ul { list-style-type: none; margin: 3; padding: 2; text-align: center; }
+ header nav ul li {display: inline; margin: 0 20px; }
+ header nav ul li a {color: white; text-decoration: none; }
+ main { padding: 15px; }
+ section { background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ margin: 25px 0; }
+ h2 { color: #06070a; }
+ h3 { color: ##620909; }
+ p, ul { margin-bottom: 15px; }
+ ul { padding-left: 20px; }
+ /* CSS DEL PIE DE PAGINA */
+ footer {text-align: center; background-color: rgba(0, 0, 0, 0.3); padding: 20px; color: white; margin-top: 20px; }
+ /* CSS PARA EL INTERCAMBIO DE LAS IMAGENES */
+ .carousel {position: relative; max-width: 100%; margin: auto; }
+ .carousel img { width: 100%; border-radius: 8px; display: none; }
+ .carousel img.active { display: block; }
+ /* CSS PARA EL CUESTIONARIO Y JUEGO */
+ iframe { width: 100%; height: 315px; border: none; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ margin-bottom: 20px; }
+ form { margin-top: 20px; }
+ label { display: block; margin: 10px 0 5px; }
+ input, select, button { width: 100%; padding: 8px; margin: 5px 0 15px; border-radius: 4px; border: 1px solid
+#ccc; color: black; }
+ button { background-color: #333; color: white; cursor: pointer; }
+ button:hover { background-color: #555; }
+ #gameCanvas { background-color: #ffffff; border: 2px solid #000; }
+ #score { font-size: 20px; margin-top: 20px; }
+ #instructions { margin-top: 20px; font-size: 18px; text-align: center; }
+ /* CERRAR TODAS LAS PROPIEDADES CSS DE LA PÁGINA */
+ </style>
+ <!-- CERRAR EL ENCABEZADO -->
+</head><body>
+ <!-- AQUI VA TODO EL CONTENIDO DE LA PAGINA -->
+ <!-- ADICIONALMENTE VAN LOS SCRIPTS Y JAVASCRIPTS DE PROGRAMACIÓN DE LA INTERACTIVIDAD -->
+ <header>
+ <!-- TITULO Y MENU DE SU PAGINA -->
+ <h1>TIRO CON ARCO</h1>
+ <nav> <ul>
+ <li><a href="#resumen">RESUMEN DE SU DEPORTE</a></li>
+ <li><a href="#historia">HISTORIA DE SU DEPORTE</a></li>
+ <li><a href="#reglas">REGLAS DE SU DEPORTE</a></li>
+ <li><a href="#programacion">PROGRAMACION OLIMPICOS 2024</a></li>
+ <li><a href="#medallero">MEDALLERO</a></li>
+ <li><a href="#video">VIDEO</a></li>
+ <li><a href="#galeria">GALERIA</a></li>
+ <li><a href="#formulario">CUESTIONARIO</a></li>
+ <li><a href="#game">JUEGO</a></li>
+ </ul> </nav> </header> <main>
+ <!-- DIVISION DE LAS SESIONES DE SU PAGINA -->
+ <div class="content">
+ <!-- SESION 1 -->
+ <section id="resumen">
+ <h2>RESUMEN</h2>
+ <p>El Tiro con arco es un deporte olímpico en el cual se utiliza un arco para disparar flechas. Para disparar una flecha, un arquero primero se coloca en la posición correcta, el cuerpo debería estar perpendicular al objetivo y la línea de tiro, con los pies situados en perpendicular con cada hombro. El objetivo de esta actividad es lanzar 20 flechas por persona a la diana correspondiente. Se le llama “arquero” a la persona que está lanzando la flecha.</p>
+ </section>
+ <!-- SESION 2 -->
+ <section id="historia">
+ <h2>HISTORIA</h2>
+ <p>El tiro con arco tiene sus raíces en la prehistoria, cuando las primeras civilizaciones utilizaron arcos para cazar y como herramienta militar. Los arcos primitivos estaban hechos de materiales naturales como madera y tendones de animales, y se desarrollaron técnicas básicas para mejorar su eficacia. Las primeras evidencias arqueológicas de arcos datan de aproximadamente 10,000 a.C., con hallazgos en el Cercano Oriente y África. A medida que las sociedades avanzaban, el tiro con arco se convirtió en una habilidad esencial en las batallas y conflictos, especialmente en civilizaciones como las de los egipcios, los griegos y los romanos, quienes perfeccionaron sus técnicas y desarrollaron distintos tipos de arcos, como el compuesto y el recurvo. Con el tiempo, el tiro con arco dejó de ser una herramienta de guerra para convertirse en un deporte y una actividad recreativa. Durante la Edad Media, el arco seguía siendo vital en el combate, pero con la llegada de armas de fuego, su uso en la guerra disminuyó. En el siglo XIX, el tiro con arco se institucionalizó como deporte en países como Gran Bretaña y Estados Unidos, con la creación de asociaciones y la organización de competiciones. La inclusión del tiro con arco en los Juegos Olímpicos modernos en 1900 marcó un hito importante, consolidándolo como una disciplina deportiva global. Hoy en día, el tiro con arco se practica tanto a nivel competitivo como recreativo, con tecnologías avanzadas y un enfoque en la precisión y la técnica..</p>
+ </section>
+ <!-- SESION 3 -->
+ <section id="reglas">
+ <h2>REGLAS DE SU DEPORTE</h2>
+ <p>
+°El arquero cuando vaya a disparar deberá asegurarse que no haya nadie detrás de los parapetos o en el campo de tiro.
+°La flecha solo se puede colocar en el arco cuando se está en la línea de tiro y apuntando en dirección hacia la diana.
+°El arco solo se puede tensar en la línea de tiro y en dirección a la diana.
+°No se puede disparar un arco sin flecha 
+°Las flechas no se deben disparar nunca hacia arriba, ya que cuando bajen al suelo llevarán la misma velocidad que al salir del arco, lo que es muy peligroso.
+°Las cuerdas de los arcos deberán estar fabricadas con el material adecuado.
+°Hay que asegurarse que la cuerda está bien montada en el arco.
+°Las flechas deberán tener una longitud adecuada para evitar que al tensar el arco éstas se pudiesen caer del reposaflechas y provocarnos un accidente
+°Siempre es preferible que las flechas sobresalgan un poco del cuerpo del arco tensado, sobre todo en la fase de iniciación del arquero.
+°Cuando el arquero aprecie cualquier defecto en la flecha no la deberá utilizar.
+°Si el arquero observa algún desperfecto en el arco dejará de tirar inmediatamente.
+°Los arqueros deberán tener cuidado en no molestar a sus compañeros con el material (arco, carcaj, flechas, etc.), conversaciones, etc.
+°Una vez disparadas todas las flechas de una tanda, el arquero debe abandonar inmediatamente la línea de tiro, sin molestar al compañero de diana.
+°No se podrá traspasar la línea de tiro para ir a la diana hasta que todos los arqueros de la línea de tiro hayan disparado las flechas.
+°Nunca se puede correr hacia la diana para recoger las flechas, ni de vuelta a la línea de tiro y mucho menos si se llevan flechas en la mano.
+°Los arqueros deberá sacar las flechas del parapeto teniendo la precaución de no golpear a los compañeros de la misma diana; de la misma manera, los demás arqueros que estén esperando deberán permanecer a una distancia adecuada de las flechas clavadas. Si se está anotando los puntos en una tablilla, ésta se depositará en el suelo a una distancia prudencial del parapeto, para evitar accidentes al sacar las flechas.</p>
+ </section>
+ <!-- SESION 4 -->
+ <section id="programacion">
+ <h2>PROGRAMACION OLIMPICOS 2024</h2>
+ <p>.
+1 Fase de Clasificación
+
+Fecha: 27 de julio de 2024
+Clasificación individual masculina
+Clasificación individual femenina
+Formato: Cada arquero dispara 72 flechas (en rondas de 12 flechas cada una), y los resultados determinan el ranking para las rondas eliminatorias.
+
+2. Eliminatorias Individuales
+Fecha: 28 de julio de 2024
+Rondas de 1/32 y 1/16 de final (masculino y femenino)
+
+3. Eliminatorias por Equipos
+Fecha: 29 de julio de 2024
+Rondas de 1/8 de final, cuartos de final y semifinales (masculino y femenino)
+
+4. Finales y Ceremonias de Premiación
+Fecha: 30 de julio de 2024
+Finales individuales (masculino y femenino)
+Finales por equipos (masculino y femenino)
+
+5. Equipos Mixtos
+Fecha: 30 de julio de 2024
+Rondas eliminatorias y finales de equipos mixtoS
+
+Finales: Los dos mejores arqueros o equipos compiten por la medalla de oro, mientras que los perdedores de las semifinales disputan la medalla de bronce.
+Los eventos se celebrarán en el Parc André-Citroën, una de las sedes para el tiro con arco en París 2024.
+Los horarios específicos de cada evento se confirmarán más cerca de los Juegos.</p>
+ </section>
+ <!-- SESION 5 -->
+ <section id="medallero">
+ <h2>MEDALLERO MUJERES</h2>
+ <ul> 
+ <li><strong>Oro:</strong> COREA DEL SUR; LIM SI-HYEON</li>
+ <li><strong>Plata:</strong> COREA DEL SUR; NAM SU-HYEON</li>
+ <li><strong>Bronce:</strong> FRANCIA; LISA BARBELIN</li>
+ <h2>MEDALLERO HOMBRES</h2>
+ <li><strong>Oro:</strong> COREA DL SUR; KIM WOO-JIN</li>
+ <li><strong>Plata:</strong> ESTADOS UNIDOS; BRADY ELLISON</li>
+ <li><strong>Bronce:</strong> COREA EL SUR; LEE WOO-SEOK</li>
+ <h2>MEDALLERO EQUIPO MIXTO<h2>
+ <li><strong>Oro:</strong> COREA DEL SUR; LIM SI-HYEON, KIM WOO-JIN</li>
+<li><strong>Plata:</strong> ALEMANIA;FLORIAN UNRUH, MICHELLE KROPPEN</li>
+<li><strong>Bronce:</strong> ESTADOS UNIDOS; BRADY ELLISON, CASEY KAUFHOLD</li>
+<h2>MEDALLERO EQUIPO MUJERES</h2>
+<li><strong>Oro:</strong> COREA DEL SUR</li>
+<li><strong>Plata:</strong> CHINA</li>
+<li><strong>Bronce:</strong> MEXICO</li>
+<h2>MEDALLERO EQUIPO HOMBRES</h2>
+<li><strong>Oro:</strong> COREA DEL SUR</li>
+<li><strong>Plata:</strong> FRANCIA</li>
+<li><strong>Bronce: TURQUIA</li>
+ 
+ </ul>
+ </section>
+
+ <!-- SESION 6 -->
+ <section id="video">
+ <h2>VIDEO</h2>
+ <!-- PONEN UN VIDEO ALUSIVO AL DEPORTE -->
+ <iframe src="https://www.youtube.com/embed/JpVNs9dclfk" title="finales hombres tiro con arco"></iframe>
+ </section>
+ <!-- SESION 7 -->
+ <section id="galeria">
+ <!-- PONEN AL MENOS 5 IMAGENES ALUSIVAS A SU DEPORTE, RECUERDEN QUE DEBEN ESTAR EN LA
+MISMA CARPETA -->
+ <h2>GALERIA DE IMAGENES</h2>
+ <div class="carousel">
+ <img src="TIRO 1.png" alt="tiro con arco 1" class="active">
+ <img src="tiro 2.jpg" alt="tiro con arco 2">
+ <img src="tiro 3.jpg" alt="tiro con arco 3">
+ <img src="tiro 4.jpg" alt="tiro con arco 4">
+ <img src="tiro 5.jpg" alt="tiro con arco 5">
+ </div>
+ </section>
+ <!-- SESION 8 -->
+ <section id="formulario">
+ <h2>CUESTIONARIO</h2>
+ <form id="tiroconarcoForm">
+ <!-- PREGUNTA DE TEXTO CORTO -->
+ <label for="nombre">Nombre:</label>
+ <input type="text" id="nombre" name="nombre" required>
+ <!-- Pregunta de Selección Múltiple (Menú Desplegable) -->
+ <label for="pregunta1">1. ¿Cuál es el objetivo principal del tiro con arco?</label>
+ <select id="pregunta1" name="pregunta1" required>
+ <option value="encestar el balon">encestar el balon</option>
+ <option value="defenderse">defenderse</option>
+ <option value="engresar la flecha en el arco">Engresar la flecha en el arco</option>
+ <option value="conseguir puntos">conseguir puntos</option>
+ </select>
+ <!-- Pregunta Numérica (Campo Numérico) -->
+ <label for="pregunta2">2. ¿Cuántas flechas se disparan por ronda?</label>
+ <input type="number" id="pregunta2" name="pregunta2" required>
+ <!-- Pregunta de Elección Múltiple con Botones de Opción (Radio Buttons) -->
+ <label>3. ¿Cuánto tiempo tienen los arqueros para disparar las flechas en cada ronda?</label><br>
+ <input type="radio" id="sable" name="arma" value="Sable" required>
+ <label for="30 minutos">30 minutos</label><br>
+ <input type="radio" id="1 hora" name="1 hora" value="Arco">
+ <label for="40 segundos">40 segundos</label><br>
+ <input type="radio" id="hacha" name="arma" value="Hacha">
+ <label for="3 minutos">3 minutos</label><br>
+ <input type="radio" id="lanza" name="arma" value="Lanza">
+ <label for="5 minutos">5 minutos</label><br>
+ <!-- Pregunta de Elección Múltiple con Casillas de Verificación (Checkboxes) -->
+ <label>4. ¿Qué elementos son importantes para una buena técnica de tiro? (Selecciona todas las que
+apliquen)</label><br>
+ <input type="checkbox" id="postura" name="armas" value="postura">
+ <label for="postura">postura</label><br>
+ <input type="checkbox" id="respiracion" name="armas" value="respiracion">
+ <label for="respiracion">respiracion</label><br>
+ <input type="checkbox" id="fuerza muscular" name="armas" value="fuerza muscular">
+ <label for="fuerza muscular">fuerza muscular</label><br>
+ <input type="checkbox" id="concentracion" name="armas" value="concentracion">
+ <label for="concentracion">concentracion</label><br>
+ <!-- Pregunta de Texto Largo (Área de Texto) -->
+ <label for="comentarios">5. Escribe cualquier comentario o sugerencia sobre el tiro con arco:</label><br>
+ <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+ <!-- Pregunta de Fecha (Selector de Fecha) -->
+ <label for="fecha">6. ¿En qué fecha se jugo la final de tiro con arco femenino?</label>
+ <input type="date" id="fecha" name="fecha" required>
+ <button type="submit">Enviar</button>
+ </form>
+ <p id="resultado"></p>
+ <!-- SESION 9 -->
+ </section> </div> </main> <section id="game">
+ <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+<h1>Juego de Tiro con Arco</h1>
+<canvas id="canvas" width="500" height="400"></canvas>
+<div id="score">Puntos: 0</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Tiro con Arco</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        #juego {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            border: 2px solid #000;
+            overflow: hidden;
+        }
+        #diana {
+            width: 100%;
+            height: 300px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        .seccion {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+        }
+        .color1 { background: red; transform: rotate(0deg); }
+        .color2 { background: green; transform: rotate(90deg); }
+        .color3 { background: blue; transform: rotate(180deg); }
+        .color4 { background: yellow; transform: rotate(270deg); }
+        #flecha {
+            width: 5px;
+            height: 40px;
+            background: black;
+            position: absolute;
+            left: calc(50% - 2.5px);
+            bottom: 50px; /* Altura del arco */
+            visibility: hidden;
+        }
+        #control {
+            margin-top: 20px;
+        }
+        #puntos {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Juego de Tiro con Arco</h1>
+<div id="juego">
+    <div id="diana">
+        <div class="seccion color1"></div>
+        <div class="seccion color2"></div>
+        <div class="seccion color3"></div>
+        <div class="seccion color4"></div>
+    </div>
+    <div id="flecha"></div>
+</div>
+<div id="control">
+    <label for="angulo">Ángulo (°): </label>
+    <input type="number" id="angulo" min="0" max="360" value="0">
+    <button id="tiroBtn">Tirar</button>
+</div>
+<div id="resultado"></div>
+<div id="puntos">Puntos: 0</div>
+
+<script>
+    let puntosTotales = 0;
+
+    // Puntos por color
+    const puntosPorColor = {
+        'color1': 10,
+        'color2': 20,
+        'color3': 30,
+        'color4': 40
+    };
+
+    document.getElementById('tiroBtn').addEventListener('click', function() {
+        const flecha = document.getElementById('flecha');
+        const anguloInput = document.getElementById('angulo');
+        flecha.style.visibility = 'visible';
+        flecha.style.bottom = '50px'; // Reiniciar la posición de la flecha
+
+        // Obtener el ángulo
+        const angulo = parseInt(anguloInput.value);
+        
+        // Calcular la posición de la flecha
+        const radianes = angulo * (Math.PI / 180);
+        const distancia = 150; // Distancia a la que caerá la flecha
+        const left = (150 + distancia * Math.cos(radianes)) + 'px';
+        const bottom = (distancia * Math.sin(radianes)) + 50 + 'px'; // Ajustar posición para caer
+
+        // Ajustar la flecha para el tiro
+        flecha.style.left = left;
+
+        // Animar la flecha
+        setTimeout(() => {
+            flecha.style.bottom = bottom; // Ajustar para simular la caída
+        }, 50);
+
+        // Actualizar puntos
+        setTimeout(() => {
+            flecha.style.visibility = 'hidden';
+            const colorIndex = Math.floor((angulo % 360) / 90); // 0 a 3
+            const secciones = ['color1', 'color2', 'color3', 'color4'];
+            const colorAcertado = secciones[colorIndex];
+            const puntos = puntosPorColor[colorAcertado];
+            puntosTotales += puntos;
+
+            document.getElementById('resultado').textContent = `¡Has acertado en el color ${colorAcertado}! Ganaste ${puntos} puntos.`;
+            document.getElementById('puntos').textContent = `Puntos: ${puntosTotales}`;
+        }, 700); // Espera que termine la animación
+    });
+</script>
+
+</body>
+</html>   
+
+ <div id="score">Puntaje: 0</div>
+ <div id="instructions"> <p>Instrucciones:</p> <p>pon un numero en el numero de angulo:</p>
+ <p>Presiona el boton "tirar" para disparar.</p>
+ </div> </section>
+ <!-- PIE DE PAGINA -->
+ <footer>
+ <p>LIZETH SOFIA CAMACHO SANTAMARIA, 802, ANTONIO JOSE URIBE,2024</p>
+ </footer>
+ <script>
+ // JAVA SCRIPT DEL CARRUSEL DE IMAGENES
+ let currentIndex = 0;
+ const images = document.querySelectorAll('.carousel img');
+ const totalImages = images.length;
+ function showNextImage() { images[currentIndex].classList.remove('active');
+ currentIndex = (currentIndex + 1) % totalImages; images[currentIndex].classList.add('active'); }
+ setInterval(showNextImage, 3000); // Cambia de imagen cada 3 segundos </script>
+ <script>
+ // VERIFICACION DEL CUESTIONARIO SCRIPT
+ document.getElementById('esgrimaForm').addEventListener('submit', function(event) {
+ event.preventDefault(); // Evita que el formulario se envíe
+ // Obtener las respuestas del formulario
+ const nombre = document.getElementById('nombre').value;
+ const pregunta1 = document.getElementById('pregunta1').value;
+ const pregunta2 = parseInt(document.getElementById('pregunta2').value, 10);
+ const armaSeleccionada = document.querySelector('input[name="arma"]:checked').value;
+ const checkboxes = document.querySelectorAll('input[name="armas"]:checked');
+ const respuestasSeleccionadas = Array.from(checkboxes).map(checkbox => checkbox.value);
+ const comentarios = document.getElementById('comentarios').value;
+ const fecha = document.getElementById('fecha').value;
+ const respuestaCorrecta1 = "engresar la flecha en el arco";
+ const respuestaCorrecta2 = 6;
+ const respuestaCorrecta3 = "3 minutos";
+ const respuestasCorrectas = ["postura", "respiracion", "concentracion"];
+ const fechaCorrecta = "2024-07-30";
+ // Variable para almacenar el mensaje de resultado
+ let resultado = `Hola ${nombre}, aquí están tus resultados:<br>`;
+ if (pregunta1 === respuestaCorrecta1) {
+ resultado += "Pregunta 1: Correcto<br>"; } else { resultado += "Pregunta 1: Incorrecto<br>"; }
+ if (pregunta2 === respuestaCorrecta2) {
+ resultado += "Pregunta 2: Correcto<br>"; } else { resultado += "Pregunta 2: Incorrecto<br>"; }
+ if (armaSeleccionada === respuestaCorrecta3) {
+ resultado += "Pregunta 3: Correcto<br>"; } else { resultado += "Pregunta 3: Incorrecto<br>"; }
+ let esCorrecto = respuestasCorrectas.every(respuesta => respuestasSeleccionadas.includes(respuesta))
+&& respuestasSeleccionadas.length === respuestasCorrectas.length;
+ if (esCorrecto) { resultado += "Pregunta 4: Correcto<br>"; } else { resultado += "Pregunta 4:
+Incorrecto<br>"; }
+ if (fecha === fechaCorrecta) { resultado += "Pregunta 6: Correcto<br>"; } else {
+ resultado += "Pregunta 6: Incorrecto<br>"; }
+ // Mostrar los resultados en la página
+ document.getElementById('resultado').innerHTML = resultado; }); </script>
+ <script>
+ // JAVASCRIPT PARA EL JUEGO
+ const canvas = document.getElementById('gameCanvas');
+ const ctx = canvas.getContext('2d');
+ let player = { x: 50, y: 180, width: 20, height: 20, color: 'blue', speed: 5, dx: 0; dy: 0 };
+ let opponent = { x: 300, y: 180, width: 20; height: 20, color: 'red', speed: 3 };
+ let playerScore = 0;
+ function drawPlayer() { ctx.fillStyle = player.color; ctx.fillRect(player.x, player.y, player.width, player.height); }
+ function drawOpponent() { ctx.fillStyle = opponent.color;
+ ctx.fillRect(opponent.x, opponent.y, opponent.width, opponent.height); }
+ function moveOpponent() { if (opponent.x > player.x) {
+ opponent.x -= opponent.speed; } else { opponent.x += opponent.speed; } }
+ function checkCollision() {
+ if (player.x < opponent.x + opponent.width && player.x + player.width > opponent.x &&
+ player.y < opponent.y + opponent.height && player.y + player.height > opponent.y) {
+ resetGame(); } }
+ function resetGame() { player.x = 50; opponent.x = 300; updateScore(); }
+ function updateScore() {
+ document.getElementById('score').innerText = 'Puntaje: ' + playerScore; }
+ function attack() {
+ const distance = Math.abs(player.x - opponent.x);
+ if (distance <= 20) { playerScore += 10; resetGame(); } }
+ function dodge() { if (opponent.x <= 0 || opponent.x >= canvas.width - opponent.width) {
+ playerScore += 5; resetGame(); } }
+ function movePlayer() { player.x += player.dx; player.y += player.dy; if (player.x < 0) player.x = 0; if (player.y <
+0) player.y = 0;
+ if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
+ if (player.y + player.height > canvas.height) player.y = canvas.height - player.height; }
+ function keyDownHandler(event) {
+ if (event.key === 'ArrowUp') { player.dy = -player.speed; } else if (event.key === 'ArrowDown') {
+ player.dy = player.speed; } else if (event.key === 'ArrowLeft') {
+ player.dx = -player.speed; } else if (event.key === 'ArrowRight') {
+ player.dx = player.speed; } else if (event.key === ' ') {
+ attack(); // Barra espaciadora para atacar } }
+ function keyUpHandler(event) { if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+ player.dy = 0; } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { player.dx = 0; } }
+ document.addEventListener('keydown', keyDownHandler);
+ document.addEventListener('keyup', keyUpHandler);
+ function gameLoop() { ctx.clearRect(0, 0, canvas.width, canvas.height);
+ movePlayer(); drawPlayer(); drawOpponent(); moveOpponent();
+ dodge(); // Verifica si el jugador esquivó al oponente
+ checkCollision(); requestAnimationFrame(gameLoop); }
+ gameLoop(); </script></body></html>

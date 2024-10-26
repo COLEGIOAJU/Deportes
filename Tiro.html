@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<head>
+ <title>El tiro olimpico</title>
+ <!-- ADICIONALMENTE EN ESTE APARTADO PONEN TODO LO RELACIONADO A LA ESTRUCTURA CSS ASI: -->
+ <style>
+ body {
+ /* MODELO DE CAJA */
+ font-family: serif; margin: 1; padding: 1;
+ /* IMAGEN DE FONDO Y SUS PROPIEDADES */
+ background-image: url('tiro-al-plato.jpg'); background-size: 100% 100%; background-position: 50% 50%;
+ background-attachment: fixed; background-repeat: no-repeat;
+ /* COLOR DE FONDO */
+ background-color: #white; }
+ /* CONTINUACION ESTRUCTURA DE MODELO DE CAJA PARA EL ENCABEZADO Y LAS SESIONES, INCLUIDA
+COLOR, ALINEACION */
+ header, .content {
+ background-color: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 9px; margin: 20px; }
+ header h1, header nav ul li a { color: white; text-align: left; }
+ header nav ul { list-style-type: none; margin: 0; padding: 0; text-align: left; }
+ header nav ul li {display: inline; margin: 0 15px; }
+ header nav ul li a {color: ; text-decoration: none; }
+ main { padding: 20px; }
+ section { background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ margin: 20px 0; }
+ h2 { color: #333; }
+ h3 { color: #555; }
+ p, ul { margin-bottom: 15px; }
+ ul { padding-left: 20px; }
+ /* CSS DEL PIE DE PAGINA */
+ footer {text-align: left; background-color: rgba(0, 0, 0, 0.3); padding: 20px; color: white; margin-top: 20px; }
+ /* CSS PARA EL INTERCAMBIO DE LAS IMAGENES */
+ .carousel {position: relative; max-width: 100%; margin: auto; }
+ .carousel img { width: 100%; border-radius: 8px; display: none; }
+ .carousel img.active { display: block; }
+ /* CSS PARA EL CUESTIONARIO Y JUEGO */
+ iframe { width: 100%; height: 315px; border: none; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ margin-bottom: 20px; }
+ form { margin-top: 20px; }
+ label { display: block; margin: 10px 0 5px; }
+ input, select, button { width: 100%; padding: 8px; margin: 5px 0 15px; border-radius: 4px; border: 1px solid
+#ccc; color: black; }
+ button { background-color: #333; color: white; cursor: pointer; }
+ button:hover { background-color: #555; }
+ #gameCanvas { background-color: #ffffff; border: 2px solid #000; }
+ #score { font-size: 20px; margin-top: 20px; }
+ #instructions { margin-top: 20px; font-size: 18px; text-align: center; }
+ /* CERRAR TODAS LAS PROPIEDADES CSS DE LA PÁGINA */
+ </style>
+ <!-- CERRAR EL ENCABEZADO -->
+</head><body>
+ <!-- AQUI VA TODO EL CONTENIDO DE LA PAGINA -->
+ <!-- ADICIONALMENTE VAN LOS SCRIPTS Y JAVASCRIPTS DE PROGRAMACIÓN DE LA INTERACTIVIDAD -->
+ <header>
+ <!-- TITULO Y MENU DE SU PAGINA -->
+ <h1>TIRO</h1>
+ <nav> <ul>
+ <li><a href="#resumen">RESUMEN DE SU DEPORTE</a></li>
+ <li><a href="#historia">HISTORIA DE SU DEPORTE</a></li>
+ <li><a href="#reglas">REGLAS DE SU DEPORTE</a></li>
+ <li><a href="#programacion">PROGRAMACION OLIMPICOS 2024</a></li>
+ <li><a href="#medallero">MEDALLERO</a></li>
+ <li><a href="#video">VIDEO</a></li>
+ <li><a href="#galeria">GALERIA</a></li>
+ <li><a href="#formulario">CUESTIONARIO</a></li>
+ <li><a href="#game">JUEGO</a></li>
+ </ul> </nav> </header> <main>
+ <!-- DIVISION DE LAS SESIONES DE SU PAGINA -->
+ <div class="content">
+ <!-- SESION 1 -->
+ <section id="resumen">
+ <h2>RESUMEN DE SU DEPORTE</h2>
+ <p>El tiro olímpico es una de las distintas especialidades del tiro deportivo. Se divide en dos modalidades: la de precisión, cuyo objetivo es alcanzar un blanco estático o móvil, y la de plato, cuyo objetivo es romper platos lanzados por las máquinas específicas de cada modalidad. El tiro ha sido incluido en el programa olímpico desde la celebración de los primeros JJ. OO. modernos y solo ha faltado a la cita olímpica en los Juegos Olímpicos de San Luis 1904 y en los Juegos Olímpicos de Ámsterdam 1928.</p>
+ </section>
+ <!-- SESION 2 -->
+ <section id="historia">
+ <h2>HISTORIA DE SU DEPORTE</h2>
+ <p>Las líneas de fuego utilizadas en combate sirvieron de modelo para las primeras competiciones, con disputas en las posiciones tumbada, arrodillada y de pie. En 1867, se creó el Campo de Instrucción de Chalôns, en Francia, donde se realizó una práctica de tiro al blanco con rifles.
+
+Además de los militares, los clubes de caza también contribuyeron a la creación del tiro deportivo. La actividad de los cazadores incluso inspiró algunas de las evidencias que existen actualmente, como el skeet y el foso.
+
+El tiro deportivo está presente en los Juegos Olímpicos desde la primera edición, en 1896, en Atenas. Hasta 1964, en Tokio, solo participaban hombres. Las primeras mujeres compitieron en la Ciudad de México-1968, en competencias con hombres.
+
+Los primeros concursos exclusivamente femeninos surgieron en Los Ángeles-1984, en dos categorías: pistola de aire y carabina de aire. Actualmente, el tiro deportivo se disputa en 15 categorías, nueve para hombres y seis para mujeres.</p>
+ </section>
+ <!-- SESION 3 -->
+ <section id="reglas">
+ <h2>REGLAS DEL TIRO OLIMPICO</h2>
+ <p><strong>-Utilizar</strong> las armas deportivas únicamente en campos de tiro o lugares autorizados y seguros.</p>
+ <p><strong>-</strong>Los ejercicios de tiro deben realizarse solo sobre blancos autorizados por la Federación de Tiro y nunca disparar contra superficies planas, aguas o cuerpos duros, pues la bala podría rebotar y provocar accidentes.</p>
+ <p><strong>-Los</strong> tiradores deben disparar con precisión hacia el centro del blanco, que suele ser electrónico.</p>
+ <p><strong>-Los</strong> ocho mejores tiradores avanzan a la fase final, donde se reduce el número de disparos por turno y solo quedan los dos mejores.</p>
+ <p><strong>-Las</strong> armas se revisan aleatoriamente durante la competencia para verificar peso y posición.</p>
+ </section>
+ <!-- SESION 4 -->
+ <section id="programacion">
+ <h2>PROGRAMACION OLIMPICOS 2024</h2>
+ <p><strong>Tiro al plato olímpico masculino:</strong>
+Fecha: Del 26 de julio al 11 de agosto de 2024.
+En esta modalidad, los tiradores compiten en la disciplina de tiro al plato, utilizando escopetas. La precisión y la concentración son fundamentales para acertar los blancos que se lanzan al aire.
+Puedes seguir los resultados en tiempo real durante los días de competición.
+Algunos horarios destacados:
+23 de abril de 2024:
+09:00: Clasificación en 10 metros rifle de aire (equipos mixtos).
+10:30: Medalla de bronce en 10 metros rifle de aire (equipos mixtos).
+10:30: Clasificación en 10 metros pistola de aire (categoría masculina).
+11:00: Medalla de oro en 10 metros rifle de aire (equipos mixtos).
+12:30: Clasificación en 10 metros pistola de aire (categoría femenina).</p>
+ </section>
+ <!-- SESION 5 -->
+ <section id="medallero">
+ <h2>CUADRO DE HONOR "MEDALLERO"</h2>
+ <ul>
+ <li><strong>Oro:</strong> Damir Mike de Split, Yugoslavia </li>
+ <li><strong>Plata:</strong> Federico Nilo Maldini de Bolonia, Italia</li>
+ <li><strong>Bronce:</strong>  Christian Reitz de Löbau, Alemania</li>
+ </ul>
+ </section>
+ <!-- SESION 6 -->
+ <section id="video">
+ <h2>VIDEO</h2>
+ <!-- PONEN UN VIDEO ALUSIVO AL DEPORTE -->
+ <iframe src="https://www.youtube.com/embed/qF6ovRhzp1A" title="Video de tiro"></iframe>
+ </section>
+ <!-- SESION 7 -->
+ <section id="galeria">
+ <!-- PONEN AL MENOS 5 IMAGENES ALUSIVAS A SU DEPORTE, RECUERDEN QUE DEBEN ESTAR EN LA
+MISMA CARPETA -->
+ <h2>GALERIA DE IMAGENES</h2>
+ <div class="carousel">
+ <img src="Disciplinas-Imagen-1.jpg" alt="TIRO" class="active">
+ <img src="2024-02-28jorgeorozcotiro.jpg" alt="TIRO">
+ <img src="tiro-precision.jpg" alt="TIRO">
+ <img src="2024-02-28jorgeorozcotiro.jpg" alt="TIRO">
+ </div>
+ </section>
+ <!-- SESION 8 -->
+ <section id="formulario">
+ <h2>CUESTIONARIO DE SU DEPORTE</h2>
+ <form id="esgrimaForm">
+ <!-- PREGUNTA DE TEXTO CORTO -->
+ <label for="nombre">Nombre:</label>
+ <input type="text" id="nombre" name="nombre" required>
+ <!-- Pregunta de Selección Múltiple (Menú Desplegable) -->
+ <label for="pregunta1">1. ¿Cuál de estas habilidades no se aprende al practicar tiro?</label>
+ <select id="pregunta1" name="pregunta1" required>
+ <option value="Responsabilidad y Respeto">Responsabilidad y Respeto</option>
+ <option value="Desarrollo mental">Desarrollo mental</option>
+ <option value="Capacidad de Adaptación">Capacidad de Adaptación</option>
+ <option value="Evitar golpes">Evitar golpes</option>
+ </select>
+ <!-- Pregunta Numérica (Campo Numérico) -->
+ <label for="pregunta2">2. ¿Cuánto tiempo lleva de creación el tiro olimpico?</label>
+ <input type="number" id="pregunta2" name="pregunta2" required>
+ <!-- Pregunta de Elección Múltiple con Botones de Opción (Radio Buttons) -->
+ <label>3. ¿Qué arma se utiliza mas en tiro?</label><br>
+ <input type="radio" id="rifle de aire" name="arma" value="rifle de aire" required>
+ <label for="rifle de aire">rifle de aire</label><br>
+ <input type="radio" id="22 Long Rifle" name="arma" value="22 Long Rifle">
+ <label for="22 Long Rifle">22 Long Rifle</label><br>
+ <input type="radio" id="pistola de 25 metros" name="arma" value="pistola de 25 metros">
+ <label for="pistola de 25 metros">pistola de 25 metros</label><br>
+ <input type="radio" id="pistola de aire" name="arma" value="pistola de aire">
+ <label for="pistola de aire">pistola de aire</label><br>
+ <!-- Pregunta de Elección Múltiple con Casillas de Verificación (Checkboxes) -->
+ <label>4. ¿Cuáles de las siguientes son armas usadas en tiro olimpico? (Selecciona todas las que
+apliquen)</label><br>
+ <input type="checkbox" id="pistola de aire" name="armas" value="pistola de aire">
+ <label for="pistola de aire">pistola de aire</label><br>
+ <input type="checkbox" id="10 metros rifle de aire" name="armas" value="10 metros rifle de aire">
+ <label for="10 metros rifle de aire">10 metros rifle de aire</label><br>
+ <input type="checkbox" id="10 metros rifle de aire" name="armas" value="10 metros rifle de aire">
+ <label for="10 metros rifle de aire">10 metros rifle de aire</label><br>
+ <input type="checkbox" id="Escopeta con retroceso" name="armas" value="Escopeta con retroceso">
+ <label for="Escopeta con retroceso">Escopeta con retroceso</label><br>
+ <!-- Pregunta de Texto Largo (Área de Texto) -->
+ <label for="comentarios">5. Escribe cualquier comentario de lo que te gusto:</label><br>
+ <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+ <!-- Pregunta de Fecha (Selector de Fecha) -->
+ <label for="fecha">6. ¿En qué fecha se celebrarán los próximos Juegos Olímpicos?</label>
+ <input type="date" id="fecha" name="fecha" required>
+ <button type="submit">Enviar</button>
+ </form>
+ <p id="resultado"></p>
+ <!-- SESION 9 -->
+ <!-- PIE DE PAGINA -->
+ <footer>
+ <p>Yomar Lopez, 802, Antonio jose Uribe 2024</p>
+ </footer>
+ <script>
+ // JAVA SCRIPT DEL CARRUSEL DE IMAGENES 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Plataformas</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="800"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const player = {
+            x: 400,
+            y: 300,
+            width: 50,
+            height: 50,
+            speed: 5,
+            dx: 0,
+            dy: 0,
+            angle: 0
+        };
+
+        const bullets = [];
+        const enemies = [];
+        let gameOver = false;
+
+        function drawPlayer() {
+            ctx.save();
+            ctx.translate(player.x + player.width / 2, player.y + player.height / 2);
+            ctx.rotate(player.angle);
+            ctx.fillStyle = 'red';
+            ctx.fillRect(-player.width / 2, -player.height / 2, player.width, player.height);
+            ctx.restore();
+        }
+
+        function updatePlayer() {
+            player.x += player.dx;
+            player.y += player.dy;
+
+            // Limitar el movimiento dentro del canvas
+            if (player.x < 0) player.x = 0;
+            if (player.y < 0) player.y = 0;
+            if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
+            if (player.y + player.height > canvas.height) player.y = canvas.height - player.height;
+        }
+
+        function moveRight() { player.dx = player.speed; }
+        function moveLeft() { player.dx = -player.speed; }
+        function moveUp() { player.dy = -player.speed; }
+        function moveDown() { player.dy = player.speed; }
+
+        function keyDown(e) {
+            if (e.key === 'ArrowRight') moveRight();
+            if (e.key === 'ArrowLeft') moveLeft();
+            if (e.key === 'ArrowUp') moveUp();
+            if (e.key === 'ArrowDown') moveDown();
+        }
+
+        function keyUp(e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') player.dx = 0;
+            if (e.key === 'ArrowUp' || e.key === 'ArrowDown') player.dy = 0;
+        }
+
+        document.addEventListener('keydown', keyDown);
+        document.addEventListener('keyup', keyUp);
+
+        function mouseMove(e) {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+            player.angle = Math.atan2(mouseY - (player.y + player.height / 2), mouseX - (player.x + player.width / 2));
+        }
+
+        document.addEventListener('mousemove', mouseMove);
+
+        function shoot() {
+            const bullet = {
+                x: player.x + player.width / 2,
+                y: player.y + player.height / 2,
+                angle: player.angle,
+                speed: 10
+            };
+            bullets.push(bullet);
+        }
+
+        document.addEventListener('click', shoot);
+
+        function drawBullets() {
+            ctx.fillStyle = 'yellow';
+            bullets.forEach(bullet => {
+                ctx.beginPath();
+                ctx.arc(bullet.x, bullet.y, 5, 0, Math.PI * 2);
+                ctx.fill();
+            });
+        }
+
+        function updateBullets() {
+            bullets.forEach((bullet, index) => {
+                bullet.x += Math.cos(bullet.angle) * bullet.speed;
+                bullet.y += Math.sin(bullet.angle) * bullet.speed;
+
+                // Eliminar balas fuera del canvas
+                if (bullet.x < 0 || bullet.x > canvas.width || bullet.y < 0 || bullet.y > canvas.height) {
+                    bullets.splice(index, 1);
+                }
+            });
+        }
+
+        function createEnemy() {
+            let x, y;
+            do {
+                x = Math.random() * canvas.width;
+                y = Math.random() * canvas.height;
+            } while (Math.abs(x - player.x) < 100 && Math.abs(y - player.y) < 100);
+
+            const enemyTypes = [
+                { color: 'blue', speed: 1, health: 1 },
+                { color: 'green', speed: 2, health: 2 },
+                { color: 'purple', speed: 1.5, health: 3 }
+            ];
+            const type = enemyTypes[Math.floor(Math.random() * enemyTypes.length)];
+
+            const enemy = {
+                x: x,
+                y: y,
+                width: 30,
+                height: 30,
+                speed: type.speed,
+                dx: (Math.random() - 0.5) * 2 * type.speed,
+                dy: (Math.random() - 0.5) * 2 * type.speed,
+                health: type.health,
+                color: type.color
+            };
+            enemies.push(enemy);
+        }
+
+        function drawEnemies() {
+            enemies.forEach(enemy => {
+                ctx.fillStyle = enemy.color;
+                ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height);
+            });
+        }
+
+        function updateEnemies() {
+            enemies.forEach(enemy => {
+                enemy.x += enemy.dx;
+                enemy.y += enemy.dy;
+
+                // Limitar el movimiento dentro del canvas
+                if (enemy.x < 0 || enemy.x + enemy.width > canvas.width) enemy.dx *= -1;
+                if (enemy.y < 0 || enemy.y + enemy.height > canvas.height) enemy.dy *= -1;
+            });
+        }
+
+        function checkCollisions() {
+            enemies.forEach((enemy, enemyIndex) => {
+                if (player.x < enemy.x + enemy.width &&
+                    player.x + player.width > enemy.x &&
+                    player.y < enemy.y + enemy.height &&
+                    player.y + player.height > enemy.y) {
+                    // Colisión detectada
+                    gameOver = true;
+                }
+
+                bullets.forEach((bullet, bulletIndex) => {
+                    if (bullet.x < enemy.x + enemy.width &&
+                        bullet.x > enemy.x &&
+                        bullet.y < enemy.y + enemy.height &&
+                        bullet.y > enemy.y) {
+                        // Colisión bala-enemigo detectada
+                        enemy.health -= 1;
+                        bullets.splice(bulletIndex, 1);
+                        if (enemy.health <= 0) {
+                            enemies.splice(enemyIndex, 1);
+                        }
+                    }
+                });
+            });
+        }
+
+        function generateMap() {
+            for (let i = 0; i < 10; i++) {
+                createEnemy();
+            }
+        }
+
+        function clear() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function drawGameOver() {
+            ctx.fillStyle = 'white';
+            ctx.font = '48px serif';
+            ctx.fillText('Game Over', canvas.width / 2 - 120, canvas.height / 2);
+        }
+
+        function update() {
+            if (gameOver) {
+                drawGameOver();
+                return;
+            }
+
+            clear();
+            drawPlayer();
+            updatePlayer();
+            drawBullets();
+            updateBullets();
+            drawEnemies();
+            updateEnemies();
+            checkCollisions();
+            requestAnimationFrame(update);
+        }
+
+        generateMap();
+        update();
+    </script>
+</body>
+</html>

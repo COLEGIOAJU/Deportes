@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOLEIBOL</title>
+ <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            border: 1px solid #000;
+        }
+        .score {
+            position: absolute;
+            top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+
+    <style>
+        body {
+            font-family: algerian; 
+            margin: 0; 
+            padding: 20px;
+            background-image: url('aguaaaaaaaaaaa.jpg'); 
+            background-size: 90% 300%; 
+            background-position: 60% 35%;
+            background-attachment: fixed; 
+            background-repeat: no-repeat; 
+            background-color: #D6DBDF; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: auto;
+        }
+        canvas {
+            border: 1px solid #000;
+        }
+        #score {
+            position: absolute;
+            top: 20px;
+            font-size: 24px;
+        }
+        header, .content {
+            background-color: rgba(178,186,187); 
+            padding: 15px; 
+            border-radius: 5px; 
+            margin: 25px; 
+            width: calc(100% - 70px);
+        }
+        header h1, header nav ul li a { color: black; text-align: center; }
+        header nav ul { list-style-type: none; margin: 5; padding: 5; text-align: center; }
+        header nav ul li { display: inline; margin: 0 17px; }
+        header nav ul li a { color: black; text-decoration: none; }
+        main { padding: 20px; }
+        section { background-color:white; border-radius: 8px; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 20px 0; }
+        h2 { color: #17202A; }
+        h3 { color: #9e930d; }
+        p, ul { margin-bottom: 25px; }
+        ul { padding-left: 25px; }
+        footer { text-align: center; background-color: rgba(0,0,0,0.3); padding: 30px; color: turquoise; margin-top: 20px; }
+        .carousel {
+            position: relative;
+            max-width: 100%; /* Ensures the carousel does not exceed the page width */
+            margin: auto;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: none; 
+            object-fit: contain;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        iframe { width: 100%; height: 315px; border: none; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-bottom: 25px; }
+        form { margin-top: 25px; }
+        label { display: block; margin: 12px 0 7px; }
+        input, select, button { width: 100%; padding: 8px; margin: 5px 0 15px; border-radius: 4px; border: 1px solid #ccc; color: black; }
+        button { background-color: #333; color: white; cursor: pointer; }
+        button:hover { background-color: #555; }
+        #gameCanvas { background-color: #ffffff; border: 2px solid #000; }
+        #score { font-size: 20px; margin-top: 20px; }
+        #instructions { margin-top: 20px; font-size: 18px; text-align: center; }
+    </style>
+</head>
+<body>
+<header> 
+    <h1>NOMBRE DE SU JUEGO</h1>
+    <nav> 
+        <ul>
+            <li><a href="#resumen">RESUMEN DE SU DEPORTE</a></li>
+            <li><a href="#historia">HISTORIA DE SU DEPORTE</a></li>
+            <li><a href="#reglas">REGLAS DE SU DEPORTE</a></li>
+            <li><a href="#programacion">PROGRAMACION OLIMPICOS 2024</a></li>
+            <li><a href="#medallero">MEDALLERO</a></li>
+            <li><a href="#video">VIDEO</a></li>
+            <li><a href="#galeria">GALERIA</a></li>
+            <li><a href="#formulario">CUESTIONARIO</a></li>
+            <li><a href="#game">JUEGO</a></li>
+        </ul>
+    </nav> 
+</header> 
+<main>
+    <div class="content">
+        <section id="resumen">
+            <h2>RESUMEN DE SU DEPORTE</h2>
+            <p>El deporte tuvo su origen en Estados Unidos en 1895, siendo hoy muy popular y practicándose en casi todo el mundo. Lo regula la Federación Internacional de Voleibol (FIVB) y en ella se encuentran representadas 220 naciones.​ Han encabezado los rankings de comienzos del siglo XXI Brasil, Estados Unidos, Italia y Rusia. El voleibol, balonvolea o simplemente voley, es un deporte donde dos equipos se enfrentan sobre un terreno de juego liso separados por una red central, tratando de pasar el balón por encima de la red hacia el suelo del campo contrario.</p>
+        </section>
+        <section id="historia">
+            <h2>HISTORIA DE SU DEPORTE</h2>
+            <p>El origen del voleibol se remonta a 1895 cuando William G. Morgan, un instructor de educación física en Estados Unidos, quiso inventar una alternativa con menos fricción que el baloncesto, pero sin perder la competencia y la diversión. El voleibol fue creado el 9 de febrero de 1895 por William George Morgan, entrenador deportivo de la Asociación Cristiana de Jóvenes (YMCA) en Holyoke. Morgan había realizado sus estudios en el Colegio de Springfield de la YMCA donde conoció a James Naismith quien, en 1891, había inventado el juego del baloncesto. Voleibol proviene del francés antiguo, por lo que "voleibol" significa "BALÓN QUE VUELA".</p>
+        </section>
+        <section id="reglas">
+            <h2>REGLAS DE SU DEPORTE</h2>
+            <ul>
+                <li>Las reglas más importantes del voleibol</li>
+                <li>Seis jugadores por equipo.</li>
+                <li>Cada equipo puede tocar la pelota tres veces por posesión.</li>
+                <li>Los jugadores rotan de posición tras lograr un punto.</li>
+                <li>Está permitido el uso de todo el cuerpo.</li>
+                <li>Los jugadores deben dar golpes limpios al balón, no está permitido retenerlo.</li>
+                <li>Los jugadores tienen que evitar que el balón toque el suelo dentro de su campo, ya que será punto para el equipo contrario.</li>
+            </ul>
+        </section>
+        <section id="programacion">
+            <h2>PROGRAMACION OLIMPICOS 2024</h2>
+            <p>Grupo C: Japón - Alemania (09:00)<br>
+               Grupo B: Italia - Brasil (13:00)<br>
+               Grupo B: Polonia - Egipto (17:00)<br>
+               Grupo C: Egipto (17:00)<br>
+               Grupo C: Estados Unidos - Argentina (21:00)</p>
+            <p>ALTURA DEL BORDE SUPERIOR DE LA RED (m)<br>
+               CATEGORIA MASCULINA: 2,43<br>
+               CATEGORIA FEMENINA: 2,24<br>
+               Juvenil (16 a 18 años): 2,43 / 2.24<br>
+               Cadete (14 y 15 años): 2,37 / 2,18</p>
+        </section>
+        <section id="medallero">
+            <h2>CUADRO DE HONOR "MEDALLERO"</h2>
+            <ul>
+                <li><strong>Oro:</strong> ITALIA</li>
+                <li><strong>Plata:</strong> ESTADOS UNIDOS</li>
+                <li><strong>Bronce:</strong> BRASIL</li>
+            </ul>
+        </section>
+        <section id="video">
+            <h2>VIDEO</h2>
+            <iframe src="https://www.youtube.com/embed/2SzbcpB8ZdI" title="Video Reglas del Voleibol"></iframe>
+        </section>
+        <section id="galeria">
+            <h2>GALERIA</h2>
+            <div class="carousel">
+                <img src="equipo2024.jpg" alt="Imagen 1" class="active">
+                <img src="equipo hombres.jpg" alt="Imagen 2">
+                <img src="aguaaaaaaaaaaa.jpg" alt="Imagen 3">
+                <img src="el voibol mi vida.jpg" alt="Imagen 4">
+                 <img src="jijijijji.webp" alt="Imagen 5">
+                 <img src="jajajajjajaja.jpg" alt="Imagen 6">
+
+
+
+            </div>
+        </section>
+        <section id="formulario">
+            <h2>CUESTIONARIO</h2>
+            <form action="#" method="post">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="sport">Deporte favorito:</label>
+                <select id="sport" name="sport">
+                    <option value="voleibol">Voleibol</option>
+                    <option value="futbol">Fútbol</option>
+                    <option value="baloncesto">Baloncesto</option>
+                    <option value="tenis">Tenis</option>
+                </select>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        <section id="game">
+            < <canvas id="volleyballGame" width="800" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('volleyballGame');
+        const ctx = canvas.getContext('2d');
+        const scoreElement = document.getElementById('score');
+
+        let playerY = 150;
+        let opponentY = 150;
+        const paddleHeight = 100;
+        const paddleWidth = 20;
+        const ballSize = 20;
+        let ballX = canvas.width / 2;
+        let ballY = canvas.height / 2;
+        let ballSpeedX = 5;
+        let ballSpeedY = 5;
+        const playerSpeed = 20;
+
+        let playerScore = 0;
+        let opponentScore = 0;
+
+        document.addEventListener('keydown', movePlayer);
+
+        function movePlayer(e) {
+            switch (e.key) {
+                case 'w':
+                    playerY = Math.max(playerY - playerSpeed, 0);
+                    break;
+                case 's':
+                    playerY = Math.min(playerY + playerSpeed, canvas.height - paddleHeight);
+                    break;
+                case 'ArrowUp':
+                    opponentY = Math.max(opponentY - playerSpeed, 0);
+                    break;
+                case 'ArrowDown':
+                    opponentY = Math.min(opponentY + playerSpeed, canvas.height - paddleHeight);
+                    break;
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Dibujar malla
+            ctx.setLineDash([10, 5]);
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2, 0);
+            ctx.lineTo(canvas.width / 2, canvas.height);
+            ctx.strokeStyle = '#000';
+            ctx.stroke();
+
+            // Jugador
+            ctx.fillStyle = '#0095DD';
+            ctx.fillRect(10, playerY, paddleWidth, paddleHeight);
+
+            // Oponente
+            ctx.fillStyle = '#DD9500';
+            ctx.fillRect(canvas.width - paddleWidth - 10, opponentY, paddleWidth, paddleHeight);
+
+            // Pelota
+            ctx.beginPath();
+            ctx.arc(ballX, ballY, ballSize / 2, 0, Math.PI * 2);
+            ctx.fillStyle = '#0095DD';
+            ctx.fill();
+            ctx.closePath();
+
+            ballX += ballSpeedX;
+            ballY += ballSpeedY;
+
+            // Rebote de la pelota en los bordes superior e inferior
+            if (ballY + ballSize / 2 > canvas.height || ballY - ballSize / 2 < 0) {
+                ballSpeedY = -ballSpeedY;
+            }
+
+            // Rebote de la pelota en las paletas
+            if (
+                (ballX - ballSize / 2 < 10 + paddleWidth && ballY > playerY && ballY < playerY + paddleHeight) ||
+                (ballX + ballSize / 2 > canvas.width - 10 - paddleWidth && ballY > opponentY && ballY < opponentY + paddleHeight)
+            ) {
+                ballSpeedX = -ballSpeedX;
+            }
+
+            // Fuera de límites
+            if (ballX + ballSize / 2 > canvas.width) {
+                playerScore++;
+                resetBall();
+            } else if (ballX - ballSize / 2 < 0) {
+                opponentScore++;
+                resetBall();
+            }
+
+            updateScore();
+            requestAnimationFrame(draw);
+        }
+
+        function resetBall() {
+            ballX = canvas.width / 2;
+            ballY = canvas.height / 2;
+            ballSpeedX = -ballSpeedX;
+        }
+
+        function updateScore() {
+            scoreElement.textContent = `Jugador 1: ${playerScore} - Jugador 2: ${opponentScore}`;
+        }
+
+        draw();
+    </script>
+
+        </section>
+    </div>
+</main>
+<footer>
+    <p>MARIA FERNANDA RODRIGUEZ LÓPEZ- 801- COLEGIO ANTONIO JOSÉ URIBE- 2024</p>
+</footer>
+<script>
+    const images = document.querySelectorAll('.carousel img');
+    let currentIndex = 0;
+    
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.classList.remove('active');
+            if (i === index) {
+                img.classList.add('active');
+            }
+        });
+    }
+    
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+    
+    setInterval(nextImage, 3000); // Cambiar imagen cada 3 segundos
+</script>
+</body>
+</html>

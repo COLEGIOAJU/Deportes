@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voleibol de Playa - Juegos Olímpicos 2024</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            position: relative;
+        }
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel img {
+            width: 100%;
+            max-height: 300px;
+        }
+        .quiz {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        iframe {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Voleibol de Playa - Juegos Olímpicos 2024</h1>
+
+    <h2>Resumen</h2>
+    <p>El voleibol de playa, vóleibol playa, voleibol playero o vóley-playa es una variante del voleibol que se juega sobre arena, generalmente en la playa, aunque son muy populares los torneos en localidades del interior en piscinas de arena. Es una disciplina olímpica desde los Juegos Olímpicos de Atlanta 1996..</p>
+
+    <h2>Historia</h2>
+    <p>El voleibol fue inventado en Massachusetts por la Familia Georgia Porgan en 1895. Las primeras referencias del voleibol de playa se sitúan en Uruguay en 1914 y en Hawaii en 1915. Por lo tanto, el origen exacto y concreto del voleibol de playa es difícil de determinar. Puede que haya sido en California debido a que en sus costas siempre han aparecido juegos innovadores practicados en la playa. A Brasil se le podría atribuir el nacimiento de este deporte, ya que parece ser que en 1941 se organizó el "Primer Campeonato sobre Arena" y, al mismo tiempo.</p>
+
+    <h2>Reglas</h2>
+    <ul>
+        <li><strong>Equipos:</strong> Dos jugadores por equipo.</li>
+        <li><strong>Puntuación:</strong> Se juega al mejor de tres sets. El primer equipo en llegar a 21 puntos gana el set.</li>
+        <li><strong>Cancha:</strong> La cancha mide 8x8 metros y está cubierta de arena.</li>
+        <li><strong>Rotación:</strong> Los jugadores deben rotar al ganar el servicio.</li>
+    </ul>
+
+    <h2>Imágenes que Rotan</h2>
+    <div class="carousel">
+        <div class="carousel-container">
+            <img src="voleibol-playa-2.jpg" alt="Jugada en la arena">
+            <img src="balon jh.jpg" alt="Celebración de un equipo">
+            <img src="voliebol-1.jpg" alt="Partido en acción">
+        </div>
+    </div>
+
+    <h2>Video de YouTube</h2>
+    <title>Inserción de Video</title>
+</head>
+<body>: 
+
+<h1>Video de voleybol</h1>
+
+<video width="640" height="360" controls>
+    <source src="https://www.clarosports.com/olimpicos."<iframe width="530" height="315" src="https://www.youtube.com/embed/ID_DEL_VIDEO" frameborder="4" allowfullscreen></iframe>" type=": "https://x.com/clarosports/">
+    
+</video>
+    <h2>Medalleros</h2>
+    <p><strong>Oro:francia</strong> [femenina/italia]</p>
+    <p><strong>Plata:polonia</strong> [masculino/polonia]</p>
+    <p><strong>Bronce:estados unidos</strong> [femenina/estados unidos]</p>
+
+    <h2>Fechas Importantes</h2>
+    <p><strong>27 de julio:</strong> [27 de julio]</p>
+    <p><strong>10 de agosto:</strong> [10 de agosto]</p>
+
+    <h2>Categorías</h2>
+    <p>Masculino</p>
+    <p>Femenino</p>
+
+    <h2>voleybol de playa</h2>
+    <div class="quiz">
+        <h3>¿Cuánto sabes de Voleibol de Playa?</h3>
+        <form onsubmit="return checkAnswer(event);">
+            <label>¿Cuántos jugadores hay en un equipo?</label><br>
+            <input type="text" id="hay dos jugadores" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="dos jugadores"></p>
+    </div>
+
+    <script>
+        const carousel = document.querySelector('.carousel-container');
+        let index = 0;
+
+        setInterval(() => {
+            index = (index + 1) % 3; // Cambia de imagen cada 3 segundos
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+        }, 3000);
+
+        function checkAnswer(event) {
+            event.preventDefault();
+            const respuesta = document.getElementById('respuesta').value;
+            const resultado = document.getElementById('resultado');
+            if (respuesta.trim() === '2') {
+                resultado.textContent = '¡Correcto! Cada equipo tiene 2 jugadores.';
+            } else {
+                resultado.textContent = 'Incorrecto. Inténtalo de nuevo.';
+            }
+            document.getElementById('respuesta').value = '';
+
+    </script>
+<footer>
+<p> JHOANA GÓMEZ- 802- COLEGIO ANTONIO JOSÉ URIBE </p>
+</footer>
+</body>
+</html>
+<jhoana>

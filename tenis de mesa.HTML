@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo sobre el Ping Pong</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('ping-pong.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-bottom: 3px solid #ff9800;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    header nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    header nav ul li a {
+      color: #ff9800;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    header nav ul li a:hover {
+      color: #fff;
+    }
+    main {
+      padding: 20px;
+    }
+    .content {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 900px;
+    }
+    section {
+      margin: 20px 0;
+    }
+    h2 {
+      color: #ff9800;
+      border-bottom: 2px solid #ff9800;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    h3 {
+      color: #ff5722;
+    }
+    p, ul {
+      margin-bottom: 15px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      color: white;
+      text-align: center;
+      border-top: 3px solid #ff9800;
+    }
+    .carousel {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .carousel img {
+      width: 100%;
+      display: none;
+      border-radius: 10px;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+    form {
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: bold;
+      color: #333;
+    }
+    input, select, textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      transition: border 0.3s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border: 1px solid #ff9800;
+      outline: none;
+    }
+    button {
+      background-color: #ff9800;
+      color: white;
+      cursor: pointer;
+      border: none;
+      padding: 12px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background-color: #e68900;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    #score {
+      font-size: 20px;
+      margin-top: 20px;
+      color: #ff5722;
+    }
+    #instructions {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+      color: #333;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Todo sobre el Ping Pong</h1>
+    <nav>
+      <ul>
+        <li><a href="#resumen">Resumen</a></li>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#reglas">Reglas</a></li>
+        <li><a href="#programacion">Programación</a></li>
+        <li><a href="#medallero">Medallero</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#cuestionario">Cuestionario</a></li>
+        <li><a href="#game">Juego</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="content">
+      <section id="resumen">
+        <h2>Resumen del Ping Pong</h2>
+        <p>El ping pong, también conocido como tenis de mesa, es un deporte en el que dos o cuatro jugadores golpean una pelota ligera sobre una mesa dividida por una red. El objetivo es hacer que la pelota rebote en la mesa del adversario de manera que no pueda devolverla correctamente.</p>
+      </section>
+      <section id="historia">
+        <h2>Historia del Ping Pong</h2>
+        <p>El ping pong nació en Inglaterra a finales del siglo XIX como una versión de interior del tenis. Originalmente se jugaba en mesas de comedor con una pelota de corcho y tapas de botellas como raquetas. El deporte se formalizó y estandarizó en 1926 con la creación de la International Table Tennis Federation (ITTF).</p>
+      </section>
+      <section id="reglas">
+        <h2>Reglas del Ping Pong</h2>
+        <ul>
+          <li>El juego se juega en una mesa de 2.74 m de largo, 1.525 m de ancho y 76 cm de alto.</li>
+          <li>La pelota debe ser golpeada por debajo de la cintura.</li>
+          <li>Los partidos se juegan al mejor de 5 o 7 sets, cada set a 11 puntos.</li>
+          <li>Un jugador gana un punto si el oponente no puede devolver la pelota correctamente.</li>
+          <li>Los jugadores cambian de lado cada dos sets y en el quinto set, cambian de lado cuando uno de ellos llega a 5 puntos.</li>
+        </ul>
+      </section>
+      <section id="programacion">
+        <h2>Programación Olímpicos 2024</h2>
+        <p><strong>Tenis de mesa masculino y femenino:</strong></p>
+        <p>Fecha: Del 26 de julio al 11 de agosto de 2024.</p>
+        <p>Las competencias incluyen eventos individuales y por equipos. Los horarios exactos se publicarán en el sitio oficial de los Juegos Olímpicos.</p>
+        <p>Algunos horarios destacados:</p>
+        <p>23 de julio de 2024:</p>
+        <p>09:00: Clasificación en dobles mixtos.</p>
+        <p>10:30: Medalla de bronce en dobles masculinos.</p>
+        <p>11:00: Clasificación en individuales femeninos.</p>
+        <p>12:30: Medalla de oro en individuales masculinos.</p>
+      </section>
+      <section id="medallero">
+        <h2>Cuadro de Honor "Medallero"</h2>
+        <ul>
+          <li><strong>Oro:</strong> Ma Long, China</li>
+          <li><strong>Plata:</strong> Fan Zhendong, China</li>
+          <li><strong>Bronce:</strong> Tomokazu Harimoto, Japón</li>
+        </ul>
+      </section>
+      <section id="video">
+        <h2>Video Informativo del Ping Pong</h2>
+        <iframe src="https://www.youtube.com/embed/uAcTaNooll0" allowfullscreen></iframe>
+      </section>
+      <section id="galeria">
+        <h2>Galería de Imágenes</h2>
+        <div class="gallery">
+          <img src="PING PONG.jpg" alt="Imagen de ping pong 1" loading="lazy">
+          <img src="tenis de mesa.jpg" alt="Imagen de ping pong 2" loading="lazy">
+          <img src="imagen ping pong.jpg" alt="Imagen de ping pong 3" loading="lazy">
+          <!-- Puedes añadir más imágenes aquí -->
+        </div>
+      </section>
+      <section id="cuestionario">
+        <h2>Cuestionario sobre el Ping Pong</h2>
+        <form>
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+          </div>
+
+          <div class="form-group">
+            <label for="jugador-favorito">¿Cuál es tu jugador de ping pong favorito?</label>
+            <input type="text" id="jugador-favorito" name="jugador-favorito" required placeholder="Nombre del jugador">
+          </div>
+
+          <div class="form-group">
+            <label for="efecto">¿Qué tipo de efecto se puede aplicar a la pelota en el ping pong?</label>
+            <select id="efecto" name="efecto" required>
+              <option value="">Selecciona una opción</option>
+              <option value="topspin">Topspin</option>
+              <option value="backspin">Backspin</option>
+              <option value="sidespin">Sidespin</option>
+              <option value="sin-efecto">Sin efecto</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="comentarios">Comentarios adicionales:</label>
+            <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe tus comentarios aquí..."></textarea>
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+      <section id="game">
+        <h2>Juego Interactivo de Ping Pong</h2>
+        <canvas id="gameCanvas"></canvas>
+        <p id="instructions">Usa las teclas de flecha para mover la paleta y la barra espaciadora para golpear la pelota.</p>
+        <p id="score">Puntuación: 0</p>
+        <!-- Aquí puedes insertar el script de tu juego -->
+      </section>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 Todo sobre el Ping Pong. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+    // Script básico para el carousel de imágenes
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel img');
+    function showNextImage() {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    }
+    setInterval(showNextImage, 3000); // Cambia la imagen cada 3 segundos
+  </script>
+</body>
+</html>

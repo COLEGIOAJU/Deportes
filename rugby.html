@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rugby en los Juegos Olímpicos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 0;
+        }
+        .carousel img {
+            min-width: 200px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .quiz {
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .game {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Rugby en los Juegos Olímpicos</h1>
+    
+    <h2>Resumen</h2>
+    <p>El rugby es un deporte de equipo que se juega en dos formatos: Rugby XV y Rugby Sevens. Desde su reintroducción en los Juegos Olímpicos en 2016, el Rugby Sevens ha capturado la atención de los aficionados por su ritmo rápido y emocionante.</p>
+    
+    <h2>Historia en los Juegos Olímpicos</h2>
+    <p>El rugby fue parte de los Juegos Olímpicos por primera vez en 1900 y se jugó hasta 1924. Regresó en 2016 con el formato de Rugby Sevens.</p>
+    
+    <h2>Reglas</h2>
+    <p>El Rugby Sevens se juega en dos mitades de 7 minutos cada una. Los equipos marcan puntos llevando el balón a la zona de anotación del adversario.</p>
+    
+    <h2>Medallero en los Juegos Olímpicos 2024</h2>
+    <h3>Rugby Sevens</h3>
+    <p><strong>Categoría Masculina</strong></p>
+    <ul>
+        <li>Oro: [Fiji]</li>
+        <li>Plata: [Gran Bretaña]</li>
+        <li>Bronce: [Sudafrica]</li>
+    </ul>
+    <p><strong>Categoría Femenina</strong></p>
+    <ul>
+        <li>Oro: [Australia]</li>
+        <li>Plata: [Nueva Zelanda ]</li>
+        <li>Bronce: [Canada]</li>
+    </ul>
+    
+    <h2>Galería de Imágenes</h2>
+    <div class="carousel">
+        <img src="rugby1.jpg" alt="Rugby Sevens en acción">
+        <img src="imagen2 del rugby7.html" alt="">
+        <img src="imagen3 el rugby7.html" alt="">
+        <img src="imagen4 del rugby7.html" alt="">
+        <img src="imagen5 del rugby7.html" alt="">
+    </div>
+    
+    <h2>Cuestionario</h2>
+    <div class="quiz">
+        <h3>1. ¿Cuántos jugadores hay en un equipo de Rugby ?</h3>
+        <p>a) 5  b) 7  c) 15  d) 11</p>
+        
+        <h3>2. ¿En qué año regresó el rugby a los Juegos Olímpicos?</h3>
+        <p>a) 2008  b) 2012  c) 2016  d) 2020</p>
+        
+        <h3>3. ¿Qué significa un "ensayo"?</h3>
+        <p>a) Una falta  b) Marcar puntos  c) Un pase  d) Una técnica defensiva</p>
+        
+        <h3>4. ¿Cuántos minutos dura un partido de Rugby Sevens?</h3>
+        <p>a) 5  b) 10  c) 14  d) 28</p>
+        
+        <h3>5. ¿Qué país ganó la medalla de oro en Rugby Sevens masculino en 2021?</h3>
+        <p>a) Nueva Zelanda  b) Fiji  c) Sudáfrica  d) Gran Bretaña</p>
+        
+        <h3>6. ¿Cuántos puntos se otorgan por un ensayo?</h3>
+        <p>a) 3  b) 5  c) 7  d) 10</p>
+    </div>
+
+    <h2>Resultados</h2>
+    <p>1. b, 2. c, 3. b, 4. d, 5. b, 6. b</p>
+    
+    <h2>Juego Alusivo</h2>
+    <div class="game">
+        <p><strong>Adivina el País:</strong></p>
+        <button onclick="guessCountry('Fiji')">Fiji</button>
+        <button onclick="guessCountry('Nueva Zelanda')">Nueva Zelanda</button>
+        <button onclick="guessCountry('Sudáfrica')">Sudáfrica</button>
+        <button onclick="guessCountry('Gran Bretaña')">Gran Bretaña</button>
+        <p id="result"></p>
+    </div>
+
+    <div class="footer">ANTWAN CAMILO MARQUEZ de 802 AJU.</div>
+</div>
+
+<script>
+    function guessCountry(country) {
+        const correctAnswer = 'Fiji'; // Cambia esto según el país correcto
+        const result = document.getElementById('result');
+        if (country === correctAnswer) {
+            result.textContent = '¡Correcto! Fiji ha tenido mucho éxito en Rugby Sevens.';
+        } else {
+            result.textContent = 'Incorrecto. Intenta de nuevo.';
+        }
+    }
+</script>
+
+</body>
+</html>

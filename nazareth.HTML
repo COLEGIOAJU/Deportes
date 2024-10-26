@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<head>
+<title>TENIS</title>
+<!-- ADICIONALMENTE EN ESTE APARTADO PONEN TODO LO RELACIONADO A LA ESTRUCTURA CSS ASI: -->
+<style>
+body {
+/* MODELO DE CAJA */
+font-family: Arial, sans-serif; margin: 0; padding: 0;
+/* IMAGEN DE FONDO Y SUS PROPIEDADES */
+background-image: url('esgrima4.jpg'); background-size: 70% 25%; background-position: 50% 25%;
+background-attachment: fixed; background-repeat: no-repeat;
+/* COLOR DE FONDO */
+background-color:#1DBAA7; }
+/* CONTINUACION ESTRUCTURA DE MODELO DE CAJA PARA EL ENCABEZADO Y LAS SESIONES, INCLUIDA
+COLOR, ALINEACION */
+header, .content {
+background-color: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 8px; margin: 20px; }
+header h1, header nav ul li a { color: white; text-align: center; }
+header nav ul { list-style-type: none; margin: 0; padding: 0; text-align: center; }
+header nav ul li {display: inline; margin: 0 15px; }
+header nav ul li a {color: white; text-decoration: none; }
+main { padding: 20px; }
+section { background-color: PINK; border-radius: 8px; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+margin: 20px 0; }
+h2 { color: #A51DBA; }
+h3 { color: #00FFFB; }
+p, ul { margin-bottom: 15px; }
+ul { padding-left: 20px; }
+/* CSS DEL PIE DE PAGINA */
+footer {text-align: center; background-color:pink(0, 0, 0, 0.3); padding: 20px; color: white; margin-top: 20px; }
+/* CSS PARA EL INTERCAMBIO DE LAS IMAGENES */
+.carousel {position: relative; max-width: 100%; margin: auto; }
+.carousel img { width: 100%; border-radius: 8px; display: none; }
+.carousel img.active { display: block; }
+/* CSS PARA EL CUESTIONARIO Y JUEGO */
+iframe { width: 100%; height: 315px; border: none; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px; }
+form { margin-top: 20px; }
+label { display: block; margin: 10px 0 5px; }
+input, select, button { width: 100%; padding: 8px; margin: 5px 0 15px; border-radius: 4px; border: 1px solid
+#ccc; color: black; }
+button { background-color: #9E31F3; color: white; cursor: pointer; }
+button:hover { background-color: #EAF331; }
+#gameCanvas { background-color: #31F3E4; border: 2px solid #000; }
+#score { font-size: 20px; margin-top: 20px; }
+#instructions { margin-top: 20px; font-size: 18px; text-align: center; }
+/* CERRAR TODAS LAS PROPIEDADES CSS DE LA PÁGINA */
+</style>
+<!-- CERRAR EL ENCABEZADO -->
+</head><body>
+<!-- AQUI VA TODO EL CONTENIDO DE LA PAGINA -->
+<!-- ADICIONALMENTE VAN LOS SCRIPTS Y JAVASCRIPTS DE PROGRAMACIÓN DE LA INTERACTIVIDAD -->
+<header>
+<!--EL TENIS -->
+<h1>TENIS</h1>
+<nav> <ul>
+<li><a href="#resumen">El tenis se juega en una cancha rectangular dividida por una red. Los tenistas deben golpear una pelota con una raqueta y enviarla por encima de la red hacia el campo contrario.</a></li>
+<li><a href="#historia">Se origino en Europa a finales del siglo XVIII y se expandio en un principio por los países angloparlantes, especialmente entre sus clases altas.</a></li>
+<li><a href="#reglas">Su primera etapa se disputo desde Atenas 1896 hasta Paris 1924. Era considerado un deporte regular con sus medallas. A partir de esa fecha,y hasta Seul 19988.se considero una disciplina de exhibición. su buena acogida en los Angeles 1984 hizo que el tenis volviera a ser parte del programa olímpico en 1988.</a></li>
+<li><a href="#programacion"></a></li>
+<li><a href="#medallero"></a></li>
+<li><a href="#video"></a></li>
+<li><a href="#galeria"></a></li>
+<li><a href="#formulario"></a></li>
+<li><a href="#game"></a></li>
+</ul> </nav> </header> <main>
+<!-- DIVISION DE LAS SESIONES DE SU PAGINA -->
+<div class="content">
+<!-- SESION 1 -->
+<section id="resumen">
+<h2></h2>El objetivo principal del juego es lanzar una raqueta de modo que rebote en el otro lado pasando la red dentro de los limites permitidos del campo del rival, procurando que este no pueda devolverla para conseguir un segundo rebote en el suelo y darle un punto.
+<p>Consiste en golpear  la pelota después de un rebote o antes que rebote con la raqueta para que vaya de un lado al otro lado del campo pasando por encima de la red.</p>
+</section>
+<!-- SESION 2 -->
+<section id="historia">Las referencias del tenis tiene lugar en Francia, nombrado TENIS (´juego de raquetas´), dado que al principio se golpeaba la pelota con la mano. Mas tarde se empezaron a utilizar raqueta .<h2></h2>
+<p>Su primera etapa se diputo desde Atenas 1896 hasta Paris 1924.Era considerado un deporte regular con sus medallas. A partir de esa fecha ,y hasta Seul 1988, se considero una disciplina.</p>
+</section>
+<!-- SESION 3 -->
+<section id="reglas">
+<h2>REGLAS DEL TENIS</h2>1.Servicio. El jugador comienza con un saque.
+2.Golpear la pelota. 
+3.La bola no debe tocar el suelo. 
+4.La pelota no puede tocar el techo o las paredes. 
+5.No debe tocarse la red con la raqueta.
+6.Gana el equipo que gane 6 sets.
+7.Losjugadores cambian de lado.
+<p>ESCRIBEN LAS REGLAS DEL DEPORTE AVALADAS EN LOS JUEGOS OLIMPICOS</p>El jugador solo puede golpear la pelota una vez por turno;
+-El jugador lleva una puntuación inusual:el primer punto se contabilizara como 15 puntos, el segundo como 30 y el tercero 40 puntos ,ganara eljuego quien llegue a 45 sin esar empatdos y puntue.
+</section>
+<!-- SESION 4 -->
+<section id="programacion">
+<h2>PROGRAMACION OLIMPICOS 2024</h2>
+<p>27 y 28 de julio.
+29 de julio.
+30 de julio.
+31 de julio.
+1 2 y 3 de agosto .
+4 de agosto.
+Partido por el bronce dobles femenino.
+Final masculino.
+Final dobles masculin.</p>
+</section>
+<!-- SESION 5 -->
+<section id="medallero">
+<h2>CUADRO DE HONOR "MEDALLERO"</h2>
+<ul>
+<li><strong>Oro:</strong>Novak Djokovien paris 2024</li>
+<li><strong>Plata:</strong>Gabriela sabatini en seul 1988</li>
+<li><strong>Bronce:</strong>Kei Nishikori en Rio de Janeiro en 2016</li>
+</ul>
+</section>
+<!-- SESION 6 -->
+<section id="video">
+<h2>VIDEO</h2>
+<!-- PONEN UN VIDEO ALUSIVO AL DEPORTE -->
+<iframe src="https://www.youtube.com/embed/HDwfH48EGvk" title="Video de Esgrima"></iframe>
+</section>
+<!-- SESION 7 -->
+<section id="galeria">
+<!-- PONEN AL MENOS 5 IMAGENES ALUSIVAS A SU DEPORTE, RECUERDEN QUE DEBEN ESTAR EN LA
+MISMA CARPETA -->
+<h2>GALERIA DE IMAGENES</h2>
+<div class="carousel">
+<img src="Tenis1.jpg" alt="Tenis Imagen 1" class="active">
+<img src="Tenis2.jpg" alt="Tenis Imagen 2">
+<img src="Tenis3.jpg" alt="tenis Imagen 3">
+</div>
+</section>
+<!-- SESION 8 -->
+<section id="formulario">
+<h2>CUESTIONARIO DE SU DEPORTE</h2>
+<form id="esgrimaForm">
+<!-- PREGUNTA DE TEXTO CORTO -->
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre" required>
+<!-- Pregunta de Selección Múltiple (Menú Desplegable) -->
+<label for="pregunta1">1. ¿Cuál es el objetivo principal en el tenis?</label>
+<select id="pregunta1" name="pregunta1" required>
+<option ="Defenderse">Defenderse</option>
+<option ="Hacer puntos">Ganar suficientes puntos para poder ganar el juego</option>
+<option ="Nodistraerse">Golpear la pelota </option>
+<option ="Evitar golpes">Que la pelota pase al otro lado</option>
+</select>
+<!-- Pregunta Numérica (Campo Numérico) -->
+<label for="pregunta2">2. ¿Cuántos tipos de raquetas se utilizan en el tenis?</label>
+<input type="number" id="pregunta2" name="pregunta2" required>
+<!-- Pregunta de Elección Múltiple con Botones de Opción (Radio Buttons) -->
+<label>3. ¿Qué arma se utiliza en esgrima?</label><br>
+<input type="hacha" id="sable" name="arma" value="Sable" required>
+<label for="">Sable</label><br>
+<input type=">" id="arco" name="arma" value="Arco">
+<label for=""></label><br>
+<input type="manos id="manos" name="arma" value="Hacha">
+<label for=""></label><br>
+<input type="" id="" name="arma" value="Lanza">
+<label for="martillo">Lanza</label><br>
+<!-- Pregunta de Elección Múltiple con Casillas de Verificación (Checkboxes) -->
+<label>4. ¿Cuáles de las siguientes son usadas en el tenis? (Selecciona todas las que
+apliquen)</label><br>
+<input type="checkbox" id="sable" name="armas" value="Sable">
+<label for=pelota">pelota</label><br>
+<input type="checkbox" id="florete" name="armas" value="Florete">
+<label for="raqueta">raqueta</label><br>
+<input type="checkbox" id="lanza" name="armas" value="Lanza">
+<label for="lanza">Lanza</label><br>
+<input type="checkbox" id="espada" name="armas" value="Espada">
+<label for="pies">pies</label><br>
+<!-- Pregunta de Texto Largo (Área de Texto) -->
+<label for="comentarios">5. Escribe cualquier comentario o sugerencia sobre la esgrima:</label><br>
+<textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+<!-- Pregunta de Fecha (Selector de Fecha) -->
+<label for="fecha">6. ¿En qué fecha se celebrarán los próximos Juegos Olímpicos?</label>
+<input type="date" id="fecha" name="fecha" required>
+<button type="submit">Enviar</button>
+</form>
+<p id="resultado"></p>
+<!-- SESION 9 -->
+</section> </div> </main> <section id="game">
+<canvas id="gameCanvas" width="400" height="400"></canvas>
+<div id="score">Puntaje: 0</div>
+<div id="instructions"> <p>Instrucciones:</p> <p>Usa las flechas del teclado para mover al jugador:</p>
+<p>↑ Arriba, ↓ Abajo, ← Izquierda, → Derecha</p> <p>Presiona la tecla espacio para atacar.</p>
+</div> </section>
+<!-- PIE DE PAGINA -->
+<footer>
+<p>VALENTINA PINEDA,801,2024</p>
+</footer>
+<script>
+// JAVA SCRIPT DEL CARRUSEL DE IMAGENES
+let currentIndex = 0;
+const images = document.querySelectorAll('.carousel img');
+const totalImages = images.length;
+function showNextImage() { images[currentIndex].classList.remove('active');
+currentIndex = (currentIndex + 1) % totalImages; images[currentIndex].classList.add('active'); }
+setInterval(showNextImage, 3000); // Cambia de imagen cada 3 segundos </script>
+<script>
+// VERIFICACION DEL CUESTIONARIO SCRIPT
+document.getElementById('esgrimaForm').addEventListener('submit', function(event) {
+event.preventDefault(); // Evita que el formulario se envíe
+// Obtener las respuestas del formulario
+const nombre = document.getElementById('nombre').value;
+const pregunta1 = document.getElementById('pregunta1').value;
+const pregunta2 = parseInt(document.getElementById('pregunta2').value, 10);
+const armaSeleccionada = document.querySelector('input[name="arma"]:checked').value;
+const checkboxes = document.querySelectorAll('input[name="armas"]:checked');
+const respuestasSeleccionadas = Array.from(checkboxes).map(checkbox => checkbox.value);
+const comentarios = document.getElementById('comentarios').value;
+const fecha = document.getElementById('fecha').value;
+const respuestaCorrecta1 = "Atacar al oponente";
+const respuestaCorrecta2 = 3;
+const respuestaCorrecta3 = "Sable";
+const respuestasCorrectas = ["Sable", "Florete", "Espada"];
+const fechaCorrecta = "2024-07-26";
+// Variable para almacenar el mensaje de resultado
+let resultado = `Hola ${nombre}, aquí están tus resultados:<br>`;
+if (pregunta1 === respuestaCorrecta1) {
+resultado += "Pregunta 1: Correcto<br>"; } else { resultado += "Pregunta 1: Incorrecto<br>"; }
+if (pregunta2 === respuestaCorrecta2) {
+resultado += "Pregunta 2: Correcto<br>"; } else { resultado += "Pregunta 2: Incorrecto<br>"; }
+if (armaSeleccionada === respuestaCorrecta3) {
+resultado += "Pregunta 3: Correcto<br>"; } else { resultado += "Pregunta 3: Incorrecto<br>"; }
+let esCorrecto = respuestasCorrectas.every(respuesta => respuestasSeleccionadas.includes(respuesta))
+&& respuestasSeleccionadas.length === respuestasCorrectas.length;
+if (esCorrecto) { resultado += "Pregunta 4: Correcto<br>"; } else { resultado += "Pregunta 4:
+Incorrecto<br>"; }
+if (fecha === fechaCorrecta) { resultado += "Pregunta 6: Correcto<br>"; } else {
+resultado += "Pregunta 6: Incorrecto<br>"; }
+// Mostrar los resultados en la página
+document.getElementById('resultado').innerHTML = resultado; }); </script>
+<script>
+// JAVASCRIPT PARA EL JUEGO
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+let player = { x: 50, y: 180, width: 20, height: 20, color: 'blue', speed: 5, dx: 0; dy: 0 };
+let opponent = { x: 300, y: 180, width: 20; height: 20, color: 'red', speed: 3 };
+let playerScore = 0;
+function drawPlayer() { ctx.fillStyle = player.color; ctx.fillRect(player.x, player.y, player.width, player.height); }
+function drawOpponent() { ctx.fillStyle = opponent.color;
+ctx.fillRect(opponent.x, opponent.y, opponent.width, opponent.height); }
+function moveOpponent() { if (opponent.x > player.x) {
+opponent.x -= opponent.speed; } else { opponent.x += opponent.speed; } }
+function checkCollision() {
+if (player.x < opponent.x + opponent.width && player.x + player.width > opponent.x &&
+player.y < opponent.y + opponent.height && player.y + player.height > opponent.y) {
+resetGame(); } }
+function resetGame() { player.x = 50; opponent.x = 300; updateScore(); }
+function updateScore() {
+document.getElementById('score').innerText = 'Puntaje: ' + playerScore; }
+function attack() {
+const distance = Math.abs(player.x - opponent.x);
+if (distance <= 20) { playerScore += 10; resetGame(); } }
+function dodge() { if (opponent.x <= 0 || opponent.x >= canvas.width - opponent.width) {
+playerScore += 5; resetGame(); } }
+function movePlayer() { player.x += player.dx; player.y += player.dy; if (player.x < 0) player.x = 0; if (player.y <
+0) player.y = 0;
+if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
+if (player.y + player.height > canvas.height) player.y = canvas.height - player.height; }
+function keyDownHandler(event) {
+if (event.key === 'ArrowUp') { player.dy = -player.speed; } else if (event.key === 'ArrowDown') {
+player.dy = player.speed; } else if (event.key === 'ArrowLeft') {
+player.dx = -player.speed; } else if (event.key === 'ArrowRight') {
+player.dx = player.speed; } else if (event.key === ' ') {
+attack(); // Barra espaciadora para atacar } }
+function keyUpHandler(event) { if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+player.dy = 0; } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { player.dx = 0; } }
+document.addEventListener('keydown', keyDownHandler);
+document.addEventListener('keyup', keyUpHandler);
+function gameLoop() { ctx.clearRect(0, 0, canvas.width, canvas.height);
+movePlayer(); drawPlayer(); drawOpponent(); moveOpponent();
+dodge(); // Verifica si el jugador esquivó al oponente
+checkCollision(); requestAnimationFrame(gameLoop); }
+gameLoop(); </script></body></html>
+

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atletismo en los Juegos Olímpicos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #0073e6;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .box {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gallery {
+            position: relative;
+            max-width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .gallery img.active {
+            opacity: 1;
+        }
+        .medal-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .medal-table th, .medal-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .video {
+            text-align: center;
+        }
+        .quiz {
+            margin-top: 20px;
+        }
+        .quiz input[type="radio"] {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Atletismo en los Juegos Olímpicos</h1>
+</header>
+
+<div class="container">
+
+    <div class="box">
+        <h2>Resumen</h2>
+        <p>El atletismo es una de las disciplinas más antiguas y emocionantes de los Juegos Olímpicos, con eventos que incluyen carreras, saltos y lanzamientos.</p>
+    </div>
+
+    <div class="box">
+        <h2>Historia en los Olímpicos</h2>
+        <p>Desde los primeros Juegos Olímpicos en 776 a.C., el atletismo ha sido un pilar fundamental, evolucionando con el tiempo en diversas disciplinas.</p>
+    </div>
+
+    <div class="box">
+        <h2>Reglas</h2>
+        <p>Las reglas varían según el evento, pero en general, los atletas deben seguir pautas específicas sobre equipamiento y conducta durante las competiciones.</p>
+    </div>
+
+    <div class="box">
+        <h2>Programación en los Olímpicos 2024</h2>
+        <p>Los eventos de atletismo se llevarán a cabo del 1 al 10 de agosto de 2024 en París.</p>
+    </div>
+
+    <div class="box">
+        <h2>Medallería</h2>
+        <table class="medal-table">
+            <tr>
+                <th>Evento</th>
+                <th>Medalla de Oro</th>
+                <th>Medalla de Plata</th>
+                <th>Medalla de Bronce</th>
+            </tr>
+            <tr>
+                <td>100m</td>
+                <td>mujer María Pérez hombre Álvaro Martín</td>
+                <td>mujer Maria Páez hombre Yeison López</td>
+                <td>mujer Brittany Brown hombre Álvaro Martín</td>
+            </tr>
+            <tr>
+                <td>Maratón</td>
+                <td>mujer Sifan Hassan hombre Tamirat Tola</td>
+                <td>mujer Tigst Assefa hombre Bashir Abdi</td>
+                <td>mujer Hellen Obiri hombre Benson Kipruto</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="box gallery">
+        <h2>Galería</h2>
+        <img src="atletismo1.jpg" class="active" alt="Atletismo 1">
+        <img src="atletismo2.jpg" alt="Atletismo 2">
+        <img src="atletismo3.jpg" alt="Atletismo 3">
+        <img src="atletismo4.jpg" alt="Atletismo 4">
+        <img src="imagen5.jpg" alt="Atletismo 5">
+    </div>
+
+    <div class="box video">
+        <h2>Video</h2>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="box quiz">
+        <h2>Cuestionario</h2>
+        <form id="quizForm">
+            <p>1. ¿En qué año se celebraron los primeros Juegos Olímpicos modernos?</p>
+            <input type="radio" name="question1" value="1896"> 1896<br>
+            <input type="radio" name="question1" value="1900"> 1900<br>
+            <input type="radio" name="question1" value="1920"> 1920<br>
+
+            <p>2. ¿Cuál es la distancia de una maratón?</p>
+            <input type="radio" name="question2" value="42.195"> 42.195 km<br>
+            <input type="radio" name="question2" value="42.0"> 42.0 km<br>
+
+            <button type="button" onclick="checkAnswers()">Enviar</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <div class="box">
+        <h2>Minijuego</h2>
+        <p>¡Intenta adivinar el número entre 1 y 10!</p>
+        <input type="number" id="guess" min="1" max="10">
+        <button onclick="playGame()">Adivinar</button>
+        <div id="gameResult"></div>
+    </div>
+
+</div>
+
+<script>
+    // Galería de imágenes (carrusel)
+    let currentImage = 0;
+    const images = document.querySelectorAll('.gallery img');
+    setInterval(() => {
+        images[currentImage].classList.remove('active');
+        currentImage = (currentImage + 1) % images.length;
+        images[currentImage].classList.add('active');
+    }, 3000);
+
+    // Cuestionario
+    function checkAnswers() {
+        let score = 0;
+        if (document.querySelector('input[name="question1"]:checked').value === "1896") score++;
+        if (document.querySelector('input[name="question2"]:checked').value === "42.195") score++;
+        document.getElementById('result').innerText = `Tu puntaje es: ${score} de 2`;
+    }
+
+    // Minijuego
+    function playGame() {
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
+        const userGuess = parseInt(document.getElementById('guess').value);
+        const result = userGuess === randomNumber ? "¡Correcto!" : `Incorrecto. El número era ${randomNumber}.`;
+        document.getElementById('gameResult').innerText = result;
+    }
+</script>
+
+</body>
+</html>

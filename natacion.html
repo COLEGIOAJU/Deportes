@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natación en los Juegos Olímpicos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+        }
+        header, footer {
+            background-color: #00796b;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .box {
+            border: 1px solid #00796b;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .rotating-images {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        .rotating-images img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .active {
+            opacity: 1;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #00796b;
+            padding: 12px; /* Aumentar el padding */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Natación en los Juegos Olímpicos</h1>
+</header>
+
+<div class="container">
+    <div class="box">
+        <h2>Resumen de la Natación</h2>
+        <p>La natación es un deporte que consiste en desplazarse en el agua utilizando los brazos y las piernas. Es uno de los deportes más antiguos y se practica en diversas distancias y estilos.</p>
+    </div>
+
+    <div class="box">
+        <h2>Historia de la Natación</h2>
+        <p>La natación ha sido parte de los Juegos Olímpicos modernos desde 1896 para hombres y desde 1912 para mujeres. Desde entonces, ha crecido en popularidad y número de eventos.</p>
+    </div>
+
+    <div class="box">
+        <h2>Reglas de la Natación</h2>
+        <p>Las reglas de la natación incluyen el uso de técnicas específicas para cada estilo: libre, espalda, braza y mariposa. Los nadadores deben tocar la pared al final de cada largo.</p>
+    </div>
+
+    <div class="box">
+        <h2>Medallero en la Natación 2024</h2>
+        <table>
+            <tr>
+                <th>Medalla</th>
+                <th>Atleta</th>
+                <th>País</th>
+                <th>Evento</th>
+            </tr>
+            <tr>
+                <td>Oro</td>
+                <td>Ana García</td>
+                <td>España</td>
+                <td>100m Libre</td>
+            </tr>
+            <tr>
+                <td>Plata</td>
+                <td>John Smith</td>
+                <td>Estados Unidos</td>
+                <td>100m Libre</td>
+            </tr>
+            <tr>
+                <td>Bronce</td>
+                <td>Li Wei</td>
+                <td>China</td>
+                <td>100m Libre</td>
+            </tr>
+            <tr>
+                <td>Oro</td>
+                <td>Maria Lopez</td>
+                <td>Brasil</td>
+                <td>200m Mariposa</td>
+            </tr>
+            <tr>
+                <td>Plata</td>
+                <td>David Brown</td>
+                <td>Reino Unido</td>
+                <td>200m Mariposa</td>
+            </tr>
+            <tr>
+                <td>Bronce</td>
+                <td>Sofia Kim</td>
+                <td>Corea del Sur</td>
+                <td>200m Mariposa</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="box rotating-images">
+    <h2>Imágenes de Natación</h2>
+    <img src="natacionrico5.jpg" alt="Nadador en acción" class="active">
+    <img src="natacionrico1.jpg" alt="Competencia de natación">
+    <img src="natacionrico2.jfif" alt="Entrenamiento de natación">
+    <img src="natacionrico3.jfif" alt="Entrenamiento de natación">
+    <img src="natacionrico4.jfif" alt="Entrenamiento de natación">
+</div>
+
+    <div class="box">
+        <h2>Video</h2>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/VQxykkE2t-g" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="box">
+        <h2>Cuestionario</h2>
+        <form id="quiz">
+            <p>1. ¿En qué año se incluyó la natación femenina en los Juegos Olímpicos?</p>
+            <input type="text" name="q1">
+            <p>2. ¿Cuál es el estilo que se nada de espaldas?</p>
+            <input type="text" name="q2">
+            <p>3. ¿Qué distancia se nada en los relevos 4x100m?</p>
+            <input type="text" name="q3">
+            <p>4. ¿Cuál es el estilo de natación que se nada en posición boca abajo?</p>
+            <input type="text" name="q4">
+            <p>5. ¿Qué deporte acuático es parte de los Juegos Olímpicos además de la natación?</p>
+            <input type="text" name="q5">
+            <p>6. ¿Qué nombre recibe la técnica de natación que parece volar?</p>
+            <input type="text" name="q6">
+            <button type="button" onclick="calificar()">Calificar</button>
+        </form>
+        <p id="resultado"></p>
+    </div>
+
+    <div class="box">
+        <h2>Minijuego: ¿Cuántos estilos de natación conoces?</h2>
+        <p>Intenta adivinar el estilo de natación que he seleccionado al azar. Escribe tu respuesta y haz clic en "¡Adivinar!"</p>
+        <input type="text" id="respuestaMinijuego" placeholder="Escribe tu respuesta aquí">
+        <button onclick="adivinar()">¡Adivinar!</button>
+        <p id="respuestaJuego"></p>
+    </div>
+</div>
+
+<footer>
+    <p>Michel Rico-801</p>
+</footer>
+
+<script>
+    // Rotación de imágenes
+    const images = document.querySelectorAll('.rotating-images img');
+    let currentIndex = 0;
+    setInterval(() => {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add('active');
+    }, 3000);
+
+    // Cuestionario
+    function calificar() {
+        const respuestas = {
+            q1: "1912",
+            q2: "espalda",
+            q3: "100",
+            q4: "libre",
+            q5: "waterpolo",
+            q6: "mariposa"
+        };
+        let score = 0;
+        const form = document.forms['quiz'];
+        for (let q in respuestas) {
+            if (form[q].value.toLowerCase() === respuestas[q]) {
+                score++;
+            }
+        }
+        document.getElementById('resultado').innerText = `Puntuación: ${score}/6`;
+    }
+
+    // Minijuego
+    let estiloSeleccionado;
+
+    function jugar() {
+        const estilos = ["libre", "espalda", "braza", "mariposa"];
+        estiloSeleccionado = estilos[Math.floor(Math.random() * estilos.length)];
+        document.getElementById('respuestaJuego').innerText = "He seleccionado un estilo. ¡Intenta adivinarlo!";
+        document.getElementById('respuestaMinijuego').value = ''; // Limpiar el campo de entrada
+    }
+
+    function adivinar() {
+        const respuestaUsuario = document.getElementById('respuestaMinijuego').value.toLowerCase();
+        if (respuestaUsuario === estiloSeleccionado) {
+            document.getElementById('respuestaJuego').innerText = "¡Correcto! Has adivinado el estilo.";
+        } else {
+            document.getElementById('respuestaJuego').innerText = "Incorrecto. Intenta de nuevo.";
+        }
+    }
+
+    // Iniciar el minijuego
+    jugar();
+</script>
+
+</body>
+</html>

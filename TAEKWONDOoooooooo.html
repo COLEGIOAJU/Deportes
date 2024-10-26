@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Taekwondo</title>
+
+    <!-- Estilos CSS -->
+    <style>
+        /* Estilos básicos */
+        body {
+            margin: 0;
+            font-family: Calibri, Gill Sans MT, sans-serif;
+            background-image: url('images.jfif');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-color: #f0f0f0;
+        }
+
+        /* Contenedor de puntaje e instrucciones */
+        #score, #instructions {
+            position: absolute;
+            font-size: 20px;
+            color: white;
+        }
+        #score { top: 10px; left: 10px; }
+        #instructions { top: 10px; right: 10px; }
+
+        /* Modelo de caja y alineación para encabezado y secciones */
+        header, .content {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main { padding: 20px; }
+
+        /* Estilo de secciones */
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            color: #333;
+        }
+
+        h2 { color: #333; }
+        h3 { color: #555; }
+
+        /* Estilo del pie de página */
+        footer {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Estilos de carrusel de imágenes */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .carousel img {
+            width: 100%;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        /* Estilos del cuestionario y juego */
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #gameCanvas {
+            background-color: #ffffff;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Taekwondo</h1>
+    <nav>
+        <ul>
+            <li><a href="#resumen">RESUMEN</a></li>
+            <li><a href="#historia">HISTORIA</a></li>
+            <li><a href="#reglas">REGLAS</a></li>
+            <li><a href="#programacion">PROGRAMACION OLIMPICA</a></li>
+            <li><a href="#medallero">MEDALLERO</a></li>
+            <li><a href="#video">VIDEO</a></li>
+	    <li><a href="#galeria">GALERIA</a></li>
+	    <li><a href="#cuestionarioo">CUESTIONARIO</a></li>
+	   <li><a href="#juego">JUEGO</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Secciones del contenido -->
+    <section id="resumen">
+        <h2>Resumen del Taekwondo</h2>
+        <p>El taekwondo debutó como deporte olímpico de demostración en los Juegos de Seúl 1988, y se convirtió en deporte de medalla oficial en los Juegos de Sídney 2000. En el mundo del taekwondo existen varios estilos. Ganadores de taekwondo en Juegos Olímpicos - 2004 Atena Pabellón Deportivo de Faliro - 2008 Pekín Gimnasio de la Universidad de Ciencia y Tecnología - 2012 Londres ExCeL Exhibition Centre - 2016 Río de Janeiro Arena Carioca - 2020 Tokio Makuhari Messe – Pabellón A - 2024 París Grand Palais</p>
+    </section>
+
+    <section id="historia">
+        <h2>Historia del Taekwondo</h2>
+        <p>La primera aparición olímpica del taekwondo se produjo en los Juegos Olímpicos de Seúl 1988, cuando se disputó como un evento de demostración. Volvió a aparecer como deporte de demostración en los Juegos de Barcelona 1992, pero obtuvo un reconocimiento formal como deporte olímpico en los Juegos de Atlanta 1996.<br>
+
+El 4 de septiembre se celebra el Día Internacional del Taekwondo, en recuerdo de la fecha en que comenzó a reconocerse como deporte olímpico oficial el 4 de septiembre de 1994. El taekwondo es un arte marcial moderno de origen coreano que utiliza diversas técnicas de patadas.<br>
+
+Corea del Sur, como país fundador del taekwondo, ha dominado históricamente estas competencias, consiguiendo 173 títulos mundiales y 244 medallas en total. El segundo lugar lo ocupa España, con 106 medallas en total, de las cuales 23 son de oro.</p>
+    </section>
+
+    <section id="reglas">
+        <h2>Reglas del Taekwondo</h2>
+        <p>Un combate de taekwondo se disputa en tres rounds, cada uno con una duración de dos minutos. Hay un minuto de descanso entre cada round. Los competidores se identifican por colores: azul y rojo. El ganador del combate será quien logre golpear más veces a su contrincante, ya sea con puños o con patadas.<br>
+
+Objetivo del juego: Golpear al oponente de manera que los jueces puedan determinar quién logró más golpes efectivos y patadas.<br>
+
+Duración del combate: Cada round dura entre 2 y 3 minutos, con un descanso breve entre ellos.<br>
+
+País con más medallas: En el taekwondo, México ha ganado un total de siete medallas olímpicas, de las cuales dos son de oro, dos de plata y tres de bronce.</p>
+    </section>
+
+    <section id="programacion">
+        <h2>Programación Olímpica del Taekwondo 2020</h2>
+        <p>Calendario de Competencias de Taekwondo<br>
+
+Categoría Masculina:<br>
+
+07 de Septiembre<br>
+08 de Septiembre<br>
+∓58 kg - Competencia<br>
+80 kg - Competencia<br>
++80 kg - Competencia<br>
+09 de Septiembre - Continuación de competencias en categorías anteriores.<br>
+10 de Septiembre - Finales de categorías masculinas.<br>
+Categoría Femenina:<br>
+
+07 de Septiembre<br>
+08 de Septiembre<br>
+49 kg - Competencia<br>
+67 kg - Competencia<br>
++67 kg - Competencia<br>
+09 de Septiembre - Continuación de competencias en categorías anteriores.<br>
+10 de Septiembre - Finales de categorías femeninas.</p>
+    </section>
+
+    <section id="medallero">
+        <h2>Cuadro de Honor "Medallero"</h2>
+        <p>Oro: Gran Bretaña <br> Plata: Turquía<br> Bronce: Uzbekistán.</p>
+    </section>
+
+     <section id="video">
+            <h2>VIDEO</h2>
+            <!-- VIDEO ALUSIVO AL DEPORTE -->
+            <iframe src="https://www.youtube.com/embed/3ymdFmJzo" title="Video de Taekwondo" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </section>
+        
+        <section id="galeria">
+            <h2>GALERÍA DE IMÁGENES</h2>
+            <div class="carousel">
+                <img src="images1.JFIF" alt="Taekwondo Imagen 1" class="active">
+                <img src="images2.JFIF" alt="Taekwondo Imagen 2">
+                <img src="images3.JFIF" alt="Taekwondo Imagen 3">
+                <img src="images4.JFIF" alt="Taekwondo Imagen 4">
+                <img src="images5.JFIF" alt="Taekwondo Imagen 5">
+            </div>
+        </section>
+
+        <section id="cuestionario">
+            <h2>CUESTIONARIO DE TAEKWONDO</h2>
+            <form id="taekwondoForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="pregunta1">1. ¿Cuál es el objetivo principal en taekwondo?</label>
+                <select id="pregunta1" name="pregunta1" required>
+                    <option value="Defenderse">Defenderse</option>
+                    <option value="Atacar al oponente">Atacar al oponente</option>
+                    <option value="Mantener la distancia">Mantener la distancia</option>
+                    <option value="Evitar golpes">Evitar golpes</option>
+                </select>
+                
+                <label for="pregunta2">2. ¿Cuántos tipos de armas se utilizan en taekwondo?</label>
+                <input type="number" id="pregunta2" name="pregunta2" required>
+                
+                <label>3. ¿Qué arma se utiliza en taekwondo?</label><br>
+                <input type="radio" id="puños_y_patadas" name="arma" value="puños y patadas" required>
+                <label for="puños_y_patadas">Puños y Patadas</label><br>
+                <input type="radio" id="sable" name="arma" value="Sable">
+                <label for="sable">Sable</label><br>
+                <input type="radio" id="arco" name="arma" value="Arco">
+                <label for="arco">Arco</label><br>
+                <input type="radio" id="lanza" name="arma" value="Lanza">
+                <label for="lanza">Lanza</label><br>
+                
+                <label>4. ¿En qué año se integró el taekwondo en los Juegos Olímpicos? (Selecciona todas las que apliquen)</label><br>
+                <input type="checkbox" id="1988" name="año" value="1988">
+                <label for="1988">1988</label><br>
+                <input type="checkbox" id="2000" name="año" value="2000">
+                <label for="2000">2000</label><br>
+                <input type="checkbox" id="2020" name="año" value="2020">
+                <label for="2020">2020</label><br>
+                
+                <label for="comentarios">5. Para usted, ¿quién es el mejor luchador de taekwondo?</label><br>
+                <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+                
+                <label for="fecha">6. ¿En qué fecha se celebrarán los próximos Juegos Olímpicos?</label>
+                <input type="date" id="fecha" name="fecha" required>
+                
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="resultado"></p>
+        </section>
+        
+        <section id="game">
+            <div id="score">Jugador 1: 0 - Jugador 2: 0</div>
+            <div id="instructions">Instrucciones: W/A/S/D para mover, Espacio para golpear</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>MOISES, 802, ANTONIO JOSE URIBE 2024</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+        const totalImages = images.length;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+        setInterval(showNextImage, 3000); // Cambia de imagen cada 3 segundos
+
+        // Verificación del cuestionario
+        document.getElementById('taekwondoForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe
+            
+            // Obtener las respuestas del formulario
+            const nombre = document.getElementById('nombre').value;
+            const pregunta1 = document.getElementById('pregunta1').value;
+            const pregunta2 = parseInt(document.getElementById('pregunta2').value, 10);
+            const armaSeleccionada = document.querySelector('input[name="arma"]:checked').value;
+            const checkboxes = document.querySelectorAll('input[name="año"]:checked');
+            const respuestasSeleccionadas = Array.from(checkboxes).map(checkbox => checkbox.value);
+            const comentarios = document.getElementById('comentarios').value;
+            const fecha = document.getElementById('fecha').value;
+            
+            // Respuestas correctas
+            const respuestaCorrecta1 = "Atacar al oponente";
+            const respuestaCorrecta2 = 3; // Cantidad de tipos de armas
+            const respuestaCorrecta3 = "puños y patadas"; // Esta respuesta debe coincidir con el valor del input
+            const respuestasCorrectas = ["1988", "2000", "2020"]; // Respuestas correctas para el checkbox
+            const fechaCorrecta = "2024-07-26"; // Ajusta según sea necesario
+
+            // Mensaje de resultado
+            let resultado = `Hola ${nombre}, aquí están tus resultados:<br>`;
+            if (pregunta1 === respuestaCorrecta1) {
+                resultado += "Pregunta 1: Correcto<br>";
+            } else {
+                resultado += "Pregunta 1: Incorrecto<br>";
+            }
+            if (pregunta2 === respuestaCorrecta2) {
+                resultado += "Pregunta 2: Correcto<br>";
+            } else {
+                resultado += "Pregunta 2: Incorrecto<br>";
+            }
+            if (armaSeleccionada === respuestaCorrecta3) {
+                resultado += "Pregunta 3: Correcto<br>";
+            } else {
+                resultado += "Pregunta 3: Incorrecto<br>";
+            }
+            const esCorrecto = respuestasCorrectas.every(respuesta => respuestasSeleccionadas.includes(respuesta)) &&
+                               respuestasSeleccionadas.length === respuestasCorrectas.length;
+            if (esCorrecto) {
+                resultado += "Pregunta 4: Correcto<br>";
+            } else {
+                resultado += "Pregunta 4: Incorrecto<br>";
+            }
+            // Se puede agregar verificación para la fecha
+            document.getElementById('resultado').innerHTML = resultado;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<head>
+ <title> GOLF </title>
+ <!-- ADICIONALMENTE EN ESTE APARTADO PONEN TODO LO RELACIONADO A LA ESTRUCTURA CSS ASI: -->
+ <style>
+ body {
+ /* MODELO DE CAJA */
+ font-family:ALGERIAN; margin: 0; padding: 0;
+ /* IMAGEN DE FONDO Y SUS PROPIEDADES */
+ background-image: url('C:\Users\Estudiante\Desktop\samuel golf 8-1.jpg'); background-size: 70% 25%; background-position: 50% 25%;
+ background-attachment: fixed; background-repeat: no-repeat;
+ /* COLOR DE FONDO */
+ background-color: #4a235a; }
+ /* CONTINUACION ESTRUCTURA DE MODELO DE CAJA PARA EL ENCABEZADO Y LAS SESIONES, INCLUIDA
+COLOR, ALINEACION */
+ header, .content {
+ background-color: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 8px; margin: 20px; }
+ header h1, header nav ul li a { color: white; text-align: center; }
+ header nav ul { list-style-type: none; margin: 0; padding: 0; text-align: center; }
+header nav ul li {display: inline; margin: 0 15px; }
+ header nav ul li a {color:#f5eef8 ; text-decoration: none; }
+ main { padding: 20px; }
+ section { background-color: #cacfd2; border-radius: 8px; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ margin: 20px 0; }
+ h2 { color: #000000; }
+ h3 { color: #000000; }
+ p, ul { margin-bottom: 15px; }
+ ul { padding-left: 20px; }
+ /* CSS DEL PIE DE PAGINA */
+ footer {text-align: center; background-color: rgba(0, 0, 0, 0.3); padding: 20px; color: white; margin-top: 20px; }
+ /* CSS PARA EL INTERCAMBIO DE LAS IMAGENES */
+ .carousel {position: relative; max-width: 100%; margin: auto; }
+ .carousel img { width: 100%; border-radius: 8px; display: none; }
+ .carousel img.active { display: block; }
+ /* CSS PARA EL CUESTIONARIO Y JUEGO */
+ iframe { width: 100%; height: 315px; border: none; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ margin-bottom: 20px; }
+ form { margin-top: 20px; }
+ label { display: block; margin: 10px 0 5px; }
+ input, select, button { width: 100%; padding: 8px; margin: 5px 0 15px; border-radius: 4px; border: 1px solid
+#ccc; color: black; }
+ button { background-color: #333; color: white; cursor: pointer; }
+ button:hover { background-color: #555; }
+ #gameCanvas { background-color: #ffffff; border: 2px solid #000; }
+ #score { font-size: 20px; margin-top: 20px; }
+ #instructions { margin-top: 20px; font-size: 18px; text-align: center; }
+/* CERRAR TODAS LAS PROPIEDADES CSS DE LA PÁGINA */
+ </style>
+ <!-- CERRAR EL ENCABEZADO -->
+</head><body>
+ <!-- AQUI VA TODO EL CONTENIDO DE LA PAGINA -->
+ <!-- ADICIONALMENTE VAN LOS SCRIPTS Y JAVASCRIPTS DE PROGRAMACIÓN DE LA INTERACTIVIDAD -->
+ <header>
+ <!-- TITULO Y MENU DE SU PAGINA -->
+ <h1>Golf</h1>
+ <nav> <ul>
+ <li><a href="#resumen">
+ <li><a href="#programacion">PROGRAMACION OLIMPICOS 2024</a></li>
+ <li><a href="#medallero">
+</a></li>
+ <li><a href="#video">VIDEO</a></li>
+ <li><a href="#galeria">GALERIA</a></li>
+ <li><a href="#formulario">CUESTIONARIO</a></li>
+ <li><a href="#game">JUEGO</a></li>
+ </ul> </nav> </header> <main>
+ <!-- DIVISION DE LAS SESIONES DE SU PAGINA -->
+ <div class="content">
+ <!-- SESION 1 -->
+ <section id="resumen">
+ <h2>RESUMEN</h2>
+ <p>El golf es un deporte cuyo objetivo es introducir una bola en los hoyos que están distribuidos en el campo con el menor número de golpes, utilizando para cada tipo de golpe uno de entre un conjunto de palos ligeramente diferentes entre sí, ya que la cabeza del palo tiene ángulos distintos, al igual que las varillas tienen longitudes diferentes. A menor número de grados de inclinación, mayor longitud de la varilla, por lo tanto, más distancia. Como máximo se pueden llevar catorce palos y como mínimo cinco palos. Al que practica el golf se le denomina golfista.</p>
+</section>
+ <!-- SESION 2 -->
+ <section id="historia">
+ <h2>	HISTORIA</h2>
+ <p>Se cree que el juego de golf moderno se originó en Escocia en el siglo XV. Este deporte formó parte del programa Olímpico en los Juegos Olímpicos de París 1900 y después en los Juegos Olímpicos de San Luis 1904, donde solo se realizaron competiciones masculinas, y Estados Unidos y Canadá fueron los únicos participantes. En los Juegos Olímpicos de Río 2016, después de estar ciento doce años ausente, el golf volvió a los Juegos Olímpicos
+
+Se cree que el juego de golf moderno se originó en Escocia en el siglo XV. Este deporte formó parte del programa Olímpico en los Juegos Olímpicos de París 1900 y después en los Juegos Olímpicos de San Luis 1904, donde solo se realizaron competiciones masculinas, y Estados Unidos y Canadá fueron los únicos participantes. En los Juegos Olímpicos de Río 2016, después de estar ciento doce años ausente, el golf volvió a los Juegos Olímpicos
+</p>
+ </section>
+ <!-- SESION 3 -->
+ <section id="reglas">
+ <h2>REGLAS</h2>
+ <p>El golf tiene la reputación de ser un deporte con reglas complicadas, pero los conceptos básicos son bastante simples. La regla más importante es que cada golfista debe jugar con la pelota donde este, lo que significa que la pelota debe ser golpeada desde donde quede. Otras reglas incluyen mantener el ritmo del grupo que está adelante, no tocar la pelota con las manos y contar todos los golpes dados, incluso aquellos que no golpean la pelota.
+
+Entendiendo las Reglas del Golf
+Aunque las reglas puedan parecer complicadas al principio, una vez que las entiendes, es mucho más fácil disfrutar del juego. Aquí hay algunas reglas importantes que debes tener en cuenta:
+
+Juega la Pelota Donde Este:  La regla más importante en el golf es jugar la pelota donde quede. Esto significa que debes golpear la pelota desde donde quede, ya sea en la calle, en el rough o en un bunker. No puedes recoger la pelota y moverla a una posición más favorable, excepto en circunstancias muy específicas, como tomar una caída de penalización, o si hay excepciones locales debido a obstáculos en el campo, por ejemplo, podría ser una tapa de riego o algo similar.
+Pelotas Perdidas y Fuera del Campo de Juego: Si tu pelota sale fuera de los límites del campo o se pierde, debes tomar un golpe de penalidad y volver a jugar el golpe desde donde lo hiciste originalmente. Los límites del campo están marcados por estacas blancas o una cerca, y las pelotas perdidas suelen ser el resultado de golpear la pelota en áreas de vegetación alta o en obstáculos de agua.
+Cuenta todos los golpes: Debes contar cada golpe que hagas, incluso si haces un swing y pierdes completamente la pelota. Cada vez que golpees la pelota (o intentes hacerlo) se considera un golpe, y tu puntuación es el número total de golpes tomados para completar cada hoyo y luego el total para la ronda completa.
+Sigue el Ritmo de Juego: El golf puede ser un juego lento, especialmente si estás jugando con un grupo grande o en un campo lleno de gente. Para mantener el juego en movimiento, es importante mantener el ritmo del grupo que está delante de ti. Si te estás quedando atrás, deja que los grupos más rápidos jueguen delante de ti para evitar retrasar el juego.
+Etiqueta: El golf tiene una fuerte tradición de etiqueta, lo que incluye el respeto por tus compañeros golfistas y el campo de juego en sí. Esto significa reparar los divots y las marcas de bola, rastrillar los bunkers y evitar hablar o moverte cuando otro golfista está dando su golpe. También es importante estar al tanto de tu entorno, especialmente en campos ocupados donde otros golfistas pueden estar golpeando sus pelotas cerca.
+Penalizaciones: Existen varios tipos de penalizaciones, y en general consisten en sumarle golpes de más en la tarjeta de puntuaciones de los golfistas, empeorando su puntuación. Se incluyen las penalizaciones de golpe por violar las reglas y las caídas de penalización por tomar alivio de obstáculos o posiciones de juego no jugables. Es importante entender los diferentes tipos de penalizaciones y cuándo se aplican para evitar agregar golpes innecesarios a tu puntuación.</p>
+ </section>
+ <!-- SESION 4 -->
+ <section id="programacion">
+ <h2>PROGRAMACION OLIMPICOS 2024</h2>
+ <p>mié, 7 de ago·1.° fase
+    jue, 8 de ago·2.° fase
+    vie, 9 de ago·3.° fase
+    sáb, 10 de ago·4.° fase</p>
+ </section>
+ <!-- SESION 5 -->
+ <section id="medallero">
+<h2>CUADRO DE HONOR "MEDALLERO"</h2>
+ <ul>
+ <li><strong>Oro:</strong> Scottie Scheffler E.E.U.U</li>
+ <li><strong>Plata:</strong> Tommy Fleetwood Inglaterra </li>
+ <li><strong>Bronce:</strong> Hideki Matsuyama Japon</li>
+ </ul>
+ </section>
+ <!-- SESION 6 -->
+ <section id="video">
+ <h2>VIDEO</h2>
+ <!-- PONEN UN VIDEO ALUSIVO AL DEPORTE -->
+ <iframe src="https://www.youtube.com/embed/?v=ssa0ZecgMXQ" title="video de golf"></iframe>
+ </section>
+ <!-- SESION 7 -->
+ <section id="galeria">
+ <!-- PONEN AL MENOS 5 IMAGENES ALUSIVAS A SU DEPORTE, RECUERDEN QUE DEBEN ESTAR EN LA
+MISMA CARPETA -->
+ <h2>GALERIA DE IMAGENES</h2>
+ <div class="carousel">
+ <img src="golf 1.jpg" alt="golf Imagen 1" class="active">
+ <img src="golf 2.jpg" alt="golf Imagen 2">
+ <img src="golf 3.jpg" alt="golf Imagen 3">
+ <img src="golf 4.jpg" alt="golf Imagen 4">
+ <img src="golf 5.jpg" alt="golf Imagen 5">
+
+ </div>
+ </section>
+<!-- SESION 8 -->
+ <section id="formulario">
+ <h2>CUESTIONARIO DE SU DEPORTE</h2>
+ <form id="esgrimaForm">
+ <!-- PREGUNTA DE TEXTO CORTO -->
+ <label for="nombre">Nombre:</label>
+ <input type="text" id="nombre" name="nombre" required>
+ <!-- Pregunta de Selección Múltiple (Menú Desplegable) -->
+ <label for="pregunta1">1. ¿Cuál es el objetivo principal en GOLF?</label>
+ <select id="pregunta1" name="pregunta1" required>
+ <option value="patear ancianitas">patear ancianitas</option>
+ <option value="meter la pelota en el hoyo con la menor cantidad dede golpes posibles">meter la pelota en el hoyo con la menor cantidad dede golpes posibles</option>
+ <option value="hacer muchos swings">hacer muchos swings</option>
+ <option value="noquear al opónente">noquear al opónente</option>
+ </select>
+ <!-- Pregunta Numérica (Campo Numérico) -->
+ <label for="pregunta2">2. ¿cuantos tipos de palo hay?</label>
+ <input type="number" id="pregunta2" name="pregunta2" required>
+ <!-- Pregunta de Elección Múltiple con Botones de Opción (Radio Buttons) -->
+ <label>3. ¿con que se juega al golf?</label><br>
+ <input type="radio" id="sable" name="arma" value="Sable" required>
+ <label for="sable">Sable</label><br>
+ <input type="radio" id="arco" name="arma" value="Arco">
+<label for="arco">Arco</label><br>
+ <input type="radio" id="hacha" name="arma" value="Hacha">
+ <label for="hacha">Hacha</label><br>
+ <input type="radio" id="palo" name="arma" value="palo">
+ <label for="palo">palo</label><br>
+ <!-- Pregunta de Elección Múltiple con Casillas de Verificación (Checkboxes) -->
+ <label>4. ¿Cuáles de las siguientes son palos usados en el golf? (Selecciona todas las que
+apliquen)</label><br>
+ <input type="checkbox" id="putter" name="armas" value="putter">
+ <label for="putter">putter</label><br>
+ <input type="checkbox" id="driver" name="armas" value="driver">
+ <label for="driver">driver</label><br>
+ <input type="checkbox" id="lanza" name="armas" value="Lanza">
+ <label for="lanza">Lanza</label><br>
+ <input type="checkbox" id="espada" name="armas" value="Espada">
+ <label for="espada">Espada</label><br>
+ <!-- Pregunta de Texto Largo (Área de Texto) -->
+ <label for="comentarios">5. Escribe cualquier comentario o sugerencia sobre el golf:</label><br>
+ <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+ <!-- Pregunta de Fecha (Selector de Fecha) -->
+ <label for="fecha">6. ¿En qué fecha se celebrarán los próximos Juegos Olímpicos?</label>
+<select id="pregunta1" name="pregunta1" required>
+ <option value="4.689.077 A.C">4.689.077 A.C</option>
+ <option value="2028">2028</option>
+ <option value="NO SE">NO SE</option>
+ <option value="2038">2038</option>
+ </select>
+ <!-- Pregunta Numérica (Campo Numérico) -->
+ <label for="pregunta2">2. ¿Cuántos tipos de terreno hay en el golf?</label>
+ <input type="number" id="pregunta2" name="pregunta2" required>
+ <!-- Pregunta de Elección Múltiple con Botones de Opción (Radio Buttons) -->
+ <label>3. ¿cuales son?</label><br>
+ <input type="radio" id="arena" name="arena" value="arena" required>
+ <label for="arena">arena</label><br>
+ <input type="radio" id="pasto" name="arma" value="pasto">
+ <label for="pasto">pasto</label><br>
+ <input type="radio" id="agua" name="arma" value="agua">
+ <label for="agua">agua</label><br>
+ <input type="radio" id="todo lo anterior" name="arma" value="todo lo anterior">
+ <label for="todo lo anterior">todo lo anterior</label><br>
+ <!-- Pregunta de Elección Múltiple con Casillas de Verificación (Checkboxes) -->
+ <label>4. ¿Cuáles de las siguientes son armas usadas en golf? (Selecciona todaas las que
+apliquen)</label><br>
+ <input type="checkbox" id="sable" name="armas" value="Sable">
+ <label for="sable">Sable</label><br>
+<input type="checkbox" id="florete" name="armas" value="Florete">
+ <label for="florete">Florete</label><br>
+ <input type="checkbox" id="lanza" name="armas" value="Lanza">
+ <label for="lanza">Lanza</label><br>
+ <input type="checkbox" id="no se usan" name="armas" value="no se usan">
+ <label for="no se usan">no se usan</label><br>
+ <!-- Pregunta de Texto Largo (Área de Texto) -->
+ <label for="comentarios">5. Escribe cualquier comentario o sugerencia sobre la esgrima:</label><br>
+ <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+ <!-- Pregunta de Fecha (Selector de Fecha) -->
+ <label for="fecha">6. ¿En qué fecha se celebrarán los próximos Juegos Olímpicos?</label>
+ <input type="date" id="fecha" name="fecha" required>
+ <button type="submit">Enviar</button>
+ </form>
+ <p id="resultado"></p>
+ <!-- SESION 9 -->
+ </section> </div> </main> <section id="game">
+ <canvas id="gameCanvas" width="400" height="400"></canvas>
+ <div id="score">Puntaje: 0</div>
+ <div id="instructions"> <p>Instrucciones:</p> <p>Usa las flechas del teclado para mover al jugador:</p>
+ <p>↑ Arriba, ↓ Abajo, ← Izquierda, → Derecha</p> <p>Presiona la tecla espacio para atacar.</p>
+ </div> </section>
+ <!-- PIE DE PAGINA -->
+ <footer>
+ <p>Deiby Samuel Aristizabal, ANTONIO JOSE URIBE. OCTAVO, 2024</p>
+ </footer>
+ <script>
+ // JAVA SCRIPT DEL CARRUSEL DE IMAGENES
+ let currentIndex = 0;
+ const images = document.querySelectorAll('.carousel img');
+ const totalImages = images.length;
+ function showNextImage() { images[currentIndex].classList.remove('active');
+ currentIndex = (currentIndex + 1) % totalImages; images[currentIndex].classList.add('active'); }
+ setInterval(showNextImage, 3000); // Cambia de imagen cada 3 segundos </script>
+ <script>
+ // VERIFICACION DEL CUESTIONARIO SCRIPT
+ document.getElementById('esgrimaForm').addEventListener('submit', function(event) {
+ event.preventDefault(); // Evita que el formulario se envíe
+ // Obtener las respuestas del formulario
+ const nombre = document.getElementById('nombre').value;
+ const pregunta1 = document.getElementById('pregunta1').value;
+ const pregunta2 = parseInt(document.getElementById('pregunta2').value, 10);
+ const armaSeleccionada = document.querySelector('input[name="arma"]:checked').value;
+ const checkboxes = document.querySelectorAll('input[name="armas"]:checked');
+ const respuestasSeleccionadas = Array.from(checkboxes).map(checkbox => checkbox.value);
+ const comentarios = document.getElementById('comentarios').value;
+const fecha = document.getElementById('fecha').value;
+ const respuestaCorrecta1 = "Atacar al oponente";
+ const respuestaCorrecta2 = 3;
+ const respuestaCorrecta3 = "Sable";
+ const respuestasCorrectas = ["Sable", "Florete", "Espada"];
+ const fechaCorrecta = "2024-07-26";
+ // Variable para almacenar el mensaje de resultado
+ let resultado = `Hola ${nombre}, aquí están tus resultados:<br>`;
+ if (pregunta1 === respuestaCorrecta1) {
+ resultado += "Pregunta 1: Correcto<br>"; } else { resultado += "Pregunta 1: Incorrecto<br>"; }
+ if (pregunta2 === respuestaCorrecta2) {
+ resultado += "Pregunta 2: Correcto<br>"; } else { resultado += "Pregunta 2: Incorrecto<br>"; }
+ if (armaSeleccionada === respuestaCorrecta3) {
+ resultado += "Pregunta 3: Correcto<br>"; } else { resultado += "Pregunta 3: Incorrecto<br>"; }
+ let esCorrecto = respuestasCorrectas.every(respuesta => respuestasSeleccionadas.includes(respuesta))
+&& respuestasSeleccionadas.length === respuestasCorrectas.length;
+ if (esCorrecto) { resultado += "Pregunta 4: Correcto<br>"; } else { resultado += "Pregunta 4:
+Incorrecto<br>"; }
+if (fecha === fechaCorrecta) { resultado += "Pregunta 6: Correcto<br>"; } else {
+ resultado += "Pregunta 6: Incorrecto<br>"; }
+ // Mostrar los resultados en la página
+ document.getElementById('resultado').innerHTML = resultado; }); </script>
+ <script>
+ // JAVASCRIPT PARA EL JUEGO
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Golf</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #4CAF50;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #gameCanvas {
+            border: 2px solid #fff;
+            background-color: #87CEEB;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Golf</h1>
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const hole = { x: 550, y: 350, radius: 20 };
+        const ball = { x: 50, y: 50, radius: 10, dx: 0, dy: 0 };
+
+        function drawHole() {
+            ctx.beginPath();
+            ctx.arc(hole.x, hole.y, hole.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'black';
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function drawBall() {
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'white';
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function update() {
+            ball.x += ball.dx;
+            ball.y += ball.dy;
+
+            // Check for collision with the hole
+            const dx = ball.x - hole.x;
+            const dy = ball.y - hole.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < ball.radius + hole.radius) {
+                alert('¡Has ganado!');
+                ball.x = 50;
+                ball.y = 50;
+                ball.dx = 0;
+                ball.dy = 0;
+            }
+
+            // Draw everything
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawHole();
+            drawBall();
+            requestAnimationFrame(update);
+        }
+
+        canvas.addEventListener('click', (event) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            const dx = x - ball.x;
+            const dy = y - ball.y;
+
+            const angle = Math.atan2(dy, dx);
+            const speed = 5;
+
+            ball.dx = Math.cos(angle) * speed;
+            ball.dy = Math.sin(angle) * speed;
+
+        });
+
+ </script></body></html>
+
+

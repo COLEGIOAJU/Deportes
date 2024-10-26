@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Boxeo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            background-color: #f0f0f0;
+            animation: backgroundAnimation 5s infinite alternate;
+        }
+        @keyframes backgroundAnimation {
+            0% { background-color: #f0f0f0; }
+            100% { background-color: #e0e0e0; }
+        }
+        #game {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            margin: 50px auto;
+            background: url('https://via.placeholder.com/800x500/cccccc/000000?text=Ring+de+Boxeo') no-repeat center center;
+            background-size: cover;
+            border: 5px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .fighter {
+            position: absolute;
+            width: 150px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .fighter img {
+            width: 150px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+        .fighter1 {
+            top: 50px;
+            left: 50px;
+        }
+        .fighter2 {
+            top: 50px;
+            right: 50px;
+        }
+        .health-bar {
+            width: 150px;
+            height: 20px;
+            border: 1px solid #000;
+            margin-bottom: 10px;
+            background-color: #ccc;
+        }
+        .health {
+            height: 100%;
+            background-color: red;
+            transition: width 0.3s ease;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+        #message {
+            font-weight: bold;
+            color: #f00;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <div class="fighter fighter1">
+            <h2>Boxeador 1</h2>
+            <img src="https://via.placeholder.com/150/ff9999/000000?text=Boxeador+1" alt="Boxeador 1">
+            <div class="health-bar">
+                <div id="health1" class="health" style="width: 100%;"></div>
+            </div>
+            <button onclick="attack(1)">Atacar Boxeador 2</button>
+        </div>
+        <div class="fighter fighter2">
+            <h2>Boxeador 2</h2>
+            <img src="https://via.placeholder.com/150/99ccff/000000?text=Boxeador+2" alt="Boxeador 2">
+            <div class="health-bar">
+                <div id="health2" class="health" style="width: 100%;"></div>
+            </div>
+            <button onclick="attack(2)">Atacar Boxeador 1</button>
+        </div>
+        <p id="message"></p>
+    </div>
+    <script>
+        const maxHealth = 100;
+        let health1 = maxHealth;
+        let health2 = maxHealth;
+
+        const healthBar1 = document.getElementById('health1');
+        const healthBar2 = document.getElementById('health2');
+        const messageElement = document.getElementById('message');
+
+        function attack(attacker) {
+            if (health1 <= 0 || health2 <= 0) {
+                return;
+            }
+
+            let damage;
+            if (attacker === 1) {
+                damage = Math.floor(Math.random() * 20) + 10;
+                health2 -= damage;
+                healthBar2.style.width = `${Math.max(health2, 0)}%`;
+            } else {
+                damage = Math.floor(Math.random() * 20) + 10;
+                health1 -= damage;
+                healthBar1.style.width = `${Math.max(health1, 0)}%`;
+            }
+
+            checkWinner();
+            messageElement.textContent = `Boxeador ${attacker} ataca y causa ${damage} de daño.`;
+        }
+
+        function checkWinner() {
+            if (health1 <= 0) {
+                messageElement.textContent = '¡Boxeador 2 gana!';
+                disableButtons();
+            } else if (health2 <= 0) {
+                messageElement.textContent = '¡Boxeador 1 gana!';
+                disableButtons();
+            }
+        }
+
+        function disableButtons() {
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => button.disabled = true);
+        }
+    </script>
+</body>
+</html>

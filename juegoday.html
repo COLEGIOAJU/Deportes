@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Halterofilia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        #container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .audience {
+            margin: 30px;
+            font-size: 2em;
+            color: #007BFF;
+        }
+        .player-area {
+            text-align: center;
+            margin: 0 20px;
+        }
+        #weight {
+            font-size: 2em;
+            margin: 20px;
+        }
+        #liftButton {
+            padding: 10px 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+        #playerTurn {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        #scoreBoard {
+            margin-top: 20px;
+        }
+        .weightlifter {
+            font-size: 5em; /* Tamaño de la personita */
+            transition: transform 0.5s; /* Animación de movimiento */
+            display: inline-block;
+        }
+        .lifting {
+            transform: translateY(-50px); /* Levanta la personita */
+        }
+        .barbell {
+            font-size: 1.5em; /* Tamaño de la pesa */
+            margin-top: -30px; /* Ajusta la posición de la pesa */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Juego de Halterofilia</h1>
+    <p>Compite levantando el peso en turnos.</p>
+    
+    <div id="container">
+        <div class="audience" id="audienceLeft">
+            <h2>Audiencia Jugador 1</h2>
+            <div>👤</div>
+            <div>👤</div>
+            <div>👤</div>
+        </div>
+
+        <div class="player-area">
+            <h2 id="currentPlayer">Turno de: Jugador 1</h2>
+            <div class="weightlifter" id="weightLifter">🏋️‍♂️<span class="barbell">💪</span></div> <!-- Personita levantando pesas -->
+            <div id="weight">Peso: <span id="weightValue">50</span> kg</div>
+            <button id="liftButton">Levantar</button>
+            <div id="result"></div>
+            <div id="scoreBoard">
+                <h2>Puntuaciones</h2>
+                <p>Jugador 1: <span id="score1">0</span></p>
+                <p>Jugador 2: <span id="score2">0</span></p>
+            </div>
+        </div>
+
+        <div class="audience" id="audienceRight">
+            <h2>Audiencia Jugador 2</h2>
+            <div>👤</div>
+            <div>👤</div>
+            <div>👤</div>
+        </div>
+    </div>
+
+    <script>
+        const liftButton = document.getElementById('liftButton');
+        const weightValue = document.getElementById('weightValue');
+        const result = document.getElementById('result');
+        const currentPlayer = document.getElementById('currentPlayer');
+        const score1 = document.getElementById('score1');
+        const score2 = document.getElementById('score2');
+        const weightLifter = document.getElementById('weightLifter');
+
+        const players = ['Jugador 1', 'Jugador 2'];
+        const audienceMessages = [
+            "¡Vamos, Jugador 1! ¡Tú puedes!",
+            "¡Vamos, Jugador 2! ¡Eres el mejor!"
+        ];
+        
+        let currentPlayerIndex = 0;
+        let weight = 50;
+        let scores = [0, 0];
+
+        liftButton.addEventListener('click', () => {
+            weightLifter.classList.add('lifting'); // Agrega la clase de levantamiento
+
+            const success = Math.random() > 0.3; // 70% de éxito
+            const playerName = players[currentPlayerIndex];
+            
+            setTimeout(() => { // Espera para simular el levantamiento
+                weightLifter.classList.remove('lifting'); // Elimina la clase después del levantamiento
+
+                if (success) {
+                    result.textContent = `${playerName} ¡Levantaste ${weight} kg!`;
+                    scores[currentPlayerIndex]++; // Incrementa la puntuación del jugador
+                    weight += 5; // Aumenta el peso
+                    weightValue.textContent = weight;
+                } else {
+                    result.textContent = `${playerName}, no lograste levantar ${weight} kg. ¡Inténtalo de nuevo!`;
+                }
+
+                // Actualiza la puntuación en la interfaz
+                score1.textContent = scores[0];
+                score2.textContent = scores[1];
+
+                // Cambia al siguiente jugador
+                currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
+                currentPlayer.textContent = `Turno de: ${players[currentPlayerIndex]}`;
+
+                // Cambia el mensaje de la audiencia
+                document.getElementById('audienceLeft').innerHTML = `
+                    <h2>Audiencia Jugador 1</h2>
+                    <div>👤</div>
+                    <div>👤</div>
+                    <div>👤</div>
+                    <p>${audienceMessages[0]}</p>
+                `;
+                document.getElementById('audienceRight').innerHTML = `
+                    <h2>Audiencia Jugador 2</h2>
+                    <div>👤</div>
+                    <div>👤</div>
+                    <div>👤</div>
+                    <p>${audienceMessages[1]}</p>
+                `;
+            }, 500); // Tiempo de la animación
+        });
+    </script>
+
+</body>
+</html>

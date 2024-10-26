@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Balonmano</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        #campo {
+            width: 600px;
+            height: 400px;
+            border: 2px solid #333;
+            margin: 20px auto;
+            position: relative;
+            background-color: #fff;
+        }
+        .jugador, .rival, .balon {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+        }
+        .jugador {
+            background-color: blue;
+            bottom: 10px; /* Posición del jugador azul */
+            left: calc(50% - 15px); /* Centro del campo */
+        }
+        .rival {
+            background-color: red;
+            top: 10px; /* Posición del rival rojo */
+            left: calc(50% - 15px); /* Centro del campo */
+        }
+        .balon {
+            background-color: yellow;
+            border-radius: 50%;
+            top: 180px; /* Posición inicial del balón */
+            left: calc(50% - 15px); /* Centro del campo */
+        }
+        .gol {
+            background-color: green;
+            width: 50px;
+            height: 20px;
+            position: absolute;
+            top: 0;
+            left: calc(50% - 25px);
+        }
+        #info {
+            margin-top: 20px;
+        }
+        #instrucciones {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Balonmano</h1>
+    <div id="instrucciones">
+        <p>Instrucciones:</p>
+        <p>Usa las teclas <strong>izquierda</strong> y <strong>derecha</strong> para mover tu jugador (azul).</p>
+        <p>Presiona <strong>espacio</strong> para intentar anotar un gol.</p>
+        <p>El rival (rojo) usa las teclas <strong>A</strong> (izquierda), <strong>D</strong> (derecha) para moverse.</p>
+    </div>
+    <div id="campo">
+        <div class="gol"></div>
+        <div id="jugador" class="jugador"></div>
+        <div id="rival" class="rival"></div>
+        <div id="balon" class="balon"></div>
+    </div>
+    <div id="info">
+        <h2>Puntos: <span id="puntos">0</span></h2>
+        <h2>Vidas: <span id="vidas">3</span></h2>
+    </div>
+
+    <script>
+        let puntos = 0;
+        const jugador = document.getElementById("jugador");
+        const rival = document.getElementById("rival");
+        const gol = document.querySelector(".gol");
+        const balon = document.getElementById("balon");
+        const campo = document.getElementById("campo");
+
+        // Mover la pelota aleatoriamente
+        function moverBalon() {
+            const x = Math.random() * (campo.clientWidth - 30);
+            const y = Math.random() * (campo.clientHeight - 30);
+            balon.style.left = x + "px";
+            balon.style.top = y + "px";
+        }
+
+        // Control del jugador
+        document.addEventListener("keydown", function(event) {
+            const jugadorRect = jugador.getBoundingClientRect();
+            if (event.key === "ArrowLeft" && jugadorRect.left > campo.getBoundingClientRect().left) {
+                jugador.style.left = jugador.offsetLeft - 10 + "px";
+            } else if (event.key === "ArrowRight" && jugadorRect.right < campo.getBoundingClientRect().right) {
+                jugador.style.left = jugador.offsetLeft + 10 + "px";
+            } else if (event.key === " ") { // Espacio para intentar anotar
+                intentarAnotar();
+            }
+        });
+
+        // Control del rival
+        document.addEventListener("keydown", function(event) {
+            const rivalRect = rival.getBoundingClientRect();
+            if (event.key === "A" && rivalRect.left > campo.getBoundingClientRect().left) {
+                rival.style.left = rival.offsetLeft - 10 + "px"; // Mover a la izquierda
+            } else if (event.key === "D" && rivalRect.right < campo.getBoundingClientRect().right) {
+                rival.style.left = rival.offsetLeft + 10 + "px"; // Mover a la derecha
+            }
+        });
+
+        function intentarAnotar() {
+            const jugadorRect = jugador.getBoundingClientRect();
+            const golRect = gol.getBoundingClientRect();
+            const rivalRect = rival.getBoundingClientRect();
+            const balonRect = balon.getBoundingClientRect();
+
+            // Verificar si anotas o si el rival te detiene
+            if (jugadorRect.x < golRect.x + golRect.width && jugadorRect.x + jugadorRect.width > golRect.x) {
+                if (!(jugadorRect.x < rivalRect.x + rivalRect.width && jugadorRect.x + jugadorRect.width > rivalRect.x)) {
+                    puntos += 1;
+                    document.getElementById("puntos").textContent = puntos;
+                    alert("¡Gol! Has anotado un punto.");
+                } else {
+                    alert("¡El rival te ha detenido!");
+                }
+            } else {
+                alert("Eres un malo de mierda.");
+            }
+        }
+
+        // Mover la pelota cada 3 segundos
+        setInterval(moverBalon, 2000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Triatlón Olímpico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e0f7fa;
+            padding: 20px;
+        }
+        #game {
+            display: none;
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            border: 2px solid #00796b;
+            overflow: hidden;
+        }
+        #stickman {
+            width: 30px;
+            height: 50px;
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            transition: left 0.2s;
+        }
+        #finishLine {
+            position: absolute;
+            left: 570px;
+            width: 10px;
+            height: 100%;
+            background-color: red;
+        }
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #timer, #score {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .swimming {
+            animation: swim 1s linear infinite;
+        }
+        .cycling {
+            animation: cycle 1s linear infinite;
+        }
+        .running {
+            animation: run 1s linear infinite;
+        }
+        @keyframes swim {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes cycle {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes run {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(5px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Triatlón Olímpico</h1>
+    <div id="characterSelection">
+        <h2>Elige tu personaje:</h2>
+        <div class="character" data-speed="2">
+            <div style="width:30px;height:50px;background-color:#00796b;"></div>
+            <p>Atleta Rápido (Velocidad +2)</p>
+        </div>
+        <div class="character" data-speed="1">
+            <div style="width:30px;height:50px;background-color:#2196f3;"></div>
+            <p>Atleta Equilibrado (Velocidad +1)</p>
+        </div>
+        <div class="character" data-speed="3">
+            <div style="width:30px;height:50px;background-color:#ffeb3b;"></div>
+            <p>Atleta Fuerte (Velocidad +3)</p>
+        </div>
+    </div>
+    <button id="startButton" style="display:none;">Iniciar Juego</button>
+
+    <div id="game">
+        <h2 id="stage">Etapa: Natación</h2>
+        <div id="timer">Tiempo: <span id="timeLeft">10</span> segundos</div>
+        <div id="score">Puntuación: <span id="scoreValue">0</span></div>
+        <div id="stickman"></div>
+        <div id="finishLine"></div>
+        <button id="actionButton">Nadar</button>
+    </div>
+
+    <div id="result" class="hidden"></div>
+
+    <script>
+        const stages = ['Natación', 'Ciclismo', 'Carrera'];
+        let currentStage = 0;
+        let score = 0;
+        let timeLeft;
+        let interval;
+        let playerSpeed = 1;
+
+        document.querySelectorAll('.character').forEach(character => {
+            character.addEventListener('click', function() {
+                playerSpeed = parseInt(this.getAttribute('data-speed'));
+                document.getElementById('startButton').style.display = 'block';
+                document.getElementById('characterSelection').style.display = 'none';
+            });
+        });
+
+        document.getElementById('startButton').addEventListener('click', startGame);
+        document.getElementById('actionButton').addEventListener('click', completeStage);
+
+        function startGame() {
+            currentStage = 0;
+            score = 0;
+            document.getElementById('startButton').style.display = 'none';
+            document.getElementById('game').style.display = 'block';
+            document.getElementById('result').classList.add('hidden');
+            updateStage();
+            startTimer();
+        }
+
+        function updateStage() {
+            document.getElementById('stage').textContent = `Etapa: ${stages[currentStage]}`;
+            timeLeft = 10;
+            document.getElementById('timeLeft').textContent = timeLeft;
+            document.getElementById('scoreValue').textContent = score;
+
+            const stickman = document.getElementById('stickman');
+            stickman.className = ''; // Reinicia las clases de animación
+            if (currentStage === 0) {
+                stickman.classList.add('swimming');
+                document.getElementById('actionButton').textContent = 'Nadar';
+            } else if (currentStage === 1) {
+                stickman.classList.add('cycling');
+                document.getElementById('actionButton').textContent = 'Montar Bicicleta';
+            } else if (currentStage === 2) {
+                stickman.classList.add('running');
+                document.getElementById('actionButton').textContent = 'Correr';
+            }
+        }
+
+        function startTimer() {
+            interval = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timeLeft').textContent = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    alert('¡Tiempo agotado! Has perdido.');
+                    endGame();
+                }
+            }, 1000);
+        }
+
+        function completeStage() {
+            clearInterval(interval);
+            score += (timeLeft > 0 ? timeLeft * 10 : 0);
+            currentStage++;
+
+            if (currentStage < stages.length) {
+                updateStage();
+                startTimer();
+            } else {
+                endGame();
+            }
+        }
+
+        function endGame() {
+            clearInterval(interval);
+            document.getElementById('game').style.display = 'none';
+            document.getElementById('result').textContent = `¡Has completado el triatlón olímpico! Tu puntuación final es: ${score}`;
+            document.getElementById('result').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
+
+

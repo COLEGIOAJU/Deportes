@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Taekwondo Geométrico 3D</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+            color: white;
+        }
+        #instructions {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="score">Jugador 1: 0 - Jugador 2: 0</div>
+    <div id="instructions">Instrucciones: W/A/S/D para mover, Espacio para golpear</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        let scene, camera, renderer, controls;
+        let fighter1, fighter2;
+        let score1 = 0, score2 = 0;
+        let keys = {};
+
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.25;
+            controls.enableZoom = true;
+
+            // Plataforma
+            const platformGeometry = new THREE.PlaneGeometry(20, 20);
+            const platformMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+            const platform = new THREE.Mesh(platformGeometry, platformMaterial);
+            platform.rotation.x = -Math.PI / 2;
+            scene.add(platform);
+
+            // Luchador 1
+            fighter1 = createFighter(0xff0000);
+            fighter1.position.set(-5, 1, 0);
+            scene.add(fighter1);
+
+            // Luchador 2
+            fighter2 = createFighter(0x0000ff);
+            fighter2.position.set(5, 1, 0);
+            scene.add(fighter2);
+
+            camera.position.z = 30;
+            camera.position.y = 10;
+            camera.lookAt(0, 0, 0);
+
+            animate();
+        }
+
+        function createFighter(color) {
+            const fighter = new THREE.Group();
+
+            const headGeometry = new THREE.SphereGeometry(1);
+            const headMaterial = new THREE.MeshBasicMaterial({ color: color });
+            const head = new THREE.Mesh(headGeometry, headMaterial);
+            head.position.y = 5;
+            fighter.add(head);
+
+            const neckGeometry = new THREE.CylinderGeometry(0.5, 0.5, 2);
+            const neck = new THREE.Mesh(neckGeometry, headMaterial);
+            neck.position.y = 3.5;
+            fighter.add(neck);
+
+            const torsoGeometry = new THREE.BoxGeometry(3, 5, 1);
+            const torso = new THREE.Mesh(torsoGeometry, headMaterial);
+            torso.position.y = 1;
+            fighter.add(torso);
+
+            const armGeometry = new THREE.CylinderGeometry(0.5, 0.5, 4);
+            const leftArm = new THREE.Mesh(armGeometry, headMaterial);
+            leftArm.position.set(-2.5, 2, 0);
+            leftArm.rotation.z = Math.PI / 2;
+            fighter.add(leftArm);
+
+            const rightArm = new THREE.Mesh(armGeometry, headMaterial);
+            rightArm.position.set(2.5, 2, 0);
+            rightArm.rotation.z = Math.PI / 2;
+            fighter.add(rightArm);
+
+            return fighter;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            moveFighters();
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        function moveFighters() {
+            if (keys['KeyW']) fighter1.position.z -= 0.1;
+            if (keys['KeyS']) fighter1.position.z += 0.1;
+            if (keys['KeyA']) fighter1.position.x -= 0.1;
+            if (keys['KeyD']) fighter1.position.x += 0.1;
+
+            // Movimiento del enemigo (luchador 2)
+            fighter2.position.x += (Math.random() - 0.5) * 0.1;
+            fighter2.position.z += (Math.random() - 0.5) * 0.1;
+
+            // Simulación de ataque del enemigo
+            if (Math.random() < 0.01) {
+                score2 += 1;
+                document.getElementById('score').innerText = `Jugador 1: ${score1} - Jugador 2: ${score2}`;
+                if (score1 >= 10 || score2 >= 10) {
+                    alert('¡Juego terminado!');
+                    score1 = 0;
+                    score2 = 0;
+                }
+            }
+        }
+
+        document.addEventListener('keydown', (event) => {
+            keys[event.code] = true;
+            if (event.code === 'Space') {
+                score1 += 1; // Simulación de golpe
+                document.getElementById('score').innerText = `Jugador 1: ${score1} - Jugador 2: ${score2}`;
+                if (score1 >= 10 || score2 >= 10) {
+                    alert('¡Juego terminado!');
+                    score1 = 0;
+                    score2 = 0;
+                }
+            }
+        });
+
+        document.addEventListener('keyup', (event) => {
+            keys[event.code] = false;
+        });
+
+        init();
+    </script>
+</body>
+</html>

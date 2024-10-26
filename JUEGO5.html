@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Esgrima</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #game {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: white;
+            border: 2px solid #333;
+            overflow: hidden;
+        }
+        .player, .opponent {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: blue;
+            border-radius: 20px;
+            transition: left 0.1s, top 0.1s; /* Animación suave para el movimiento */
+        }
+        .opponent {
+            background-color: red;
+        }
+        .referee {
+            position: absolute;
+            top: 10px;
+            left: 150px;
+            font-size: 20px;
+            color: green;
+        }
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+        }
+        .hit {
+            animation: shake 0.3s; /* Animación para el golpe */
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+        .defend {
+            background-color: lightblue; /* Cambia el color al defender */
+        }
+    </style>
+</head>
+<body>
+
+<div id="game">
+    <div id="score">Puntos: 0</div>
+    <div class="referee">¡Listos!</div>
+    <div class="player" style="left: 180px; top: 360px;"></div>
+    <div class="opponent" style="left: 180px; top: 0;"></div>
+</div>
+
+<script>
+    let score = 0;
+    const player = document.querySelector('.player');
+    const opponent = document.querySelector('.opponent');
+    const scoreDisplay = document.getElementById('score');
+    const referee = document.querySelector('.referee');
+    let attackInterval;
+    let isDefending = false;
+
+    function moveOpponent() {
+        const playerRect = player.getBoundingClientRect();
+        const opponentRect = opponent.getBoundingClientRect();
+
+        // Mueve el oponente hacia el jugador
+        if (opponentRect.top < playerRect.top) {
+            opponent.style.top = opponentRect.top + 10 + 'px'; // Movimiento hacia abajo
+        } else if (opponentRect.top > playerRect.top) {
+            opponent.style.top = opponentRect.top - 10 + 'px'; // Movimiento hacia arriba
+        }
+
+        if (opponentRect.left < playerRect.left) {
+            opponent.style.left = opponentRect.left + 10 + 'px'; // Movimiento hacia la derecha
+        } else if (opponentRect.left > playerRect.left) {
+            opponent.style.left = opponentRect.left - 10 + 'px'; // Movimiento hacia la izquierda
+        }
+
+        // Verifica si el oponente ha golpeado al jugador
+        detectCollision();
+    }
+
+    function detectCollision() {
+        const playerRect = player.getBoundingClientRect();
+        const opponentRect = opponent.getBoundingClientRect();
+
+        if (playerRect.left < opponentRect.right &&
+            playerRect.right > opponentRect.left &&
+            playerRect.top < opponentRect.bottom &&
+            playerRect.bottom > opponentRect.top) {
+            if (!isDefending) {
+                referee.textContent = '¡Golpeado! Fin del juego.';
+                resetGame();
+            }
+        }
+    }
+
+    function playerHit() {
+        opponent.classList.add('hit'); // Añade la clase de golpe al oponente
+        setTimeout(() => opponent.classList.remove('hit'), 300); // Remueve la clase después de la animación
+        score++;
+        scoreDisplay.textContent = 'Puntos: ' + score;
+        referee.textContent = '¡Golpe exitoso!';
+    }
+
+    function resetGame() {
+        clearInterval(attackInterval);
+        score = 0;
+        scoreDisplay.textContent = 'Puntos: 0';
+        referee.textContent = '¡Listos!';
+        player.style.left = '180px';
+        player.style.top = '360px';
+        opponent.style.left = '180px';
+        opponent.style.top = '0';
+        moveOpponent();
+        startAttacking();
+        isDefending = false; // Restablece el estado de defensa
+        player.classList.remove('defend'); // Quita la clase de defensa
+    }
+
+    function startAttacking() {
+        attackInterval = setInterval(moveOpponent, 500); // Oponente ataca cada 500 ms
+    }
+
+    document.addEventListener('keydown', (event) => {
+        const playerRect = player.getBoundingClientRect();
+        if (event.key === 'ArrowLeft' && playerRect.left > 0) {
+            player.style.left = playerRect.left - 20 + 'px';
+        } else if (event.key === 'ArrowRight' && playerRect.right < 400) {
+            player.style.left = playerRect.left + 20 + 'px';
+        } else if (event.key === 'ArrowUp' && playerRect.top > 0) {
+            // Mover hacia arriba para atacar
+            player.style.top = Math.max(0, playerRect.top - 60) + 'px'; // Aumenta el salto
+        } else if (event.key === 'a') {
+            // Ataque del jugador
+            const opponentRect = opponent.getBoundingClientRect();
+            if (Math.abs(playerRect.left - opponentRect.left) < 50 && 
+                Math.abs(playerRect.top - opponentRect.top) < 50) {
+                playerHit(); // Llama a la función de golpe
+            }
+        } else if (event.key === 'd') { // Tecla para defender
+            isDefending = true;
+            player.classList.add('defend'); // Añade la clase de defensa
+            referee.textContent = 'Defendiendo...';
+            setTimeout(() => {
+                isDefending = false;
+                player.classList.remove('defend'); // Quita la clase de defensa después de 1 segundo
+                referee.textContent = '¡Listos!';
+            }, 1000);
+        }
+    });
+
+    resetGame();
+</script>
+
+</body>
+</html>

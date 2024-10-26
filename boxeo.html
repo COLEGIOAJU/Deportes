@@ -1,0 +1,332 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Boxeo Olímpico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #ff4b5c, #007bff);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            transition: transform 0.3s;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
+        #historia { background: #ffebee; border: 2px solid #dc3545; }
+        #reglas { background: #e3f2fd; border: 2px solid #007bff; }
+        #programacion { background: #e8f5e9; border: 2px solid #28a745; }
+        #medallero { background: #fff3e6; border: 2px solid #dc3545; }
+        #video { background: #f3e5f5; border: 2px solid #6f42c1; }
+        #minijuego { background: #fff5e6; border: 2px solid #dc3545; }
+        h2 { color: #343a40; font-size: 2em; margin-bottom: 10px; }
+        p { color: #495057; line-height: 1.6; font-size: 1.1em; }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: block;
+            width: 100%;
+        }
+        button:hover { background-color: #0056b3; transform: translateY(-2px); }
+        .respuesta { margin-top: 10px; background: rgba(255, 255, 255, 0.8); padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+        .resultado-juego { margin-top: 10px; font-weight: bold; font-size: 1.1em; }
+        .opcion { margin: 5px 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #dee2e6; padding: 10px; text-align: center; }
+        th { background-color: #dc3545; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        iframe { display: block; margin: 0 auto; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); }
+        #contador { font-size: 1.2em; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Página de Boxeo Olímpico</h1>
+    <button onclick="scrollToTop()">Regresar al inicio</button>
+</header>
+
+<section id="historia">
+    <h2>Historia del Boxeo Olímpico</h2>
+    <p>El boxeo se incluyó en los Juegos Olímpicos modernos desde la primera edición en 1896 en Atenas. Desde entonces, ha evolucionado y se ha consolidado como uno de los deportes más populares y emocionantes en el programa olímpico. A lo largo de los años, el boxeo ha sido testigo de numerosas leyendas que han dejado su huella, como Cassius Clay (Muhammad Ali) y el cubano Teófilo Stevenson, quien ganó tres medallas de oro consecutivas entre 1972 y 1980.</p>
+    <p>El boxeo olímpico se ha enfrentado a desafíos y cambios a lo largo del tiempo, incluyendo la introducción de nuevas categorías de peso y la modificación de reglas para mejorar la seguridad de los boxeadores. Este deporte no solo promueve la competencia, sino que también enseña disciplina, respeto y trabajo en equipo entre los atletas.</p>
+    <p>Con el paso del tiempo, el boxeo ha crecido en popularidad a nivel mundial, convirtiéndose en un espectáculo televisivo que atrae a millones de espectadores. Las peleas de boxeo olímpico se transmiten en todo el mundo, mostrando no solo la destreza de los competidores, sino también la pasión que este deporte despierta entre los aficionados.</p>
+    <p>El boxeo, como disciplina deportiva, no solo es un combate físico, sino también un arte. Los boxeadores entrenan arduamente para perfeccionar sus habilidades técnicas y desarrollar una estrategia de combate eficaz. La preparación física incluye ejercicios de resistencia, velocidad y fuerza, así como entrenamiento específico en técnicas de golpeo y defensa.</p>
+    <p>La historia del boxeo olímpico está llena de momentos memorables. Desde el primer combate olímpico en 1904, donde el estadounidense John C. Heisman ganó la medalla de oro, hasta los combates electrizantes de los últimos Juegos Olímpicos, el boxeo ha sido un deporte que une a países y culturas, fomentando el espíritu de competencia y respeto mutuo.</p>
+</section>
+
+<section id="reglas">
+    <h2>Reglas del Boxeo Olímpico</h2>
+    <p>El boxeo olímpico tiene reglas específicas que lo diferencian del boxeo profesional. Los combates son más cortos, típicamente de tres asaltos de tres minutos. Durante cada asalto, los boxeadores deben utilizar técnicas de golpeo y defensa, y se puntúan según la cantidad y calidad de los golpes efectivos.</p>
+    <p>Los boxeadores deben usar cascos de protección y guantes específicos que son más livianos que los utilizados en el boxeo profesional. Las puntuaciones son otorgadas por jueces, quienes evalúan el desempeño de los boxeadores en función de su agresividad, defensa y precisión en los golpes.</p>
+    <p>Las categorías de peso están diseñadas para asegurar una competencia justa, y los boxeadores son clasificados en diferentes grupos según su peso corporal. Además, el boxeo olímpico también ha visto la introducción de la tecnología de puntuación electrónica para mejorar la precisión en las evaluaciones de los jueces.</p>
+    <p>Entre las categorías de peso, encontramos pesos como el ligero, welter, medio y pesado. Cada categoría tiene límites específicos de peso que los boxeadores deben cumplir para poder competir. Además, los boxeadores deben someterse a pesajes oficiales antes de los combates para asegurarse de que cumplen con los requisitos de su categoría.</p>
+    <p>Los boxeadores reciben puntos por los golpes efectivos que conectan a su oponente en áreas específicas del cuerpo, como la cabeza y la parte superior del torso. Los golpes que son bloqueados o que no conectan no se cuentan. Esto hace que la técnica y la precisión sean aspectos clave en el boxeo olímpico.</p>
+    <p>Los combates son supervisados por un árbitro que se asegura de que las reglas sean seguidas. El árbitro puede detener el combate si considera que un boxeador está en peligro o no está en condiciones de continuar. La seguridad de los atletas es primordial, y por ello se han implementado numerosas medidas para proteger a los boxeadores durante las competiciones.</p>
+</section>
+
+<section id="programacion">
+    <h2>Programación de Combates Olímpicos</h2>
+    <p>La programación de combates olímpicos se lleva a cabo durante los Juegos Olímpicos, que ocurren cada cuatro años. Cada edición de los Juegos presenta un escenario internacional donde boxeadores de todo el mundo compiten en diferentes categorías de peso.</p>
+    <p>La próxima edición de los Juegos Olímpicos se celebrará en París en 2024, y se espera que el boxeo sea uno de los eventos más destacados del programa. Los combates se desarrollan en diferentes etapas, comenzando con rondas eliminatorias, seguidas por cuartos de final, semifinales y, finalmente, las finales.</p>
+    <p>Durante los Juegos, los boxeadores deben seguir un estricto calendario de competición. El Comité Olímpico Internacional (COI) y las federaciones internacionales de boxeo trabajan juntos para garantizar que la programación se desarrolle sin problemas. Esto incluye la organización de pesajes, el establecimiento de horarios de combate y la gestión de la logística necesaria para los eventos.</p>
+    <p>Los boxeadores que se clasifican para los Juegos Olímpicos pasan por un proceso riguroso que incluye competiciones regionales y mundiales. Cada continente tiene sus propios campeonatos clasificatorios, donde los mejores boxeadores obtienen su lugar en los Juegos Olímpicos. Este sistema asegura que solo los mejores atletas representen a sus países en la arena olímpica.</p>
+    <p>Además, la clasificación se realiza con un enfoque en el desarrollo del deporte a nivel global. Se busca que países de diferentes niveles de desarrollo puedan tener representación en los Juegos, promoviendo así el boxeo en todo el mundo.</p>
+</section>
+
+<section id="medallero">
+    <h2>Medallero Histórico del Boxeo Olímpico</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Posición</th>
+                <th>País</th>
+                <th>Oros</th>
+                <th>Platas</th>
+                <th>Bronces</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Cuba</td>
+                <td>37</td>
+                <td>31</td>
+                <td>20</td>
+                <td>88</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Estados Unidos</td>
+                <td>51</td>
+                <td>36</td>
+                <td>36</td>
+                <td>123</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Rusia</td>
+                <td>37</td>
+                <td>29</td>
+                <td>32</td>
+                <td>98</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Gran Bretaña</td>
+                <td>5</td>
+                <td>7</td>
+                <td>5</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Italia</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Francia</td>
+                <td>4</td>
+                <td>6</td>
+                <td>4</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Uzbekistán</td>
+                <td>4</td>
+                <td>3</td>
+                <td>5</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Polonia</td>
+                <td>4</td>
+                <td>5</td>
+                <td>3</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Jamaica</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Australia</td>
+                <td>4</td>
+                <td>3</td>
+                <td>3</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Argentina</td>
+                <td>2</td>
+                <td>3</td>
+                <td>5</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Canadá</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Corea del Sur</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Sudáfrica</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Filipinas</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="video">
+    <h2>Video Destacado</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/S9Ew0Z3Vz2k" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<section id="minijuego">
+    <h2>Minijuego: ¿Cuánto sabes de Boxeo Olímpico?</h2>
+    <div class="pregunta" id="pregunta"></div>
+    <div id="opciones"></div>
+    <button onclick="siguientePregunta()">Siguiente</button>
+    <div class="resultado-juego" id="resultado"></div>
+    <div class="respuesta" id="contador">Puntaje: <span id="puntaje">0</span></div>
+</section>
+
+<script>
+    const preguntas = [
+        { pregunta: "¿En qué año se incluyó el boxeo en los Juegos Olímpicos?", opciones: ["1896", "1900", "1924", "1936"], respuestaCorrecta: 0 },
+        { pregunta: "¿Cuál es el peso máximo para la categoría de peso pesado en boxeo olímpico?", opciones: ["75 kg", "81 kg", "91 kg", "95 kg"], respuestaCorrecta: 2 },
+        { pregunta: "¿Quién es el boxeador con más medallas de oro olímpicas?", opciones: ["Muhammad Ali", "Teófilo Stevenson", "Joe Frazier", "Sugar Ray Leonard"], respuestaCorrecta: 1 },
+        { pregunta: "¿Cuántos asaltos se disputan en un combate de boxeo olímpico?", opciones: ["2", "3", "4", "5"], respuestaCorrecta: 1 },
+        { pregunta: "¿Qué país ha ganado más medallas de oro en boxeo olímpico?", opciones: ["Cuba", "Estados Unidos", "Rusia", "China"], respuestaCorrecta: 0 },
+        { pregunta: "¿En qué ciudad se celebraron los primeros Juegos Olímpicos modernos?", opciones: ["Londres", "Atenas", "París", "Roma"], respuestaCorrecta: 1 },
+        { pregunta: "¿Qué equipo de protección usan los boxeadores en los Juegos Olímpicos?", opciones: ["Guantes", "Cascos", "Protectores bucales", "Todo lo anterior"], respuestaCorrecta: 3 },
+        { pregunta: "¿En qué año se celebraron los Juegos Olímpicos en Barcelona?", opciones: ["1992", "1988", "1996", "2000"], respuestaCorrecta: 0 },
+        { pregunta: "¿Cuál es la edad mínima para competir en boxeo olímpico?", opciones: ["16 años", "18 años", "20 años", "21 años"], respuestaCorrecta: 1 },
+        { pregunta: "¿Quién ganó la medalla de oro en los Juegos Olímpicos de Londres 2012 en la categoría de peso ligero?", opciones: ["Vasiliy Lomachenko", "Luke Campbell", "Robby McKenzie", "Javier Mendez"], respuestaCorrecta: 0 },
+        { pregunta: "¿Cuántas categorías de peso existen en boxeo olímpico?", opciones: ["8", "10", "12", "14"], respuestaCorrecta: 1 },
+        { pregunta: "¿Qué evento se considera el 'boxeo de aficionados'?", opciones: ["Golden Gloves", "Juegos Olímpicos", "Campeonato Mundial", "Todos los anteriores"], respuestaCorrecta: 1 },
+        { pregunta: "¿Qué país ha sido sede de los Juegos Olímpicos más veces?", opciones: ["Estados Unidos", "Grecia", "Reino Unido", "Francia"], respuestaCorrecta: 0 },
+        { pregunta: "¿Quién fue el primer boxeador en ganar una medalla de oro olímpica representando a los Estados Unidos?", opciones: ["George Foreman", "Oscar De La Hoya", "Floyd Mayweather Jr.", "Muhammad Ali"], respuestaCorrecta: 3 },
+        { pregunta: "¿Qué boxeador ganó la medalla de oro en la categoría de peso mediano en los Juegos Olímpicos de 1984?", opciones: ["Sugar Ray Leonard", "Marvin Hagler", "Michael Spinks", "Frank Tate"], respuestaCorrecta: 3 },
+        { pregunta: "¿Quién es el boxeador que más veces ha competido en los Juegos Olímpicos?", opciones: ["Teófilo Stevenson", "Floyd Mayweather Jr.", "Juan Carlos Lemus", "Harry Sykes"], respuestaCorrecta: 0 },
+        { pregunta: "¿Cuál es el objetivo principal de un combate de boxeo?", opciones: ["Noquear al oponente", "Ganar puntos", "Defenderse", "Todos los anteriores"], respuestaCorrecta: 3 },
+        { pregunta: "¿Cuál es el tiempo de descanso entre asaltos en el boxeo olímpico?", opciones: ["1 minuto", "30 segundos", "2 minutos", "3 minutos"], respuestaCorrecta: 0 },
+        { pregunta: "¿Qué organización regula el boxeo olímpico a nivel internacional?", opciones: ["IBF", "WBA", "AIBA", "WBC"], respuestaCorrecta: 2 },
+        { pregunta: "¿Cuántas medallas de oro ha ganado Cuba en boxeo olímpico?", opciones: ["10", "20", "30", "37"], respuestaCorrecta: 3 }
+    ];
+
+    let preguntaActual = 0;
+    let puntaje = 0;
+
+    function mostrarPregunta() {
+        const pregunta = preguntas[preguntaActual];
+        document.getElementById("pregunta").innerText = pregunta.pregunta;
+        const opcionesContainer = document.getElementById("opciones");
+        opcionesContainer.innerHTML = '';
+        pregunta.opciones.forEach((opcion, index) => {
+            const boton = document.createElement("button");
+            boton.innerText = opcion;
+            boton.onclick = () => verificarRespuesta(index);
+            boton.className = "opcion";
+            opcionesContainer.appendChild(boton);
+        });
+    }
+
+    function verificarRespuesta(index) {
+        const pregunta = preguntas[preguntaActual];
+        if (index === pregunta.respuestaCorrecta) {
+            puntaje++;
+            document.getElementById("resultado").innerText = "¡Correcto!";
+        } else {
+            document.getElementById("resultado").innerText = `Incorrecto. La respuesta correcta era: ${pregunta.opciones[pregunta.respuestaCorrecta]}`;
+        }
+        document.getElementById("puntaje").innerText = puntaje;
+    }
+
+    function siguientePregunta() {
+        preguntaActual++;
+        if (preguntaActual < preguntas.length) {
+            mostrarPregunta();
+        } else {
+            document.getElementById("resultado").innerText = `Juego terminado. Tu puntaje final es: ${puntaje}`;
+            document.getElementById("opciones").innerHTML = '';
+            document.getElementById("pregunta").innerText = '';
+        }
+    }
+
+    // Iniciar el juego mostrando la primera pregunta
+    mostrarPregunta();
+
+    // Función para regresar al inicio
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<head> <title>NATACION EN AGUAS ABIERTAS</title> <!-- ADICIONALMENTE EN ESTE APARTADO PONEN TODO LO RELACIONADO A LA ESTRUCTURA CSS ASI: -->
+<style>
+body { /* MODELO DE CAJA */ font-family: Arial, sans-serif; margin: 0; padding: 0; 
+/* IMAGEN DE FONDO Y SUS PROPIEDADES */ 
+background-image: url('natacion5.jpg'); 
+background-size: 70% 25%; background-position: 50% 25%; background-attachment: fixed; background-repeat: no-repeat; /* COLOR DE FONDO */ background-color:#B54CF5 ; } 
+/* CONTINUACION ESTRUCTURA DE MODELO DE CAJA PARA EL ENCABEZADO Y LAS SESIONES, INCLUIDA COLOR, ALINEACION */
+header, .content { background-color: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 8px; margin: 20px; } header h1, header nav ul li a { color: white; text-align: center; } header nav ul { list-style-type: none; margin: 0; padding: 0; text-align: center; }
+header nav ul li {display: inline; margin: 0 15px; } header nav ul li a {color: white; text-decoration: none; } main { padding: 20px; } section { background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 20px 0; } h2 { color: #333; } h3 { color: #555; } p, ul { margin-bottom: 15px; } ul { padding-left: 20px; } /* CSS DEL PIE DE PAGINA */ footer {text-align: center; background-color: rgba(0, 0, 0, 0.3); padding: 20px; color: white; margin-top: 20px; } 
+/* CSS PARA EL INTERCAMBIO DE LAS IMAGENES */ 
+.carousel {position: relative; max-width: 100%; margin: auto; } 
+.carousel img { width: 100%; border-radius: 8px; display: none; } 
+.carousel img.active { display: block; } 
+/* CSS PARA EL CUESTIONARIO Y JUEGO */ 
+iframe { width: 100%; height: 315px; border: none; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-bottom: 20px; } form { margin-top: 20px; } label { display: block; margin: 10px 0 5px; } input, select, button { width: 100%; padding: 8px; margin: 5px 0 15px; border-radius: 4px; border: 1px solid #ccc; color: black; } button { background-color: #333; color: white; cursor: pointer; } button:hover { background-color: #555; } 
+#gameCanvas 
+{ background-color: #000E91; border: 2px solid #000; } #score { font-size: 20px; margin-top: 20px; } #instructions { margin-top: 20px; font-size: 18px; text-align: center; } 
+/* CERRAR TODAS LAS PROPIEDADES CSS DE LA PÁGINA */
+</style> 
+<!-- CERRAR EL ENCABEZADO -->
+</head>
+<body> <!-- AQUI VA TODO EL CONTENIDO DE LA PAGINA --> 
+<!-- ADICIONALMENTE VAN LOS SCRIPTS Y JAVASCRIPTS DE PROGRAMACIÓN DE LA INTERACTIVIDAD -->
+<header> 
+<!-- TITULO Y MENU DE SU PAGINA --> <h1>NATACION EN AGUAS ABIERTAS</h1>
+<nav> <ul> <li><a href="#resumen">RESUMEN DE SU DEPORTE</a></li> <li><a href="#historia">HISTORIA DE SU DEPORTE</a></li> <li><a href="#reglas">REGLAS DE SU DEPORTE</a></li> <li><a href="#programacion">PROGRAMACION OLIMPICOS 2024</a></li> <li><a href="#medallero">MEDALLERO</a></li> <li><a href="#video">VIDEO</a></li> <li><a href="#galeria">GALERIA</a></li> <li><a href="#formulario">CUESTIONARIO</a></li> <li><a href="#game">JUEGO</a></li>
+</ul> </nav> </header> <main> <!-- DIVISION DE LAS SESIONES DE SU PAGINA -->
+<div class="content"> 
+<!-- SESION 1 -->
+<section id="resumen"> <h2>RESUMEN </h2> <p>La natación en aguas abiertas es una disciplina que se realiza en cuerpos de agua naturales, como océanos, lagos y ríos, a diferencia de las piscinas. Este deporte combina resistencia, técnica y adaptabilidad, ya que los nadadores enfrentan condiciones variables, como corrientes, olas y cambios de temperatura.
+Existen competiciones de distintas distancias, que van desde 1.5 km hasta maratones de 10 km o más. La natación en aguas abiertas también es parte de eventos como los Juegos Olímpicos y el Campeonato Mundial de Natación.
+Además de la competencia, muchos nadadores practican esta actividad por recreación y conexión con la naturaleza. Es esencial contar con medidas de seguridad, como el uso de boyas, y tener en cuenta el estado del agua y la fauna local.
+</p>
+</section> 
+<!-- SESION 2 -->
+<section id="historia"> <h2>HISTORIA</h2> <p> En la Antigüedad Egipto y Grecia: En el antiguo Egipto, se han encontrado representaciones de nadadores en pinturas de tumbas. Los griegos también valoraban la natación, considerándola una habilidad esencial, especialmente para los guerreros. El filósofo Platón mencionó la importancia de aprender a nadar.</p>
+
+<p>Roma: En la antigua Roma, las termas eran lugares donde la gente no solo se bañaba, sino que también nadaba. Las competiciones de natación en ríos y mares eran comunes.</p>
+
+<p>Edad Media
+Durante la Edad Media, la natación en aguas abiertas no era tan popular debido a la disminución de la higiene pública y la percepción negativa de los cuerpos de agua. Sin embargo, algunas culturas, especialmente en el norte de Europa, continuaron practicando la natación.</p>
+
+<p>Renacimiento y Era Moderna
+En el Renacimiento, la natación comenzó a resurgir como actividad recreativa y deportiva. Con el auge del interés por el cuerpo humano y la naturaleza, se promovieron competiciones de natación en ríos y mares.</p>
+<p>
+Siglo XIX
+La natación en aguas abiertas se formalizó en el siglo XIX. Se llevaron a cabo las primeras competiciones organizadas. En 1837, se realizó la primera competencia de natación en el río Thames en Londres. A finales de este siglo, se establecieron eventos de natación de larga distancia, como el famoso "Challenge de natación en el mar" en el que se cruzó el Canal de la Mancha.
+</p>
+<p>
+Siglo XX
+La natación en aguas abiertas ganó popularidad y se consolidó como un deporte. En 1908, se incluyó la natación en aguas abiertas en los Juegos Olímpicos, aunque no como disciplina independiente hasta 2008.
+</p><p>
+Actualidad
+Hoy en día, la natación en aguas abiertas es un deporte reconocido a nivel mundial, con competiciones que van desde pruebas cortas hasta maratones de larga distancia. Eventos como el Campeonato Mundial de Natación en Aguas Abiertas y las travesías de larga distancia son muy populares. Además, se ha visto un aumento en la participación recreativa, con muchas personas nadando en ríos, lagos y océanos.
+
+La natación en aguas abiertas combina desafíos físicos y emocionales, ofreciendo a los nadadores la oportunidad de conectar con la naturaleza y superar sus límites.
+</p>
+</section> <!-- SESION 3 -->
+<section id="reglas"> <h2>REGLAS </h2> <p>1. Seguridad Personal
+<li>Uso de Chaleco: En algunas competencias, se permite o se requiere el uso de un chaleco de flotación.</li>
+<li>Supervisión: Siempre debe haber personal de seguridad en kayaks o embarcaciones cerca de los nadadores.</li>
+</p><p>
+2. Respeto por el Entorno</p>
+<li>
+No Dejar Basura: Es fundamental respetar el medio ambiente y no dejar desechos.
+Respetar la Vida Silvestre: Evitar perturbar la fauna marina y seguir las indicaciones sobre áreas protegidas.</li>
+<p>
+3. Reglas de Competencia</p>
+<li>Salida y Llegada: Las salidas suelen ser desde la playa o una plataforma, y la llegada debe ser claramente señalizada.</li>
+<li>Rondas de Competencia: Algunas competencias tienen varias vueltas o tramos que deben cumplirse.</li> <p>
+4. Conducta en el Agua</p>
+<li>Evitar Colisiones: Mantener una distancia adecuada de otros nadadores; se fomenta el uso de técnicas de natación que minimicen el contacto.</li>
+<li>No Obstaculizar: Si un nadador es superado, debe permitir el paso y no obstaculizar a los demás</li>
+<p>
+5. Identificación del Competidor
+Gorros y Chips: Usar el gorro de identificación y un chip de cronometraje si es requerido. </p><p>
+6. Sanciones
+Descalificaciones: Los nadadores pueden ser descalificados por faltas graves, como el uso de trampa o comportamiento antideportivo.</p> <p>
+7. Condiciones Meteorológicas
+Evaluación de Seguridad: La organización puede suspender o modificar la carrera si las condiciones climáticas son peligrosas.</p><p>
+8. Entrenamiento y Preparación
+Conocer la Ruta: Familiarizarse con el recorrido antes de la competencia.
+Hidratación y Alimentación: Mantenerse hidratado y bien alimentado antes de la prueba.</p>
+</section>
+<!-- SESION 4 -->
+<section id="programacion"> <h2>PROGRAMACION OLIMPICOS 2024</h2> <p> Las pruebas de natación en aguas abiertas fueron disputadas los días 8 y 9 de agosto en las aguas del río Sena, con punto de partida en el puente Alejandro III. En total fueron disputadas en este deporte 37 pruebas diferentes, 18 masculinas, 18 femeninas y una mixta.</p>
+</section> <!-- SESION 5 -->
+<section id="medallero"> <h2>CUADRO DE HONOR "MEDALLERO"</h2>
+<ul> <li><strong>Oro:</strong> 10 km femenino:
+
+Oro: Sharon Van Rouwendaal (Países Bajos)
+ <img src="natacion.5.jpg" alt="bandera Imagen 2">
+Plata: Moesha Johnson (Australia)
+Bronce: Ginevra Taddeucci (Italia) 1
+10 km masculino:
+
+Oro: Florian Wellbrock (Alemania)
+Plata: Kristof Rasovszky (Hungría)
+Bronce: Gregorio Paltrinieri (Italia)</li>
+</ul>
+</section> <!-- SESION 6 -->
+<section id="video">
+<h2>VIDEO</h2> <!-- PONEN UN VIDEO ALUSIVO AL DEPORTE --> <iframe src="https://www.youtube.com/embed/VSS-wal0dUM" title="Video de natacion en mar"></iframe>
+</section> <!-- SESION 7 -->
+<section id="galeria"> <!-- PONEN AL MENOS 5 IMAGENES ALUSIVAS A SU DEPORTE, RECUERDEN QUE DEBEN ESTAR EN LA MISMA CARPETA -->
+<h2>GALERIA DE IMAGENES</h2>
+<div class="carousel">
+ <img src="natacion1.jpg" alt="natacion1" class="active"> 
+ <img src="natacion2.jpg" alt="natacion Imagen 2">
+ <img src="natacion3.jpg" alt="natacion Imagen 3">
+<img src="natacion4.jpg" alt="natacion Imagen 3">
+<img src="natacion5.jpg" alt="natacion Imagen 3">
+</div>
+</section> <!-- SESION 8 -->
+<section id="formulario"> <h2>CUESTIONARIO DE SU DEPORTE</h2>
+<form id="esgrimaForm"> <!-- PREGUNTA DE TEXTO CORTO --> <label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre" required> 
+<!-- Pregunta de Selección Múltiple (Menú Desplegable) --> <label for="pregunta1">1. En los Juegos Olímpicos de 2024, ¿cuál de las siguientes distancias se competirá en la prueba de natación en aguas abiertas para hombres y mujeres?</label>
+<select id="pregunta1" name="pregunta1" required> <option value="5 km">5 km</option> <option value=" 10 km"> 10 km</option> <option value="25 km">25 km</option> <option value="D) A y B son correctas">D) A y B son correctas</option>
+</select> <!-- Pregunta Numérica (Campo Numérico) --> <label for="pregunta2">2. Si un nadador en aguas abiertas recorre una distancia de 3500 metros y completa el recorrido en 70 minutos, ¿cuál es su velocidad promedio en metros por minuto?</label>
+<input type="number" id="pregunta2" name="pregunta2" required> <!-- Pregunta de Elección Múltiple con Botones de Opción (Radio Buttons) --> <label>3. ¿Qué arma se utiliza en esgrima?</label><br> <input type="radio" id="sable" name="arma" value="Sable" required> <label for="sable">Sable</label><br> <input type="radio" id="arco" name="arma" value="Arco"> <label for="arco">Arco</label><br> <input type="radio" id="hacha" name="arma" value="Hacha"> <label for="hacha">Hacha</label><br> <input type="radio" id="lanza" name="arma" value="Lanza"> <label for="lanza">Lanza</label><br> <!-- Pregunta de Elección Múltiple con Casillas de Verificación (Checkboxes) --> <label>4. ¿Cuáles de las siguientes son armas usadas en esgrima? (Selecciona todas las que apliquen)</label><br> <input type="checkbox" id="sable" name="armas" value="Sable">
+<label for="sable">Sable</label><br>
+<input type="checkbox" id="florete" name="armas" value="Florete">
+<label for="florete">Florete</label><br> <input type="checkbox" id="lanza" name="armas" value="Lanza">
+<label for="lanza">Lanza</label><br> <input type="checkbox" id="espada" name="armas" value="Espada"> <label for="espada">Espada</label><br> <!-- Pregunta de Texto Largo (Área de Texto) --> <label for="comentarios">5. ¿Cómo puedo mejorar mi resistencia al nadar en aguas abiertas? </label><br> <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea> <!-- Pregunta de Fecha (Selector de Fecha) --> <label for="fecha">6. ¿En qué fecha se celebrarán los próximos Juegos Olímpicos?</label> <input type="date" id="fecha" name="fecha" required>
+<button type="submit">Enviar</button>
+</form>
+<p id="resultado"></p> <!-- SESION 9 -->
+</section> </div> </main> <section id="game"> <canvas id="gameCanvas" width="400" height="400"></canvas> <div id="score">Puntaje: 0</div>
+<div id="instructions"> <p>Instrucciones:</p> <p>Usa las flechas del teclado para mover al jugador:</p>
+<p>↑ Arriba, ↓ Abajo, ← Izquierda, → Derecha</p> <p>Presiona la tecla espacio para atacar.</p>
+</div> </section> <!-- PIE DE PAGINA -->
+<footer> <p>ALAN SANCHEZ HERNANDEZ- 801- ANTONIO JOSE URIBE</p>
+</footer>
+<script>
+    // JAVA SCRIPT DEL CARRUSEL DE IMAGENES 
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel img');
+    const totalImages = images.length;
+
+    // Función para mostrar la siguiente imagen
+    function showNextImage() {
+        // Ocultar la imagen actual
+        images[currentIndex].classList.remove('active');
+        
+        // Calcular el índice de la siguiente imagen
+        currentIndex = (currentIndex + 1) % totalImages;
+        
+        // Mostrar la siguiente imagen
+        images[currentIndex].classList.add('active');
+    }
+
+    // Cambia de imagen cada 3 segundos
+    setInterval(showNextImage, 3000);
+</script>
+<script> // VERIFICACION DEL CUESTIONARIO SCRIPT
+document.getElementById('esgrimaForm').addEventListener('submit', function(event) {
+event.preventDefault(); // Evita que el se envíe // Obtener las respuestas del formulario
+const nombre = document.getElementById('nombre').value;
+const pregunta1 = document.getElementById('pregunta1').value; const pregunta2 = parseInt(document.getElementById('pregunta2').value, 10);
+const armaSeleccionada = document.querySelector('input[name="arma"]:checked').value;
+const checkboxes = document.querySelectorAll('input[name="armas"]:checked');
+const respuestasSeleccionadas = Array.from(checkboxes).map(checkbox => checkbox.value);
+const comentarios = document.getElementById('comentarios').value;
+const fecha = document.getElementById('fecha').value; const respuestaCorrecta1 = "Atacar al oponente"; const respuestaCorrecta2 = 50; const respuestaCorrecta3 = "Sable"; const respuestasCorrectas = ["Sable", "Florete", "Espada"]; const fechaCorrecta = "2024-07-26"; // Variable para almacenar el mensaje de resultado
+let resultado = `Hola ${nombre}, aquí están tus resultados:<br>`;
+if (pregunta1 === respuestaCorrecta1) {
+resultado += "Pregunta 1: Correcto<br>"; } else { resultado += "Pregunta 1: Incorrecto<br>"; }
+if (pregunta2 === respuestaCorrecta2) {
+resultado += " 2: CorrQué precauciones debo tomar al nadar en aguas abiertas?ecto<br>"; } else { resultado += "Pregunta 2: Incorrecto<br>"; }
+if (armaSeleccionada === NADAR EN COMPAÑIA) {
+resultado += "Pregunta 3: Correcto<br>"; } else { resultado += "Pregunta 3: Incorrecto<br>"; }
+let esCorrecto = respuestasCorrectas.every(respuesta => respuestasSeleccionadas.includes(respuesta)) && respuestasSeleccionadas.length === respuestasCorrectas.length;
+if (esCorrecto) { resultado += "Pregunta 4: Correcto<br>"; } else { resultado += "Pregunta 4: Incorrecto<br>"; }
+if (fecha === fechaCorrecta) { resultado += "Pregunta 6: Correcto<br>"; } else {
+resultado += "Pregunta 6: Incorrecto<br>"; }
+// Mostrar los resultados en la página
+document.getElementById('resultado').innerHTML = resultado; }); </script>
+</body>
+</html>

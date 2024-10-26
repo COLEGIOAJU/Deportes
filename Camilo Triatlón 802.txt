@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<head>
+ <title>Triathlon</title>
+ <!-- ADICIONALMENTE EN ESTE APARTADO PONEN TODO LO RELACIONADO A LA ESTRUCTURA CSS ASI: -->
+ <style>
+ body {
+ /* MODELO DE CAJA */
+ font-family: Elephant; margin: 0.7% ; padding: 10%;
+ /* IMAGEN DE FONDO Y SUS PROPIEDADES */
+ background-image: url('Triathlon_pictograma.PNG'); background-size: 100% 100%; background-position: 50% 50%;
+ background-attachment: fixed; background-repeat: no-repeat;
+ /* COLOR DE FONDO */
+ background-color: #105677; }
+ /* CONTINUACION ESTRUCTURA DE MODELO DE CAJA PARA EL ENCABEZADO Y LAS SESIONES, INCLUIDA
+COLOR, ALINEACION */
+ header, .content {
+ background-color: rgba(16, 1, 3, 0.8); padding: 30px; border-radius: 12px; margin: 30px; }
+ header h1, header nav ul li a { color: WHITE; text-align: center; }
+ header nav ul { list-style-type: none; margin: 2; padding: 5; text-align: center; }
+ header nav ul li {display: inline; margin: 0 30px; }
+ header nav ul li a {color: WHITE; text-decoration: none; }
+ main { padding: 30px; }
+ section { background-color: GREY; border-radius: 12px; padding: 30px; box-shadow: 0 0 15px rgba(|182, 184, 189, 0.2);
+ margin: 20px 0; }
+ h2 { color: #e9ecf7; }
+ h3 { color: #e9ecf7; }
+ p, ul { margin-bottom: 15px; }
+ ul { padding-left: 20px; }
+ /* CSS DEL PIE DE PAGINA */
+ footer {text-align: center; background-color: rgba(85, 88, 95, 0.3); padding: 20px; color: white; margin-top: 20px; }
+ /* CSS PARA EL INTERCAMBIO DE LAS IMAGENES */
+ .carousel {position: relative; max-width: 100%; margin: auto; }
+ .carousel img { width: 100%; border-radius: 8px; display: none; }
+ .carousel img.active { display: block; }
+ /* CSS PARA EL CUESTIONARIO Y JUEGO */
+ iframe { width: 100%; height: 315px; border: none; border-radius: 8px; box-shadow: 0 2 15px rgba(4, 64, 83, 0.5);
+ margin-bottom: 20px; }
+ form { margin-top: 20px; }
+ label { display: block; margin: 10px 0 5px; }
+ input, select, button { width: 100%; padding: 8px; margin: 5px 0 15px; border-radius: 4px; border: 1px solid
+#ccc; color: black; }
+ button { background-color: #e2f1f6; color: white; cursor: pointer; }
+ button:hover { background-color: #06252f-; }
+ #gameCanvas { background-color: #9f9c9c; border: 2px solid #031f3a; }
+ #score { font-size: 20px; margin-top: 20px; }
+ #instructions { margin-top: 20px; font-size: 18px; text-align: center; }
+ /* CERRAR TODAS LAS PROPIEDADES CSS DE LA PÁGINA */
+ </style>
+ <!-- CERRAR EL ENCABEZADO -->
+</head><body>
+ <!-- AQUI VA TODO EL CONTENIDO DE LA PAGINA -->
+ <!-- ADICIONALMENTE VAN LOS SCRIPTS Y JAVASCRIPTS DE PROGRAMACIÓN DE LA INTERACTIVIDAD -->
+ <header>
+ <!-- TRIATLÓN Y MENU DEL TRIATLÓN -->
+ <h1>TRIATLÓN OLIMPICO</h1>
+ <nav> <ul>
+ <li><a href="#resumen">RESUMEN</a></li>
+ <li><a href="#historia">HISTORIA</a></li>
+ <li><a href="#reglas">REGLAS</a></li>
+ <li><a href="#programacion">PROGRAMACION OLIMPICOS 2024</a></li>
+ <li><a href="#medallero">MEDALLERO</a></li>
+ <li><a href="#video">VIDEO</a></li>
+ <li><a href="#galeria">GALERIA</a></li>
+ <li><a href="#formulario">CUESTIONARIO</a></li>
+ <li><a href="#game">JUEGO</a></li>
+ </ul> </nav> </header> <main>
+ <!-- DIVISION DE LAS SESIONES DE SU PAGINA -->
+ <div class="content">
+ <!-- SESION 1 -->
+ <section id="resumen">
+ <h2>RESUMEN DEL TRIATLÓN</h2>
+ <p>El triatlón es una competición deportiva que consta de tres disciplinas en un solo evento: natación, ciclismo y carrera a pie. Los atletas completan cada disciplina en secuencia, con transiciones entre ellas. Existen diferentes distancias, desde el sprint hasta el Ironman, que varían en dificultad y duración. El triatlón exige resistencia, habilidades en múltiples áreas y una buena estrategia. Es un deporte popular a nivel mundial, con eventos para todos los niveles de habilidad.</p>
+ </section>
+ <!-- SESION 2 -->
+ <section id="historia">
+ <h2>HISTORIA DEL TRIATLÓN</h2>
+ <p>El triatlón moderno surgió en 1974 en San Diego, California, con una competencia que combinaba natación, ciclismo y carrera. Este formato inicial, creado por Jack Johnstone y Don Shanahan, sentó las bases para el triatlón tal como lo conocemos hoy.
+
+En 1978, el triatlón ganó relevancia internacional con la introducción del Ironman de Hawaii, un evento extremadamente exigente que consistía en 2.4 millas de natación, 112 millas de ciclismo y 26.2 millas de carrera. Este desafío extremo ayudó a establecer el triatlón como un deporte de resistencia prominente.
+
+La inclusión del triatlón en los Juegos Olímpicos de Sydney 2000 fue un hito significativo, con distancias estándar de 1.5 km de natación, 40 km de ciclismo y 10 km de carrera. Esto proporcionó al triatlón una mayor visibilidad y legitimidad a nivel global.
+
+Desde entonces, el deporte ha experimentado un notable crecimiento, diversificándose en varias distancias, como el Ironman 70.3 (Medio Ironman), y expandiéndose a nivel mundial. Hoy en día, el triatlón es un deporte popular con eventos en todo el mundo, que atrae a atletas de todos los niveles de habilidad.</p>
+ </section>
+ <!-- SESION 3 -->
+ <section id="reglas">
+ <h2>REGLAS DEL TRIATLÓN</h2>
+ <p>General
+<h1>1.Equipamiento Obligatorio: </h1>
+  <br> - Casco: Obligatorio durante la etapa de ciclismo.</br>
+  <br> - Traje de Neopreno: Puede ser obligatorio para la natación en aguas frías, según la temperatura del agua.</br>
+  <br> - Número de Competidor: Debe ser visible durante todas las etapas.</br>
+
+<h1>2. Transiciones: </h1>
+  <br> - Zona de Transición: Los atletas deben pasar por áreas designadas para cambiar de equipo entre natación, ciclismo y carrera.</br>
+   - Sin Asistencia: No se permite recibir ayuda externa durante las transiciones.
+<h2>Natación</h2>
+<h3>1. Salida y Llegada: </h3>
+   <br>- Orden de Salida: Los atletas suelen salir en intervalos o en oleadas.</br>
+   <br>- Ropa: Está permitido usar trajes de neopreno si la temperatura del agua es baja.</br>
+
+<h3>2. Conducta en el Agua: </h3>
+  <br> - Interferencia: No se permite el contacto físico excesivo con otros competidores.</br>
+   <br>- Ruta: Los nadadores deben seguir las boyas y marcar la ruta designada.</br>
+
+<h2>Ciclismo</h2>
+<h3>1. Equipamiento: </h3>
+   <br>- Casco: Debe ser usado en todo momento durante la etapa de ciclismo.</br>
+  <br> - Bicicletas: Deben estar en condiciones adecuadas, y el uso de dispositivos de ayuda como bicis eléctricas puede estar prohibido.</br>
+
+<h3>2. Reglas de Competencia: </h3>
+  <br> - No Drafting: Los atletas deben mantener una distancia mínima de 7-10 metros entre ellos para evitar el drafting (acercarse demasiado a otro ciclista para beneficiarse de su estela).</br>
+  <br> - Señalización: Los ciclistas deben señalar sus intenciones (como giros) y mantener la seguridad en la carretera.</br>
+
+<h2>Carrera a Pie</h2>
+<h3>1. Ruta y Conducta: </h3>
+  <br> - Caminar: Los atletas pueden caminar, pero deben seguir el recorrido y mantenerse en la ruta designada.</br>
+   <br>- Número Visible: El número de competidor debe estar visible en todo momento durante la carrera.</br>
+
+<h3>2. Ayuda y Asistencia: </h3>
+   <br>- Hidratación: Los puntos de avituallamiento están disponibles, pero recibir asistencia externa fuera de estos puntos puede estar prohibido.</br>
+
+<h1>Reglas de Conducta</h1>
+<br>1. Deportividad: Se espera que todos los participantes compitan de manera justa y respetuosa.</br>
+<br>2. Descalificación: Los competidores pueden ser descalificados por violar las reglas, conducta antideportiva o no seguir el recorrido.</br>
+
+Estas reglas pueden variar según el evento y la organización.</p>
+ </section>
+ <!-- SESION 4 -->
+ <section id="programacion">
+ <h2>PROGRAMACION OLIMPICOS 2024</h2>
+ <p>PTS4 individual femenino
+
+PTS5 individual femenino
+
+PTS4 individual masculino
+
+Individual PTS5 masculino
+
+Individual PTVI femenino
+
+Individual PTVI masculino
+
+Individual PTS2 femenino
+
+PTS2 individual masculino
+
+PTS3 individual masculino
+
+Individual PTWC femenino
+
+Individual PTWC masculino</p>
+ </section>
+ <!-- SESION 5 -->
+ <section id="medallero">
+ <h2>CUADRO DE HONOR "MEDALLERO"</h2>
+ <ul>
+ <li><h1>Mujeres</h1>
+
+
+<h2>Individual PTS2 femenino
+<p>
+Oro
+
+H. Danz 
+
+Estados Unidos</p>
+<p>Plata
+
+V.Y. Plebani
+
+Italia</p>
+<p>Bronce
+
+A. Seely
+
+Estados Unidos</p>
+ 
+<p><h2>Individual PTVI femenino
+Oro
+
+S. Rodriguez
+
+España</p>
+<p>Plata
+
+F. Tarantello
+
+Italia</p>
+<p>Bronce
+
+A. Renner
+
+Alemania</p>
+ 
+<p><h2>Individual PTWC femenino
+Oro
+
+L. Parker
+
+Australia</p>
+<p>Plata
+
+K. Gretsch
+
+Estados Unidos</p>
+<p>Bronce
+
+L. Taylor
+
+Canadá</p>
+ 
+<p><h2>PTS4 individual femenino
+Oro
+
+M. Richter
+
+Gran Bretaña</p>
+<p>Plata
+
+M. Gómez
+
+España</p>
+<p>Bronce
+
+H. Moore
+
+Gran Bretaña</p>
+ 
+<p><h2>PTS5 individual femenino
+Oro
+
+G. Norman
+
+Estados Unidos</p>
+<p>Plata
+
+C. Cashmore
+
+Gran Bretaña</p>
+<p>Bronce
+
+L. Steadman
+
+Gran Bretaña</p></ul>
+</li>
+
+<ul>
+<li><h1>Hombres</h1>
+
+<p>PTS3 individual masculino
+Oro
+
+D. Molina
+
+España</p>
+<p>Plata
+
+M. Gelhaar
+
+Alemania</p>
+<p>Bronce
+
+N. Van Der Burgt
+
+Países Bajos</p>
+ 
+<p>PTS2 individual masculino
+Oro
+
+J. Ribstein
+
+Francia</p>
+<p>Plata
+
+M. Lahna
+
+Estados Unidos</p>
+<p>Bronce
+
+M. Barr
+
+Estados Unidos</p>
+ 
+<p>Individual PTS5 masculino
+Oro
+
+C. Hammer
+
+Estados Unidos</p>
+<p>Plata
+
+R. Cordeiro
+
+Brasil</p>
+<p>Bronce
+
+M. Schulz
+
+Alemania</p>
+ 
+<p>PTS4 individual masculino
+Oro
+
+A. Hanquinquant
+
+Francia</p>
+<p>Plata
+
+C. Clough
+
+Estados Unidos</p>
+<p>Bronce
+
+N. Victory
+
+España</p>
+ 
+<p>Individual PTVI masculino
+Oro
+
+D. Ellis
+
+Gran Bretaña</p>
+<p>Plata
+
+T. Rigaudeau
+
+Francia</p>
+<p>Bronce
+
+A. Perel
+
+Francia</p>
+ 
+<p<Individual PTWC masculino
+Oro
+
+J. Plat
+
+Países Bajos</p>
+<p>Plata
+
+F. Brungraber
+
+Austria</p>
+<p>Bronce
+
+G. Schipper
+
+Países Bajos</p></li>
+ </ul>
+ </section>
+ <!-- SESION 6 -->
+ <section id="video">
+ <h2>VIDEO</h2>
+ <!-- PONEN UN VIDEO ALUSIVO AL DEPORTE -->
+ <iframe src="https://www.youtube.com/embed/J7C0Q-49D94?si=2ZI-zFIwyHiBekox" title="YouTube video player"></iframe>
+ </section>
+ <!-- SESION 7 -->
+ <section id="galeria">
+ <!-- PONEN AL MENOS 5 IMAGENES ALUSIVAS A SU DEPORTE, RECUERDEN QUE DEBEN ESTAR EN LA
+MISMA CARPETA -->
+ <h2>GALERIA DE IMAGENES</h2>
+ <div class="carousel">
+ <img src="imagen 1.JPG" alt="Esgrima Imagen 1" class="active">
+ <img src="IMAGEN 2.JPEG" alt="Esgrima Imagen 2">
+ <img src="IMAGEN 3.JPEG" alt="Esgrima Imagen 3">
+<img src="IMAGEN 4.JPG" alt="Esgrima Imagen 3">
+<img src="IMAGEN 5.JPG" alt="Esgrima Imagen 3">
+
+ </div>
+ </section>
+ <!-- SESION 8 -->
+ <section id="formulario">
+ <h2>CUESTIONARIO DEL TRIATLÓN</h2>
+ <form id="triatlónForm">
+ <!-- PREGUNTA DE TEXTO CORTO -->
+ <label for="nombre">Nombre:</label>
+ <input type="text" id="nombre" name="nombre" required>
+ <!-- Pregunta de Selección Múltiple (Menú Desplegable) -->
+ <label for="pregunta1">1. ¿Qué competencias incluye el triatlón?</label>
+ <select id="pregunta1" name="pregunta1" required>
+ <option value="Natación y futból">Natación y futból</option>
+ <option value="Ciclismo, natación y carrera a pie">Ciclismo, natación y carrera a pie</option>
+ <option value="Carrera en patines y a pie">Carrera en patines y a pie</option>
+ <option value="Tiro de bala, balonmano y skate">Tiro de bala, balonmano y skate</option>
+ </select>
+ <!-- Pregunta Numérica (Campo Numérico) -->
+ <label for="pregunta2">2. ¿Cuántas veces se realiza cada competencia?</label>
+ <input type="number" id="pregunta2" name="pregunta2" required>
+ <!-- Pregunta de Elección Múltiple con Botones de Opción (Radio Buttons) -->
+ <label>3. ¿Cuál es la distancia de un triatlón?</label><br>
+ <input type="radio" id="sable" name="arma" value="Sable" required>
+ <label for="1,5 kilómetros de natación. 40 kilómetros de ciclismo. 10 kilómetros de carrera a pie.">1,5 kilómetros de natación. 40 kilómetros de ciclismo. 10 kilómetros de carrera a pie.</label>
+ <input type="radio" id="sable" name="arma" value="Sable" required>
+ <label for="4,5 kilómetros de natación. 22 kilómetros de ciclismo.">4,5 kilómetros de natación. 22 kilómetros de ciclismo.</label><br>
+ <input type="radio" id="hacha" name="arma" value="Hacha">
+ <label for="2,5 kilómetros de natación. 34 kilómetros de carrera a pie.">2,5 kilómetros de natación. 34 kilómetros de carrera a pie.</label><br>
+ <input type="radio" id="lanza" name="arma" value="Lanza">
+ <label for="24 kilómetros de ciclismo. 38 kilómetros de carrera a pie.">24 kilómetros de ciclismo. 38 kilómetros de carrera a pie.</label><br>
+ <!-- Pregunta de Elección Múltiple con Casillas de Verificación (Checkboxes) -->
+ <label>4. ¿Cuál de las suiguientes competencias pertenecen al triatlón? (Selecciona todas las que 
+apliquen)</label><br>
+ <input type="checkbox" id="sable" name="armas" value="Sable">
+ <label for="Ajedrez">Ajedrez</label><br>
+ <input type="checkbox" id="florete" name="armas" value="Florete">
+ <label for="Natación">Natación</label><br>
+ <input type="checkbox" id="lanza" name="armas" value="Lanza">
+ <label for="Tenis">Tenis</label><br>
+ <input type="checkbox" id="espada" name="armas" value="Espada">
+ <label for="Ciclismo">Ciclismo</label><br>
+ <!-- Pregunta de Texto Largo (Área de Texto) -->
+ <label for="comentarios">5. Escribe cualquier comentario o sugerencia sobre el triatlón:</label><br>
+ <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+ <!-- Pregunta de Fecha (Selector de Fecha) -->
+ <label for="fecha">6. ¿En qué fecha se jugo la final del triatlón mixto?</label>
+ <input type="date" id="fecha" name="fecha" required>
+ <button type="submit">Enviar</button>
+ </form>
+ <p id="resultado"></p>
+ <!-- SESION 9 -->
+ </section> </div> </main> <section id="game">
+ <canvas id="gameCanvas" width="400" height="400"></canvas>
+ <div id="score">Puntaje: 0</div>
+ <div id="instructions"> <p>Instrucciones:</p> <p>Usa las flechas del teclado para mover al jugador:</p>
+ <p>↑ Arriba, ↓ Abajo, ← Izquierda, → Derecha</p> <p>Presiona la tecla espacio para atacar.</p>
+ </div> </section>
+ <!-- PIE DE PAGINA -->
+ <footer>
+ <p>Juan Camilo Quiceno, 802, Antonio Jose Uribe, 2024</p>
+ </footer>
+ <script>
+ // JAVA SCRIPT DEL CARRUSEL DE IMAGENES
+ let currentIndex = 0;
+ const images = document.querySelectorAll('.carousel img');
+ const totalImages = images.length;
+ function showNextImage() { images[currentIndex].classList.remove('active');
+ currentIndex = (currentIndex + 1) % totalImages; images[currentIndex].classList.add('active'); }
+ setInterval(showNextImage, 3000); // Cambia de imagen cada 3 segundos </script>
+ <script>
+ // VERIFICACION DEL CUESTIONARIO SCRIPT
+ document.getElementById('esgrimaForm').addEventListener('submit', function(event) {
+ event.preventDefault(); // Evita que el formulario se envíe
+ // Obtener las respuestas del formulario
+ const nombre = document.getElementById('nombre').value;
+ const pregunta1 = document.getElementById('pregunta1').value;
+ const pregunta2 = parseInt(document.getElementById('pregunta2').value, 10);
+ const armaSeleccionada = document.querySelector('input[name="arma"]:checked').value;
+ const checkboxes = document.querySelectorAll('input[name="armas"]:checked');
+ const respuestasSeleccionadas = Array.from(checkboxes).map(checkbox => checkbox.value);
+ const comentarios = document.getElementById('comentarios').value;
+ const fecha = document.getElementById('fecha').value;
+ const respuestaCorrecta1 = "Ciclismo, natación y carrera a pie";
+ const respuestaCorrecta2 = 1;
+ const respuestaCorrecta3 = "1,5 kilómetros de natación. 40 kilómetros de ciclismo. 10 kilómetros de carrera a pie.
+";
+ const respuestasCorrectas = ["Natación", "Ciclismo"];
+ const fechaCorrecta = "2024-08-05";
+ // Variable para almacenar el mensaje de resultado
+ let resultado = `Hola ${nombre}, aquí están tus resultados:<br>`;
+ if (pregunta1 === respuestaCorrecta1) {
+ resultado += "Pregunta 1: Correcto<br>"; } else { resultado += "Pregunta 1: Incorrecto<br>"; }
+ if (pregunta2 === respuestaCorrecta2) {
+ resultado += "Pregunta 2: Correcto<br>"; } else { resultado += "Pregunta 2: Incorrecto<br>"; }
+ if (armaSeleccionada === respuestaCorrecta3) {
+ resultado += "Pregunta 3: Correcto<br>"; } else { resultado += "Pregunta 3: Incorrecto<br>"; }
+ let esCorrecto = respuestasCorrectas.every(respuesta => respuestasSeleccionadas.includes(respuesta))
+&& respuestasSeleccionadas.length === respuestasCorrectas.length;
+ if (esCorrecto) { resultado += "Pregunta 4: Correcto<br>"; } else { resultado += "Pregunta 4:
+Incorrecto<br>"; }
+ if (fecha === fechaCorrecta) { resultado += "Pregunta 6: Correcto<br>"; } else {
+ resultado += "Pregunta 6: Incorrecto<br>"; }
+ // Mostrar los resultados en la página
+ document.getElementById('resultado').innerHTML = resultado; }); </script>
+ <script>
+ // JAVASCRIPT PARA EL JUEGO
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Triatlón Olímpico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e0f7fa;
+            padding: 20px;
+        }
+        #game {
+            display: none;
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            border: 2px solid #00796b;
+            overflow: hidden;
+        }
+        #stickman {
+            width: 30px;
+            height: 50px;
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            transition: left 0.2s;
+        }
+        #finishLine {
+            position: absolute;
+            left: 570px;
+            width: 10px;
+            height: 100%;
+            background-color: red;
+        }
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #timer, #score {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .swimming {
+            animation: swim 1s linear infinite;
+        }
+        .cycling {
+            animation: cycle 1s linear infinite;
+        }
+        .running {
+            animation: run 1s linear infinite;
+        }
+        @keyframes swim {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes cycle {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes run {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(5px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Triatlón Olímpico</h1>
+    <div id="characterSelection">
+        <h2>Elige tu personaje:</h2>
+        <div class="character" data-speed="2">
+            <div style="width:30px;height:50px;background-color:#00796b;"></div>
+            <p>Atleta Rápido (Velocidad +2)</p>
+        </div>
+        <div class="character" data-speed="1">
+            <div style="width:30px;height:50px;background-color:#2196f3;"></div>
+            <p>Atleta Equilibrado (Velocidad +1)</p>
+        </div>
+        <div class="character" data-speed="3">
+            <div style="width:30px;height:50px;background-color:#ffeb3b;"></div>
+            <p>Atleta Fuerte (Velocidad +3)</p>
+        </div>
+    </div>
+    <button id="startButton" style="display:none;">Iniciar Juego</button>
+
+    <div id="game">
+        <h2 id="stage">Etapa: Natación</h2>
+        <div id="timer">Tiempo: <span id="timeLeft">10</span> segundos</div>
+        <div id="score">Puntuación: <span id="scoreValue">0</span></div>
+        <div id="stickman"></div>
+        <div id="finishLine"></div>
+        <button id="actionButton">Nadar</button>
+    </div>
+
+    <div id="result" class="hidden"></div>
+
+    <script>
+        const stages = ['Natación', 'Ciclismo', 'Carrera'];
+        let currentStage = 0;
+        let score = 0;
+        let timeLeft;
+        let interval;
+        let playerSpeed = 1;
+
+        document.querySelectorAll('.character').forEach(character => {
+            character.addEventListener('click', function() {
+                playerSpeed = parseInt(this.getAttribute('data-speed'));
+                document.getElementById('startButton').style.display = 'block';
+                document.getElementById('characterSelection').style.display = 'none';
+            });
+        });
+
+        document.getElementById('startButton').addEventListener('click', startGame);
+        document.getElementById('actionButton').addEventListener('click', completeStage);
+
+        function startGame() {
+            currentStage = 0;
+            score = 0;
+            document.getElementById('startButton').style.display = 'none';
+            document.getElementById('game').style.display = 'block';
+            document.getElementById('result').classList.add('hidden');
+            updateStage();
+            startTimer();
+        }
+
+        function updateStage() {
+            document.getElementById('stage').textContent = `Etapa: ${stages[currentStage]}`;
+            timeLeft = 10;
+            document.getElementById('timeLeft').textContent = timeLeft;
+            document.getElementById('scoreValue').textContent = score;
+
+            const stickman = document.getElementById('stickman');
+            stickman.className = ''; // Reinicia las clases de animación
+            if (currentStage === 0) {
+                stickman.classList.add('swimming');
+                document.getElementById('actionButton').textContent = 'Nadar';
+            } else if (currentStage === 1) {
+                stickman.classList.add('cycling');
+                document.getElementById('actionButton').textContent = 'Montar Bicicleta';
+            } else if (currentStage === 2) {
+                stickman.classList.add('running');
+                document.getElementById('actionButton').textContent = 'Correr';
+            }
+        }
+
+        function startTimer() {
+            interval = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timeLeft').textContent = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    alert('¡Tiempo agotado! Has perdido.');
+                    endGame();
+                }
+            }, 1000);
+        }
+
+        function completeStage() {
+            clearInterval(interval);
+            score += (timeLeft > 0 ? timeLeft * 10 : 0);
+            currentStage++;
+
+            if (currentStage < stages.length) {
+                updateStage();
+                startTimer();
+            } else {
+                endGame();
+            }
+        }
+
+        function endGame() {
+            clearInterval(interval);
+            document.getElementById('game').style.display = 'none';
+            document.getElementById('result').textContent = `¡Has completado el triatlón olímpico! Tu puntuación final es: ${score}`;
+            document.getElementById('result').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

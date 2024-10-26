@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<head>
+
+ <title>BEISBOL</title>
+
+ <!-- ADICIONALMENTE EN ESTE APARTADO PONEN TODO LO RELACIONADO A LA ESTRUCTURA CSS ASI: -->
+
+ <style>
+
+ body {
+
+ /* MODELO DE CAJA */
+
+ font-family: Calibri, Gill Sans MTi; margin: 0; padding: 0;
+
+ /* IMAGEN DE FONDO Y SUS PROPIEDADES */
+
+ background-image: url('beis.jpg'); background-size: 100% 100%; background-position: 100% 100%;
+
+ background-attachment: fixed; background-repeat: no-repeat;
+ /* COLOR DE FONDO */
+
+ background-color: #f0f0f0; }
+
+ /* CONTINUACION ESTRUCTURA DE MODELO DE CAJA PARA EL ENCABEZADO Y LAS SESIONES, INCLUIDA
+
+COLOR, ALINEACION */
+
+ header, .content {
+
+ background-color: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 8px; margin: 20px; }
+
+ header h1, header nav ul li a { color: white; text-align: center; }
+
+ header nav ul { list-style-type: none; margin: 0; padding: 0; text-align:
+ center; }
+
+ header nav ul li {display: inline; margin: 0 15px; }
+
+ header nav ul li a {color: white; text-decoration: none; }
+
+ main { padding: 20px; }
+
+ section { background-color: white; border-radius: 8px; padding: 20px; box-
+
+shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+ margin: 20px 0; }
+
+ h2 { color: #333; }
+
+ h3 { color: #555; }
+
+ p, ul { margin-bottom: 15px; }
+
+ ul { padding-left: 20px; }
+
+ /* CSS DEL PIE DE PAGINA */
+
+ footer {text-align: center; background-color: rgba(0, 0, 0, 0.3); padding: 
+
+20px; color: white; margin-top: 20px; }
+
+ /* CSS PARA EL INTERCAMBIO DE LAS IMAGENES */
+
+ .carousel {position: relative; max-width: 100%; margin: auto; }
+
+ .carousel img { width: 100%; border-radius: 8px; display: none; }
+
+ .carousel img.active { display: block; }
+
+ /* CSS PARA EL CUESTIONARIO Y JUEGO */
+
+ iframe { width: 100%; height: 315px; border: none; border-radius: 8px; 
+
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+ margin-bottom: 20px; }
+
+ form { margin-top: 20px; }
+
+
+ label { display: block; margin: 10px 0 5px; }
+
+ input, select, button { width: 100%; padding: 8px; margin: 5px 0 15px; border-radius: 4px; border: 1px solid
+
+#ccc; color: black; }
+
+ button { background-color: #333; color: white; cursor: pointer; }
+
+ button:hover { background-color: #555; }
+
+  /* CERRAR TODAS LAS PROPIEDADES CSS DE LA PÁGINA */
+
+ </style>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+        #field {
+            width: 600px;
+            height: 400px;
+            background-color: #87ceeb;
+            position: relative;
+            margin: 20px auto;
+            border: 2px solid #006400;
+            overflow: hidden;
+        }
+        #pitcher {
+            width: 50px;
+            height: 50px;
+            background-color: #ff6347;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #bat {
+            width: 100px;
+            height: 20px;
+            background-color: #8b4513;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+        #ball {
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            position: absolute;
+            display: none;
+        }
+        #score {
+            font-size: 24px;
+            margin: 20px;
+        }
+        #instructions {
+            margin: 20px;
+        }
+        #startButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .divider {
+            height: 100%;
+            width: 5px;
+            background-color: #000;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+    </style>
+
+ <!-- CERRAR EL ENCABEZADO -->
+
+</head><body>
+
+ <!-- AQUI VA TODO EL CONTENIDO DE LA PAGINA -->
+
+ <!-- ADICIONALMENTE VAN LOS SCRIPTS Y JAVASCRIPTS DE PROGRAMACIÓN DE LA INTERACTIVIDAD -->
+
+ <header>
+
+ <!-- BEISBOL EN LOS JUEGOS OLIMPICOS -->
+
+ <h1> BEISBOL </h1>
+
+ <nav> <ul>
+
+ <li><a href="#resumen">RESUMEN DEL BEISBOL EN LOS JUEGOS OLIMPICOS</a></li>
+
+ <li><a href="#historia">HISTORIA DEL BEISBOL EN LOS JUEGOS OLIMPICOS</a></li>
+
+ <li><a href="#reglas">REGLAS DEL BEISBOL EN LOS JUEGOS OLIMPICOS</a></li>
+
+ <li><a href="#programacion">PROGRAMACION OLIMPICOS 2020</a></li>
+
+ <li><a href="#medallero">MEDALLERO EN EL 2020</a></li>
+
+ <li><a href="#video">VIDEO DEL BEISBOL </a></li>
+
+ <li><a href="#galeria">GALERIA DEL BEISBOL </a></li>
+
+ <li><a href="#formulario">CUESTIONARIO</a></li>
+ 
+<li><a href="#game">JUEGO</a></li>
+
+ </ul> </nav> </header> <main>
+
+ <!-- DIVISION DE LAS SESIONES DE SU PAGINA -->
+
+ <div class="content">
+
+
+ <!-- SESION 1 -->
+
+ <section id=" RESUMEN DEL BEISBOL">
+
+ <h2>RESUMEN DEL BEISBOL</h2>
+
+ <p>El béisbol ha sido un deporte olímpico desde 1992, aunque inicialmente solo estaba abierto a jugadores amateurs ¹ ². Posteriormente, se permitió la participación de jugadores profesionales, pero las Grandes Ligas de Béisbol no permitieron a sus jugadores participar. El béisbol fue eliminado de los Juegos Olímpicos después de la edición de 2008, pero regresó en Tokio 2020 debido a su popularidad en Japón ¹ ².
+
+El Comité Olímpico Internacional ha decidido incluir el béisbol en los Juegos Olímpicos de Los Ángeles 2028 ¹. El béisbol ha tenido una historia variada en los Juegos Olímpicos, con países como Cuba y Japón destacando en la competencia ¹ ³.
+
+Ganadores de béisbol en Juegos Olímpicos
+
+- Barcelona 1992: Cuba, que se impuso en la final a China Taipéi 11-1 ³
+- Atlanta 1996: Cuba, que venció 13-9 a Japón ³
+- Sidney 2000: Estados Unidos, que mostró su calidad como potencia al doblegar a Cuba 4-0 ³
+- Atenas 2004: Cuba, que dio cuenta de Australia seis carreras por dos ³
+- Beijing 2008: Corea del Sur, que fue el campeón tras ganar la medalla dorada a Cuba 3-2 ³</p>
+
+ </section>
+
+ <!-- SESION 2 -->
+
+ <section id=" HISTORIA DEL BEISBOL EN LOS JUEGOS OLIMPICOS">
+
+ <h2>HISTORIA DEL BEISBOL</h2>
+
+ <p> El béisbol es uno de los deportes disputados en los Juegos Olímpicos de verano, organizado por el Comité Olímpico Internacional y la Federación Internacional de Béisbol ¹. Aunque ha tenido una presencia intermitente, el béisbol regresará en los Juegos Olímpicos de Los Ángeles 2028 ¹ ².
+
+El béisbol debutó en los Juegos Olímpicos de San Luis 1904 como deporte de exhibición y tuvo su primera competencia oficial en los Juegos Olímpicos de Barcelona 1992 ¹ ³. Sin embargo, fue excluido del programa olímpico después de los Juegos Olímpicos de Pekín 2008, pero regresó en los Juegos Olímpicos de Tokio 2020 ¹ ².
+
+Cuba y Japón han sido los países más destacados en la competencia de béisbol en los Juegos Olímpicos, con Cuba obteniendo tres medallas de oro y Japón seis ¹. Estados Unidos también ha tenido un desempeño notable, con tres medallas de oro ¹.
+
+El béisbol y el softbol podrían hacer apariciones consecutivas en los Juegos Olímpicos, volviendo en Brisbane 2032, ya que Australia ha crecido mucho en ambas disciplinas ². Sin embargo, dicha presencia todavía necesita la confirmación del Comité Olímpico Internacional ². 
+
+ El béisbol regresó a los Juegos Olímpicos después de una ausencia de 13 años, y solo se disputó un torneo masculino con 6 equipos.
+
+Sin embargo, es importante destacar que el softbol, una variante del béisbol jugada principalmente por mujeres, sí tuvo una categoría femenina en los Juegos Olímpicos de Tokio 2020. El softbol regresó a los Juegos Olímpicos después de una ausencia de 13 años, y se disputó un torneo femenino con 6 equipos.</p>
+
+ </section>
+
+ <!-- SESION 3 -->
+
+ <section id="REGLAS DEL BEISBOL EN LOS JUEGOS OLIMPICOS">
+
+ <h2>REGLAS DEL BEISBOL </h2>
+
+ <p> El béisbol es uno de los deportes disputados en los Juegos Olímpicos de verano, organizado por el Comité Olímpico Internacional y la Federación Internacional de Béisbol ¹. Aunque ha tenido una presencia intermitente, el béisbol regresará en los Juegos Olímpicos de Los Ángeles 2028. Aquí te dejo las reglas básicas del béisbol olímpico:
+
+Objetivo del juego: El objetivo del juego es golpear una pelota con un bate, desplazando la pelota a través del campo y correr por el campo interno de tierra buscando alcanzar la mayor cantidad de bases posibles hasta dar la vuelta a la base desde donde se bateó para lograr anotar el tanto conocido como homecarrera ².
+
+Duración del juego: El equipo que anote más carreras al cabo de los 9 episodios, llamados innings que dura el encuentro, es el que resulta ganador ².
+
+Participantes: El béisbol ha sido disputado extraoficialmente desde 1904, desde entonces en 12 olimpiadas como deporte de exhibición. En total han participado 17 países, de los cuatro torneos olímpicos donde se entregaron medallas, entre los cuales se destacan Cuba, y Japón, que han aparecido en todos los torneos ¹.
+
+Diferencias con el sóftbol: Aunque hay campeonatos mundiales masculinos y femeninos en ambos deportes, a nivel olímpico el béisbol ha sido un deporte exclusivamente masculino, mientras que el sóftbol ha sido un deporte exclusivamente femenino. Hay diferencias en el número de jugadores de cada equipo entre los dos deportes, en el tamaño del campo y en algunas reglas ³.</p>
+
+
+ </section>
+
+
+ <!-- SESION 4 -->
+
+ <section id= PROGAMACION OLIMPICOS DEL BEISBOL 2020">
+
+ <h2>PROGRAMACION OLIMPICOS DEL BEISBOL 2020</h2>
+
+
+
+ <p>El béisbol en los Juegos Olímpicos de Tokio 2020 se llevó a cabo en el Estadio de Yokohama y el Estadio de Béisbol de Fukushima Azuma del 28 de julio al 7 de agosto de 2021 ¹. Seis equipos calificaron para el torneo: Japón, Estados Unidos, República Dominicana, Corea del Sur, México e Israel ¹.
+
+Calendario de juegos ¹:
+
+- 28 de julio, 12:00: República Dominicana vs. Japón
+- 29 de julio, 19:00: Israel vs. Corea del Sur
+- 30 de julio, 12:00: México vs. República Dominicana
+- 30 de julio, 19:00: Estados Unidos vs. Israel
+- 31 de julio, 12:00: Japón vs. México
+- 31 de julio, 19:00: Corea del Sur vs. Estados Unidos
+
+Ronda eliminatoria ¹:
+
+- Juego 7: Israel vs. Corea del Sur
+- Juego 8: República Dominicana vs. Israel
+- Juego 9: Estados Unidos vs. Japón
+- Juego 10: Corea del Sur vs. Estados Unidos
+- Juego 11: República Dominicana vs. Estados Unidos
+- Juego 12: Japón vs. Corea del Sur
+- Juego 13: Estados Unidos vs. Corea del Sur (por el bronce)
+- Juego 14: Japón vs. Estados Unidos (por el oro)</p>
+
+ </section>
+
+ <!-- SESION 5 -->
+
+ <section id="medallero">
+
+ <h2>CUADRO DE HONOR "MEDALLERO DEL BEISBOL EN LOS JUEGOS OLIMPICOS 2020"</h2>
+
+ <ul>
+
+ <li><strong>Oro:</strong> Japon</li>
+
+ <li><strong>Plata:</strong> Estados Unidos</li>
+
+ <li><strong>Bronce:</strong> Republica Dominicana</li>
+
+ </ul>
+
+ </section>
+
+ <!-- SESION 6 -->
+
+ <section id="VIDEO DEL BEISBOL">
+
+ <h2>VIDEO</h2>
+
+ <!-- VIDEO DEL BEISBOL-->
+
+ <iframe src="https://www.youtube.com/embed/Jb-umprcAzU" title="Video de beisbol"></iframe>
+
+ </section>
+
+ <!-- SESION 7 -->
+
+ <section id="GALERIA DEL BEISBOL">
+
+ <!-- PONEN AL MENOS 5 IMAGENES ALUSIVAS A SU DEPORTE, RECUERDEN QUE DEBEN ESTAR EN LA
+
+MISMA CARPETA -->
+
+ <h2>GALERIA DE IMAGENES DEL BEISBOL</h2>
+
+ <div class="carousel">
+
+ <img src="BEISBOLO.jpg" alt="beisbol Imagen 1" class="active">
+
+ <img src="BEISBOL2.jpg" alt="beisbol Imagen 2">
+
+ <img src="BEISBOL3.jpg" alt="beisbol Imagen 3">
+
+<img src="BEISBOL4.jpg" alt="beisbol Imagen 4">
+
+<img src="BEISBOL5.jpg" alt="beisbol Imagen 5">
+
+ </div>
+
+ </section>
+
+ <!-- SESION 8 -->
+
+ <section id="formulario">
+
+ <h2>CUESTIONARIO DEL BEISBOL EN LOS JUEGOS OLIMPICOS </h2>
+ <form id="esgrimaForm">
+
+ <!-- PREGUNTA DE TEXTO CORTO -->
+
+ <label for="nombre">Nombre:</label>
+
+ <input type="text" id="nombre" name="nombre" required>
+
+ <!-- Pregunta de Selección Múltiple (Menú Desplegable) -->
+
+ <label for="pregunta1">1. ¿En qué año hizo su debut el béisbol en los Juegos Olímpicos?</label>
+ 
+<select id="pregunta1" name="pregunta1" required>
+
+ <option value="1904">1904</option>
+
+ <option value="1936">1936</option>
+
+ <option value=" 1964"> 1964</option>
+
+ <option value=" 1984"> 1984</option>
+
+ </select>
+
+ <!-- Pregunta Numérica (Campo Numérico) -->
+
+ <label for="pregunta2">2. ¿Cuántas veces ha sido el béisbol incluido como deporte oficial en los Juegos Olímpicos hasta la fecha?</label>
+
+ <input type="number" id="pregunta2" name="pregunta2" required>
+
+ <!-- Pregunta de Elección Múltiple con Botones de Opción (Radio Buttons) -->
+
+ <label>3. ¿Cuál país ha ganado la mayor cantidad de medallas de oro en béisbol en los Juegos Olímpicos?</label><br>
+
+ <input type="radio" id="Estados Unidos" name="arma" value="Estados Unidos" required>
+
+ <label for="Estados Unidos">Estados Unidos</label><br>
+
+ <input type="radio" id=" Japón" name="arma" value=" Japón">
+
+ <label for=" Japón"> Japón</label><br>
+
+ <input type="radio" id="hacha" name="arma" value="Corea del Sur">
+
+ <label for="Corea del Sur">Corea del Sur</label><br>
+
+ <input type="radio" id=" Cuba" name="arma" value=" Cuba">
+
+ <label for=" Cuba"> Cuba</label><br>
+
+ <!-- Pregunta de Elección Múltiple con Casillas de Verificación (Checkboxes) -->
+
+ <label>4. ¿En qué ciudad se celebraron los Juegos Olímpicos en los que el béisbol hizo su última aparición antes de ser excluido en 2008? (Selecciona solo una
+
+apliquen)</label><br>
+
+ <input type="checkbox" id=" Atenas" name="armas" value=" Atenas">
+
+ <label for=" Atenas"> Atenas</label><br>
+
+ <input type="checkbox" id=" Sídney" name="armas" value=" Sídney">
+
+ <label for=" Sídney"> Sídney</label><br>
+
+ <input type="checkbox" id=" Pekín" name="armas" value=" Pekín">
+
+ <label for=" Pekín"> Pekín</label><br>
+
+ <input type="checkbox" id="Tokio" name="armas" value="Tokio">
+
+ <label for="Tokio">Tokio</label><br>
+
+ <!-- Pregunta de Texto Largo (Área de Texto) -->
+
+ <label for="comentarios">5. para usted cual a sido el mejor jugador de beisbol en lo juegos olimpicos :</label><br>
+
+ <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+
+ <!-- Pregunta de Fecha (Selector de Fecha) -->
+
+ <label for="fecha">6.¿cuando fue la final del beisbol en los juegos olimpicos 2020?</label>
+
+ <input type="date" id="fecha" name="fecha" required>
+
+ <button type="submit">Enviar</button>
+
+ </form>
+
+ <p id="resultado"></p>
+
+ <!-- SESION 9 -->  <section id="juego">
+<h1>Juego de Béisbol Avanzado</h1>
+<div id="instructions">
+    <p>Instrucciones: Haz clic en el bate para golpear la pelota. Consigue puntos solo si la pelota está en la línea divisoria central. Pierdes un punto si dejas pasar la pelota.</p>
+</div>
+<div id="score">Puntuación: <span id="scoreValue">0</span></div>
+<button id="startButton" onclick="startGame()">Iniciar Juego</button>
+<div id="field">
+    <div id="pitcher"></div>
+    <div id="ball"></div>
+    <div id="bat" onclick="swingBat()"></div>
+    <div class="divider"></div>
+</div>
+
+ </section> </div> </main> 
+ <!-- PIE DE PAGINA -->
+
+ <footer>
+
+ <p> Nombre: Juan José castillo pineda Curso: 802 Año: 2024</p>
+
+
+
+<script>
+ let currentIndex = 0;
+
+ const images = document.querySelectorAll('.carousel img');
+
+ const totalImages = images.length;
+
+ function showNextImage() { images[currentIndex].classList.remove('active');
+
+ currentIndex = (currentIndex + 1) % totalImages; images[currentIndex].classList.add('active'); }
+
+ setInterval(showNextImage, 3000); // Cambia de imagen cada 3 segundos </script>
+
+ <script>
+
+ // VERIFICACION DEL CUESTIONARIO SCRIPT
+
+ document.getElementById('esgrimaForm').addEventListener('submit', function(event) {
+
+ event.preventDefault(); // Evita que el formulario se envíe
+
+ // Obtener las respuestas del formulario
+
+ const nombre = document.getElementById('nombre').value;
+
+ const pregunta1 = document.getElementById('pregunta1').value;
+
+ const pregunta2 = parseInt(document.getElementById('pregunta2').value, 10);
+
+ const armaSeleccionada = document.querySelector('input[name="arma"]:checked').value;
+
+ const checkboxes = document.querySelectorAll('input[name="armas"]:checked');
+
+ const respuestasSeleccionadas = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+ const comentarios = document.getElementById('comentarios').value;
+
+
+ const fecha = document.getElementById('fecha').value;
+
+ const respuestaCorrecta1 = "1964";
+ 
+const respuestaCorrecta2 = 5;
+
+ const respuestaCorrecta3 = "Cuba";
+
+ const respuestasCorrectas = ["Pekín"];
+
+ const fechaCorrecta = "2021-08-07";
+
+ // Variable para almacenar el mensaje de resultado
+
+ let resultado = `Hola ${nombre}, aquí están tus resultados:<br>`;
+
+ if (pregunta1 === respuestaCorrecta1) {
+
+ resultado += "Pregunta 1: Correcto<br>"; } else { resultado += "Pregunta 1: Incorrecto<br>"; }
+
+ if (pregunta2 === respuestaCorrecta2) {
+
+ resultado += "Pregunta 2: Correcto<br>"; } else { resultado += "Pregunta 2: Incorrecto<br>"; }
+
+ if (armaSeleccionada === respuestaCorrecta3) {
+
+ resultado += "Pregunta 3: Correcto<br>"; } else { resultado += "Pregunta 3: Incorrecto<br>"; }
+
+ let esCorrecto = respuestasCorrectas.every(respuesta => respuestasSeleccionadas.includes(respuesta))
+
+&& respuestasSeleccionadas.length === respuestasCorrectas.length;
+
+ if (esCorrecto) { resultado += "Pregunta 4: Correcto<br>"; } else { resultado += "Pregunta 4:
+
+Incorrecto<br>"; }
+
+ if (fecha === fechaCorrecta) { resultado += "Pregunta 6: Correcto<br>"; } else {
+
+ resultado += "Pregunta 6: Incorrecto<br>"; }
+
+ // Mostrar los resultados en la página
+
+ document.getElementById('resultado').innerHTML = resultado; }); </script>
+
+ <script>
+
+ <script>
+    let score = 0;
+    let ballHit = false;
+    let ballInterval;
+    const ballSpeed = 5; // Velocidad de la pelota
+
+    function startGame() {
+        score = 0;
+        ballHit = false;
+        document.getElementById('scoreValue').innerText = score;
+        document.getElementById('ball').style.display = 'block';
+        moveBall();
+        document.getElementById('startButton').disabled = true; // Deshabilitar botón
+    }
+
+    function swingBat() {
+        const ball = document.getElementById('ball');
+        const ballLeft = parseInt(ball.style.left, 10); // Obtener posición horizontal de la pelota
+        const centerX = 295; // Posición de la línea divisoria (centro del campo)
+
+        // Verificar si la pelota está en la línea divisoria
+        if (!ballHit && ballLeft >= centerX - 10 && ballLeft <= centerX + 10) {
+            score++;
+            document.getElementById('scoreValue').innerText = score;
+            ballHit = true;
+            resetBall();
+            setTimeout(() => {
+                ballHit = false;
+            }, 2000); // Espera 2 segundos antes de permitir otro golpe
+        } else {
+            alert("¡Golpe fallido! Intenta de nuevo cuando la pelota esté en la línea divisoria.");
+        }
+    }
+
+    function moveBall() {
+        const ball = document.getElementById('ball');
+        let leftPosition = 0; // Posición inicial
+        ball.style.left = `${leftPosition}px`;
+        ball.style.top = '50%'; // Centrado verticalmente
+        ball.style.display = 'block';
+
+        ballInterval = setInterval(() => {
+            leftPosition += ballSpeed; // Mover hacia la derecha
+
+            if (leftPosition > 600) { // Si la pelota sale del campo
+                score--; // Restar un punto si la pelota pasa
+                document.getElementById('scoreValue').innerText = score;
+                resetBall(); // Reiniciar la pelota
+                return; // Salir de la función
+            }
+
+            ball.style.left = `${leftPosition}px`;
+        }, 50); // Intervalo de tiempo para el movimiento
+    }
+
+    function resetBall() {
+        const ball = document.getElementById('ball');
+        ball.style.display = 'none'; // Oculta la pelota al golpear
+        clearInterval(ballInterval); // Detiene el movimiento
+        setTimeout(() => {
+            ball.style.display = 'block'; // Muestra la pelota de nuevo
+            moveBall(); // Reinicia el movimiento de la pelota
+        }, 2000); // Espera 2 segundos
+    }
+
+    // Resetea el juego al cerrar
+    window.onbeforeunload = function() {
+        resetGame();
+    };
+
+    function resetGame() {
+        score = 0;
+        document.getElementById('scoreValue').innerText = score;
+        document.getElementById('ball').style.display = 'none';
+        clearInterval(ballInterval); // Detiene el movimiento
+        document.getElementById('startButton').disabled = false; // Habilitar botón
+    }
+</script>
+
+</body></html>
+
+
+

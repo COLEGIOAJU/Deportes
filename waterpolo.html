@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waterpolo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #0077cc;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        section {
+            background: #ffffff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0077cc;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        .gallery img.active {
+            display: block;
+        }
+        .quiz, .game {
+            background: #e2e2e2;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .quiz ol {
+            padding-left: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #0077cc;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        // JavaScript for image gallery rotation
+        let currentIndex = 0;
+        function showNextImage() {
+            const images = document.querySelectorAll('.gallery img');
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+
+        // Mini game logic
+        function checkAnswer() {
+            const correctAnswers = {
+                question1: 'b',
+                question2: 'b'
+            };
+            let score = 0;
+            const resultElement = document.getElementById('result');
+            resultElement.innerHTML = '';
+
+            for (let question in correctAnswers) {
+                const answer = document.querySelector(`input[name="${question}"]:checked`);
+                if (answer) {
+                    if (answer.value === correctAnswers[question]) {
+                        score++;
+                        resultElement.innerHTML += `Pregunta ${question.charAt(question.length - 1)}: Correcto.<br>`;
+                    } else {
+                        resultElement.innerHTML += `Pregunta ${question.charAt(question.length - 1)}: Incorrecto. La respuesta correcta es ${correctAnswers[question]}.<br>`;
+                    }
+                } else {
+                    resultElement.innerHTML += `Pregunta ${question.charAt(question.length - 1)}: No respondida.<br>`;
+                }
+            }
+            resultElement.innerHTML += `Tu puntuación total es: ${score} de ${Object.keys(correctAnswers).length}.`;
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Página sobre Waterpolo</h1>
+</header>
+
+<div class="container">
+    
+    <section>
+        <h2>Resumen del Deporte</h2>
+        <p>El waterpolo es un deporte de equipo que se juega en una piscina, donde dos equipos de siete jugadores intentan marcar goles lanzando una pelota en la portería del equipo contrario. Se combina natación, estrategia y habilidad en un entorno acuático.</p>
+    </section>
+
+    <section>
+        <h2>Historia del Waterpolo</h2>
+        <p>El waterpolo se originó en el Reino Unido a finales del siglo XIX como una versión acuática del rugby. Su popularidad creció rápidamente, llevando a la creación de las primeras reglas en 1876. En 1900, se convirtió en un deporte olímpico, y desde entonces ha evolucionado.</p>
+    </section>
+
+    <section>
+        <h2>Reglas del Waterpolo</h2>
+        <ul>
+            <li><strong>Equipos:</strong> Siete jugadores por equipo (seis de campo y un portero).</li>
+            <li><strong>Duración:</strong> Cuatro períodos de 8 minutos cada uno.</li>
+            <li><strong>Gol:</strong> Se anota un gol cuando la pelota entra completamente en la portería.</li>
+            <li><strong>Faltas:</strong> Sanciones por agarrar o sujetar a un jugador contrario.</li>
+            <li><strong>Sustituciones:</strong> Ilimitadas durante el partido.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cuadro de Medallero - Juegos Olímpicos 2024</h2>
+        <table>
+            <tr>
+                <th>País</th>
+                <th>Oros</th>
+                <th>Platas</th>
+                <th>Bronces</th>
+            </tr>
+            <tr>
+                <td>china</td>
+                <td>32</td>
+                <td>25</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>Italia</td>
+                <td>5</td>
+                <td>4</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Estados Unidos</td>
+                <td>35</td>
+                <td>27</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>España</td>
+                <td>8</td>
+                <td>5</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>reino unido</td>
+                <td>28</td>
+                <td>24</td>
+                <td>36</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Videos</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=ejemplo" target="_blank">Historia del Waterpolo</a></li>
+            <li><a href="https://www.youtube.com/watch?v=ejemplo" target="_blank">Mejores momentos en competiciones de Waterpolo</a></li>
+            <li><a href="https://www.youtube.com/watch?v=ejemplo" target="_blank">Técnicas de entrenamiento para waterpolo</a></li>
+        </ul>
+    </section>
+
+    <section class="gallery">
+        <h2>Galería de Imágenes</h2>
+        <img src="waterpolo1.jpg" alt="Descripción de imagen (1) ">
+    <img src="waterpolo2.jpg" alt="Descripción de imagen (2) ">
+    <img src="waterpolo3.jpg" alt="Descripción de imagen (3) ">
+    <img src="waterpolo4.jpg" alt="Descripción de imagen (4) ">
+    <img src="waterpolo0.jpg" alt="Descripción de imagen ">
+    <section class="quiz">
+        <h2>Cuestionario</h2>
+        <ol>
+            <li>¿Cuántos jugadores hay en un equipo de waterpolo?
+                <ul>
+                    <li><input type="radio" name="question1" value="a"> a) 5</li>
+                    <li><input type="radio" name="question1" value="b"> b) 7</li>
+                    <li><input type="radio" name="question1" value="c"> c) 11</li>
+                </ul>
+            </li>
+            <li>¿En qué año se incluyó el waterpolo en los Juegos Olímpicos?
+                <ul>
+                    <li><input type="radio" name="question2" value="a"> a) 1896</li>
+                    <li><input type="radio" name="question2" value="b"> b) 1900</li>
+                    <li><input type="radio" name="question2" value="c"> c) 1924</li>
+                </ul>
+            </li>
+        </ol>
+        <button onclick="checkAnswer()">Enviar respuestas</button>
+        <p id="result"></p>
+    </section>
+
+    <footer>
+        <p>Rodolfo Sanchez - 801 - Colegio Antonio José Uribe</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
